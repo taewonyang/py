@@ -12,7 +12,7 @@ for filename in os.listdir():
     if filename[-3:] == 'csv' :
         df = pd.read_csv(f'./{filename}' , encoding='euc-kr')
         df_boolean = df == '당기순이익(손실)'
-        y = df_boolean.sum(axis=0).values.argmax()
+        y = df_boolean.sum(axis=0).values.argmax() #argmax는 최대값의 index값(순번)을 알려주는 함수
         x = df_boolean.sum(axis=1).values.argmax()
         num = df.iloc[x, y + 1]
         d[filename[7:14]] = int(num)

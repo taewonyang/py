@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331!important;
+      }
+    }
+    .form-select{display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+     function request_btn() {
+      name = $('#name_input').val()
+      address = $('#address_input').val()
+      memo = $('#memo_input').val()
+
+      if (name == "") {
+        alert('여기상호 뭐야??') ;
+        $('#name_input').focus()
+      }
+
+      if (address == "") {
+        alert('주소는??') ;
+        $('#address_input').focus()
+      }
+
+
+      $.ajax({
+        type: "POST",
+        url: "/regist", 
+        data: { name_give:name, address_give:address, food_give : $('[name=food]').val(), memo_give:memo },
+        success: function(response){
+          if( response['result']=="success" ) {
+            alert("등록완료!")
+          } 
+        }
+      })
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <!--Card-->
+  <div class="card">
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!-- Form -->
+      <form name="">
+        <!-- Heading -->
+        <h3 class="dark-grey-text text-center">
+          <strong>여긴 가야되</strong>
+        </h3>
+        <hr>
+
+        <div class="md-form">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="name_input" class="form-control">
+          <label for="name_input">상호명</label>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="text" id="address_input" class="form-control">
+          <label for="address_input">주소</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil-alt prefix grey-text"></i>
+          <textarea type="text" id="memo_input" class="md-textarea"></textarea>
+          <label for="memo_input">평가 및 후기</label>
+        </div>
+
+        <div class="food_div">
+          <fieldset class="form-select">
+            <input type="radio" name="food" value="korea_food" class="form-check-input" id="radiobox1">
+            <label for="radiobox1" class="form-check-label dark-grey-text">한식</label>
+
+            <input type="radio" name="food" value="china_food" class="form-check-input" id="radiobox2">
+            <label for="radiobox2" class="form-check-label dark-grey-text">중식</label>
+
+            <input type="radio" name="food" value="japan_food" class="form-check-input" id="radiobox3">
+            <label for="radiobox3" class="form-check-label dark-grey-text">일식</label>
+
+            <input type="radio" name="food" value="flour_food" class="form-check-input" id="radiobox4">
+            <label for="radiobox4" class="form-check-label dark-grey-text">분식</label>
+
+            <input type="radio" name="food" value="world_food" class="form-check-input" id="radiobox5">
+            <label for="radiobox5" class="form-check-label dark-grey-text">양식/세계음식</label>
+          </fieldset>
+          <hr>
+          <button class="btn btn-indigo" onclick="request_btn()">여기인정!!</button>
+        </div>
+
+      </form>
+      <!-- Form -->
+
+    </div>
+
+  </div>
+  <!--/.Card-->
+</body>
+</html>
