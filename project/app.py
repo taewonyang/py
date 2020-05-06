@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -19,10 +19,10 @@ def register() :
     memo_receive = request.form['memo_give']
 
     doc = {
-        'name_receive' : name_receive,
-        'address_receive': address_receive,
-        'food_receive' : food_receive,
-        'memo_receive': memo_receive
+        'name_list' : name_receive,
+        'address_list': address_receive,
+        'food_list' : food_receive,
+        'memo_list': memo_receive
     }
 
     db.food_store.insert_one(doc)
@@ -30,9 +30,10 @@ def register() :
     return jsonify({'result':'success'})
 
 
-# @app.route('/finder')
-# def finder() :
-#     return
+@app.route('/listing', methods=['get'])
+def listing() :
+    store = list(db.food_store.find({}, {'_id': 0}))
+    return jsonify({'result':'success', 'store':store})
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000,debug=True)
