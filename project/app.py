@@ -11,26 +11,22 @@ db = client.project  # 'project1'라는 이름의 db를 만듭니다.
 def home() :
     return render_template('re_design.html')
 
-@app.route('/regist', methods=['post'])
+@app.route('/mylist', methods=['post'])
 def register() :
     name_receive = request.form['name_give']
     address_receive = request.form['address_give']
     food_receive = request.form['food_give']
     memo_receive = request.form['memo_give']
 
-    doc = {
-        'name_list' : name_receive,
-        'address_list': address_receive,
-        'food_list' : food_receive,
-        'memo_list': memo_receive
-    }
+    doc = {'name_list' : name_receive, 'address_list': address_receive, 'food_list' : food_receive,
+        'memo_list': memo_receive  }
 
     db.food_store.insert_one(doc)
-
+    print('db등록성공')
     return jsonify({'result':'success'})
+    print('json화 성공')
 
-
-@app.route('/listing', methods=['get'])
+@app.route('/mylist', methods=['get'])
 def listing() :
     store = list(db.food_store.find({}, {'_id': 0}))
     return jsonify({'result':'success', 'store':store})

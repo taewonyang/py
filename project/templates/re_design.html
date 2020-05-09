@@ -72,44 +72,41 @@
 
       $.ajax({
         type: "POST",
-        url: "/regist", 
-        data: { name_give:name, address_give:address, food_give : $('[name=food]').val(), memo_give:memo },
+        url: "/mylist", 
+        data: { name_give:name, address_give:address, food_give : $('input[name="food"]:checked').val() , memo_give:memo },
         success: function(response){
           if( response['result']=="success" ) {
             alert("등록완료!") ;
-            window.location.reload();
           } else {
             alert('서버 오류!')
           }
         }
       })
 
-
-
      //서버에 있는 자료를 내 컴퓨터로 불러와 조회하는 구문
-   //   $.ajax({
-   //    type: "GET",
-   //    url: "/listing", 
-   //    data: { },
-   //    success: function(response){
-   //      rows = response['store']
+     $.ajax({
+      type: "GET",
+      url: "/mylist", 
+      data: { },
+      success: function(response){
+        rows = response['store']
 
-   //      for (i=0; i<rows.length; i++) {
-   //        server_name = rows[i]['name_list']
-   //        server_address = rows[i]['address_list']
-   //        server_food = rows[i]['food_list']
-   //        server_memo = rows[i]['memo_list']
+        for (i=0; i<rows.length; i++) {
+          server_name = rows[i]['name_list']
+          server_address = rows[i]['address_list']
+          server_food = rows[i]['food_list']
+          server_memo = rows[i]['memo_list']
 
-   //        table_plus = "<tr>\
-   //        <td>"+server_name+"</td>\
-   //        <td>"+server_address+"</td>\
-   //        <td>"+server_food+"</td>\
-   //        <td>"+server_memo+"</td>\
-   //        </tr>"
-   //        $('#request_table_body').append(table_plus)
-   //      }
-   //    }
-   //  })
+          table_plus = "<tr>\
+          <td>"+server_name+"</td>\
+          <td>"+server_address+"</td>\
+          <td>"+server_food+"</td>\
+          <td>"+server_memo+"</td>\
+          </tr>"
+          $('#request_table_body').append(table_plus)
+        }
+      }
+    })
 
    }
 
@@ -134,18 +131,18 @@
 
         <div class="md-form">
           <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="name_input" class="form-control">
+          <input type="text" id="name_input" class="form-control" autocomplete="off">
           <label for="name_input">상호명</label>
         </div>
         <div class="md-form">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="text" id="address_input" class="form-control">
+          <input type="text" id="address_input" class="form-control" autocomplete="off">
           <label for="address_input">주소</label>
         </div>
 
         <div class="md-form">
           <i class="fas fa-pencil-alt prefix grey-text"></i>
-          <textarea type="text" id="memo_input" class="md-textarea"></textarea>
+          <textarea type="text" id="memo_input" class="md-textarea" autocomplete="off"></textarea>
           <label for="memo_input">평가 및 후기</label>
         </div>
 
