@@ -9,7 +9,7 @@ db = client.project  # 'project1'라는 이름의 db를 만듭니다.
 
 @app.route('/')
 def home() :
-    return render_template('re_design.html')
+    return render_template('test.html')
 
 @app.route('/mylist', methods=['post'])
 def register() :

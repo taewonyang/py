@@ -1,0 +1,26 @@
+1. 기획
+ document.ready(onload) : map.html
+ 
+ <html> button -> 
+ <py> flask(post) -> db저장 -> 
+ <html> 
+
+2.시각적 구성
+------------------
+(구성) 메뉴
+-지도보기 index
+-입력하기 
+-리스트보기
+------------------
+1) (지도보기) 자동 불러오기
+   document.ready(onload) : map.html 
+
+1) 입력하기. 
+ 상호명 text
+ 주소 text
+ button
+
+3) 리스트보기 (db목록 : get)  
+
+ 
+ 
