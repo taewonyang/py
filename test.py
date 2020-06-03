@@ -1,32 +1,59 @@
 import requests
-import re
 import folium
+import re
+from pymongo import MongoClient  # pymongo를 임포트 하기(패키지 인스톨 먼저 해야겠죠?)
+client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
+db = client.project  # 'project1'라는 이름의 db를 만듭니다.
 
-# part1,좌표 얻어오기(도로명주소 이용)
+# 1. 상호명리스트(name_list) 추출
+# 2. 주소리스트(address_list) 추출
+all_store = list(db.food_store.find({}))
+name_list = []
+address_list = []
+for store in all_store :
+    name = store['name']
+    address = store['address']
+    name_list.append(name)
+    address_list.append(address)
 
+
+# 3.x_code_list(좌표-위도리스트) 추출
+# 4.y_code_list(좌표-경도리스트) 추출
 api_key = '340094C7-00E9-3582-9DDE-6566D6A8605C'
-addr = input('도로명주소를 입력해주세요 : ')  #주소입력부분
-api_url =f'http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:4326&address={addr}&refine=true&simple=false&format=json&type=ROAD&key={api_key}'
+x_code_list = []
+y_code_list = []
+for addr in address_list :
+    api_url =f'http://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:4326&address={addr}&refine=true&simple=false&format=json&type=ROAD&key={api_key}'
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'}
+    res = requests.get(api_url, headers=headers)
+    html = res.content.decode('utf8')
+    x_code = re.findall('"x" : "(.*?)", "y', html)[0]
+    y_code = re.findall('"y" : "(.*?)"}', html)[0]
+    x_code_list.append(x_code)
+    y_code_list.append(y_code)
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'}
 
-res = requests.get(api_url, headers=headers)
-html = res.content.decode('utf8')
-x_code = re.findall('"x" : "(.*?)", "y', html)
-y_code = re.findall('"y" : "(.*?)"}', html)
+print('<상호명 리스트>')
+for name in name_list :
+    print(name)
+print('<주소 리스트>')
+for address in address_list :
+    print(address)
+print('<위도 리스트>')
+for x_code in x_code_list :
+    print(x_code)
+print('<경도 리스트>')
+for y_code in y_code_list :
+    print(y_code)
 
 
 # part2.지도화 하기
 
-latitude = x_code
-longitude = y_code
+def map_view(x_code, y_code, name) :
+     m = folium.Map(location=[37.4838699,127.0565831], zoom_start=12)
+     folium.Marker(location=[x_code, y_code], popup=name,
+         icon=folium.Icon(color ="red", icon="star")).add_to(m)
+     m.save('map.html')
 
-# def map_view(#위도, #경도, #업체명) :
-#      m = folium.Map(location=[latitude,longitude], zoom_start=12)
-#      folium.Marker(location=[latitude,longitude], popup="신진다이아몬드공업',
-#          icon=folium.Icon(color ="red", icon="star")).add_to(m)
-#      m.save('map.html')
-#
-#
-# for #위도, #경도, #상호명 in zip(#위도_list, #경도_list, #상호명_list) :
-#      map_view()
+for x_code, y_code, name in zip(x_code_list, y_code_list, name_list) :
+     map_view(x_code, y_code, name)

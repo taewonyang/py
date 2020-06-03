@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_111a60ec79174b9c92099e9feb989cb9 {
+                #map_fe778c1d60464407bb0d08e4b596c3ee {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,15 +35,15 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_111a60ec79174b9c92099e9feb989cb9" ></div>
+            <div class="folium-map" id="map_fe778c1d60464407bb0d08e4b596c3ee" ></div>
         
 </body>
 <script>    
     
-            var map_111a60ec79174b9c92099e9feb989cb9 = L.map(
-                "map_111a60ec79174b9c92099e9feb989cb9",
+            var map_fe778c1d60464407bb0d08e4b596c3ee = L.map(
+                "map_fe778c1d60464407bb0d08e4b596c3ee",
                 {
-                    center: [37.536444, 126.901571],
+                    center: [37.4838699, 127.0565831],
                     crs: L.CRS.EPSG3857,
                     zoom: 12,
                     zoomControl: true,
@@ -55,26 +55,32 @@
 
         
     
-            var tile_layer_a405bc973352426588f3cc839f4ba92c = L.tileLayer(
+            var tile_layer_c9a027b63d3a4f4bb222fc7d0891916b = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_111a60ec79174b9c92099e9feb989cb9);
+            ).addTo(map_fe778c1d60464407bb0d08e4b596c3ee);
         
     
-            var marker_78538e40eecb46e59763fcfdd743de95 = L.marker(
-                [37.536444, 126.901571],
+            var marker_fa4ec7fcc43e4d8ea635ce92c81cea39 = L.marker(
+                [126.923609275, 37.551614446],
                 {}
-            ).addTo(map_111a60ec79174b9c92099e9feb989cb9);
+            ).addTo(map_fe778c1d60464407bb0d08e4b596c3ee);
         
     
-        var popup_af24c025570e4087b8b0adec985a11d3 = L.popup({"maxWidth": "100%"});
+            var icon_d7561b69bfac49c2ad0d0aa05597019e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fa4ec7fcc43e4d8ea635ce92c81cea39.setIcon(icon_d7561b69bfac49c2ad0d0aa05597019e);
+        
+    
+        var popup_30330d72b99646aeaeedd9378b08583d = L.popup({"maxWidth": "100%"});
 
         
-            var html_ae981b3a86cd4c8ea0d1c263bb1a1d60 = $(`<div id="html_ae981b3a86cd4c8ea0d1c263bb1a1d60" style="width: 100.0%; height: 100.0%;">신진다이아몬드공업</div>`)[0];
-            popup_af24c025570e4087b8b0adec985a11d3.setContent(html_ae981b3a86cd4c8ea0d1c263bb1a1d60);
+            var html_d16c4c0ae352405f802a4922b583f970 = $(`<div id="html_d16c4c0ae352405f802a4922b583f970" style="width: 100.0%; height: 100.0%;">젝시믹스 홍대점</div>`)[0];
+            popup_30330d72b99646aeaeedd9378b08583d.setContent(html_d16c4c0ae352405f802a4922b583f970);
         
 
-        marker_78538e40eecb46e59763fcfdd743de95.bindPopup(popup_af24c025570e4087b8b0adec985a11d3)
+        marker_fa4ec7fcc43e4d8ea635ce92c81cea39.bindPopup(popup_30330d72b99646aeaeedd9378b08583d)
         ;
 
         

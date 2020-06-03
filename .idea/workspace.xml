@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f7ac04d-3352-4850-8998-a59101cb0b4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,26 +17,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="-936">
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
+              <folding>
+                <marker date="1591192296060" expanded="true" signature="1257:1510" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-197">
+              <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="54" />
+            <state relative-caret-position="514">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -82,17 +82,17 @@
         <option value="$PROJECT_DIR$/혼자연습하기/dart(2)_csv_down_pands_grph.py" />
         <option value="$PROJECT_DIR$/mail.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
-        <option value="$PROJECT_DIR$/project/app.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py" />
+        <option value="$PROJECT_DIR$/project/app.py" />
         <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="950" />
-    <option name="y" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -233,8 +233,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.dart(1)_csv_down" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.dart(1)_csv_down" />
         <item itemvalue="Python.crawling_beautifulsoup_find_all" />
         <item itemvalue="Python.mail" />
       </list>
@@ -270,14 +270,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986945" weight="0.29945055" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" weight="0.29945055" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3388203" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50130546" side_tool="true" weight="0.34125873" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019531" side_tool="true" weight="0.29945055" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -289,14 +289,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986945" visible="true" weight="0.29945055" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.29945055" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3388203" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50130546" side_tool="true" weight="0.34125873" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019531" side_tool="true" visible="true" weight="0.29945055" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -444,27 +444,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py">
+    <entry file="file://$PROJECT_DIR$/project/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-197">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        <state relative-caret-position="-936">
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+          <folding>
+            <marker date="1591192296060" expanded="true" signature="1257:1510" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app.py">
+    <entry file="file://$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="514">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

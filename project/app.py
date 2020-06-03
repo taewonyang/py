@@ -9,7 +9,7 @@ db = client.project  # 'project1'라는 이름의 db를 만듭니다.
 
 @app.route('/')
 def home() :
-    return render_template('test.html')
+    return render_template('re_design.html')
 
 @app.route('/mylist', methods=['post'])
 def register() :
@@ -18,8 +18,7 @@ def register() :
     food_receive = request.form['food_give']
     memo_receive = request.form['memo_give']
 
-    doc = {'name_list' : name_receive, 'address_list': address_receive, 'food_list' : food_receive,
-        'memo_list': memo_receive  }
+    doc = {'name' : name_receive, 'address': address_receive, 'food' : food_receive, 'memo': memo_receive}
 
     db.food_store.insert_one(doc)
     print('db등록성공')
@@ -33,3 +32,4 @@ def listing() :
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000,debug=True)
+
