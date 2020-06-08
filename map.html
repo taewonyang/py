@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_fe778c1d60464407bb0d08e4b596c3ee {
+                #map_981ae3ed20014a8cb916fc8bcd61bc6b {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,13 +35,13 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_fe778c1d60464407bb0d08e4b596c3ee" ></div>
+            <div class="folium-map" id="map_981ae3ed20014a8cb916fc8bcd61bc6b" ></div>
         
 </body>
 <script>    
     
-            var map_fe778c1d60464407bb0d08e4b596c3ee = L.map(
-                "map_fe778c1d60464407bb0d08e4b596c3ee",
+            var map_981ae3ed20014a8cb916fc8bcd61bc6b = L.map(
+                "map_981ae3ed20014a8cb916fc8bcd61bc6b",
                 {
                     center: [37.4838699, 127.0565831],
                     crs: L.CRS.EPSG3857,
@@ -55,34 +55,89 @@
 
         
     
-            var tile_layer_c9a027b63d3a4f4bb222fc7d0891916b = L.tileLayer(
+            var tile_layer_117102d3e945470590c649a361d65311 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_fe778c1d60464407bb0d08e4b596c3ee);
+            ).addTo(map_981ae3ed20014a8cb916fc8bcd61bc6b);
         
     
-            var marker_fa4ec7fcc43e4d8ea635ce92c81cea39 = L.marker(
-                [126.923609275, 37.551614446],
+            var marker_8f0a1a303d2b4a6aaff04132262b86e5 = L.marker(
+                [37.54011926, 127.067847029],
                 {}
-            ).addTo(map_fe778c1d60464407bb0d08e4b596c3ee);
+            ).addTo(map_981ae3ed20014a8cb916fc8bcd61bc6b);
         
     
-            var icon_d7561b69bfac49c2ad0d0aa05597019e = L.AwesomeMarkers.icon(
+            var icon_a40d828a2380497d85798c940b526a3a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_fa4ec7fcc43e4d8ea635ce92c81cea39.setIcon(icon_d7561b69bfac49c2ad0d0aa05597019e);
+            marker_8f0a1a303d2b4a6aaff04132262b86e5.setIcon(icon_a40d828a2380497d85798c940b526a3a);
         
     
-        var popup_30330d72b99646aeaeedd9378b08583d = L.popup({"maxWidth": "100%"});
-
-        
-            var html_d16c4c0ae352405f802a4922b583f970 = $(`<div id="html_d16c4c0ae352405f802a4922b583f970" style="width: 100.0%; height: 100.0%;">젝시믹스 홍대점</div>`)[0];
-            popup_30330d72b99646aeaeedd9378b08583d.setContent(html_d16c4c0ae352405f802a4922b583f970);
-        
-
-        marker_fa4ec7fcc43e4d8ea635ce92c81cea39.bindPopup(popup_30330d72b99646aeaeedd9378b08583d)
-        ;
-
+            marker_8f0a1a303d2b4a6aaff04132262b86e5.bindTooltip(
+                `<div>
+                     ho2
+                 </div>`,
+                {"sticky": true}
+            );
         
     
+            var marker_255ee75ece6649a48ff11dee4014ef96 = L.marker(
+                [37.544469259, 127.067971079],
+                {}
+            ).addTo(map_981ae3ed20014a8cb916fc8bcd61bc6b);
+        
+    
+            var icon_2609d2faa0f94d44aacd9f7c4be736a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_255ee75ece6649a48ff11dee4014ef96.setIcon(icon_2609d2faa0f94d44aacd9f7c4be736a5);
+        
+    
+            marker_255ee75ece6649a48ff11dee4014ef96.bindTooltip(
+                `<div>
+                     우리집
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8086de42abb24e3aa4f93f2786bde87c = L.marker(
+                [37.543993914, 127.070024668],
+                {}
+            ).addTo(map_981ae3ed20014a8cb916fc8bcd61bc6b);
+        
+    
+            var icon_f1ecf321a1af4cb6945388873e5b8991 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8086de42abb24e3aa4f93f2786bde87c.setIcon(icon_f1ecf321a1af4cb6945388873e5b8991);
+        
+    
+            marker_8086de42abb24e3aa4f93f2786bde87c.bindTooltip(
+                `<div>
+                     해남닭집
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c5a4cd74c9464e5f8ac89c5310bfe63f = L.marker(
+                [37.551614446, 126.923609275],
+                {}
+            ).addTo(map_981ae3ed20014a8cb916fc8bcd61bc6b);
+        
+    
+            var icon_81e732f1e8804552a7fc18be12eaa5f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c5a4cd74c9464e5f8ac89c5310bfe63f.setIcon(icon_81e732f1e8804552a7fc18be12eaa5f3);
+        
+    
+            marker_c5a4cd74c9464e5f8ac89c5310bfe63f.bindTooltip(
+                `<div>
+                     젝시믹스 홍대점
+                 </div>`,
+                {"sticky": true}
+            );
+        
 </script>
