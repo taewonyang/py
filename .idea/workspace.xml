@@ -2,14 +2,152 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f7ac04d-3352-4850-8998-a59101cb0b4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/map.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/.idea/project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/datatables-select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/datatables-select.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/datatables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/datatables.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/directives.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/directives.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/flag.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/flag.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/rating.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/rating.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/zmd.hierarchical-display.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/addons/zmd.hierarchical-display.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/mdb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/mdb.lite.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/mdb.lite.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/mdb.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/modules/animations-extended.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/modules/animations-extended.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/css/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/enrollment.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/enrollment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Medium.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Thin.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Thin.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/font/roboto/Roboto-Thin.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/flags.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/lightbox/default-skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/lightbox/default-skin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/lightbox/preloader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/overlays/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/sample.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/svg/arrow_left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/svg/arrow_right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/img/svg/flags.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/datatables-select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/datatables-select.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/datatables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/datatables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/jquery.zmd.hierarchical-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/jquery.zmd.hierarchical-display.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/masonry.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/progressBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/progressBar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/rating.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/addons/rating.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/jquery-3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/mdb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/mdb.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/bs-custom-file-input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/default-file-input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/enhanced-modals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/forms-free.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/jquery.easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/scrolling-navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/treeview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/velocity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/velocity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/modules/wow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/re_design.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/re_design.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/_custom-skin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/_custom-styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/_custom-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/addons/_datatables-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/addons/_datatables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/addons/_directives.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/addons/_flags.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/addons/_hierarchical-display.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/addons/_rating.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_masks.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/_waves.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/bootstrap/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/bootstrap/_rfs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/core/bootstrap/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_animations-basic.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_badges.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_carousels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_depreciated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_dropdowns.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_footers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_loader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_modals.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_msc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_steppers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/_treeview.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/modules/animations-extended/_module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/free/modules/animations-extended/animations-extended.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/mdb.lite.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/mdb.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +158,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+        <entry file="file://$PROJECT_DIR$/project/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="-961">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -31,20 +169,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="32" />
+            <state>
+              <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+            <state relative-caret-position="575">
+              <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -85,17 +223,17 @@
         <option value="$PROJECT_DIR$/mail.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/project/map.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/project/app.py" />
+        <option value="$PROJECT_DIR$/project/test.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -106,7 +244,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/app.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -128,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.selenium_auto_login_crawling">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,7 +288,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="crawling_beautifulsoup_find_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="map" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/map.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="selenium_auto_login_crawling" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -162,7 +321,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/혼자연습하기/selenium_auto_login_crawling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,7 +330,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dart(1)_csv_down" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -179,32 +338,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/혼자연습하기" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="py" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mail.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,11 +374,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
+        <item itemvalue="Python.selenium_auto_login_crawling" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.dart(1)_csv_down" />
-        <item itemvalue="Python.crawling_beautifulsoup_find_all" />
-        <item itemvalue="Python.mail" />
+        <item itemvalue="Python.map" />
+        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -267,46 +405,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12681638" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" weight="0.28434065" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49739584" weight="0.2912088" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3388203" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019531" side_tool="true" weight="0.29945055" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5026042" side_tool="true" weight="0.28434065" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12681638" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.29945055" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3388203" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019531" side_tool="true" visible="true" weight="0.29945055" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/formating.py" />
@@ -408,16 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/혼자연습하기/selenium_auto_login_crawling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="20" lean-forward="true" selection-end-line="23" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mail.py" />
     <entry file="file://$PROJECT_DIR$/혼자연습하기/selenium_popup-controll_ActionChains.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -429,9 +537,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test1.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.html" />
     <entry file="file://$PROJECT_DIR$/project/templates/re_design.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -449,9 +555,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/혼자연습하기/selenium_auto_login_crawling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
+        <state relative-caret-position="628">
           <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -459,27 +583,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/project/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="-961">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/app.py">
+    <entry file="file://$PROJECT_DIR$/project/map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/map.py">
+    <entry file="file://$PROJECT_DIR$/project/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="575">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
         </state>
       </provider>
     </entry>

@@ -15,10 +15,10 @@ def home() :
 def register() :
     name_receive = request.form['name_give']
     address_receive = request.form['address_give']
-    food_receive = request.form['food_give']
+    visit_receive = request.form['visit_give']
     memo_receive = request.form['memo_give']
 
-    doc = {'name' : name_receive, 'address': address_receive, 'food' : food_receive, 'memo': memo_receive}
+    doc = {'name': name_receive, 'address': address_receive, 'visit': visit_receive, 'memo': memo_receive}
 
     db.food_store.insert_one(doc)
     print('db등록성공')

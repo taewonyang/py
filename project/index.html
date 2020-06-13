@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8e68d338ac1e483a9bbaded010d772c5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_8e68d338ac1e483a9bbaded010d772c5" ></div>
+        
+</body>
+<script>    
+    
+            var map_8e68d338ac1e483a9bbaded010d772c5 = L.map(
+                "map_8e68d338ac1e483a9bbaded010d772c5",
+                {
+                    center: [37.4838699, 127.0565831],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2b0cbfaeaa95445282f3824a759bb2d3 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var marker_c8236fb70e454ec1b3bc9dadd4c59d5d = L.marker(
+                [37.54011926, 127.067847029],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_0361dabf544c4935b645dc850dcd15ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c8236fb70e454ec1b3bc9dadd4c59d5d.setIcon(icon_0361dabf544c4935b645dc850dcd15ab);
+        
+    
+            marker_c8236fb70e454ec1b3bc9dadd4c59d5d.bindTooltip(
+                `<div>
+                     ho2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bff4369fa26e4c11a634d384dcbf8c6e = L.marker(
+                [37.544469259, 127.067971079],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_133017c6f054452daa0b3617a9f1c86e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bff4369fa26e4c11a634d384dcbf8c6e.setIcon(icon_133017c6f054452daa0b3617a9f1c86e);
+        
+    
+            marker_bff4369fa26e4c11a634d384dcbf8c6e.bindTooltip(
+                `<div>
+                     우리집
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9afbe58e462447439878fc8f83f30e31 = L.marker(
+                [37.543993914, 127.070024668],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_16221824ce6b4b6681f857adda0defb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9afbe58e462447439878fc8f83f30e31.setIcon(icon_16221824ce6b4b6681f857adda0defb3);
+        
+    
+            marker_9afbe58e462447439878fc8f83f30e31.bindTooltip(
+                `<div>
+                     해남닭집
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_21abab772c1c4e64a4cd68e000be533d = L.marker(
+                [37.551614446, 126.923609275],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_79db2e63e6b64702b4fb39fc5df325e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_21abab772c1c4e64a4cd68e000be533d.setIcon(icon_79db2e63e6b64702b4fb39fc5df325e5);
+        
+    
+            marker_21abab772c1c4e64a4cd68e000be533d.bindTooltip(
+                `<div>
+                     젝시믹스 홍대점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04ecb66f39d74ded8e762b7a06556f64 = L.marker(
+                [37.503631184, 127.026953792],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_52d0c2dde2c1487f8d0440b4168f62b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_04ecb66f39d74ded8e762b7a06556f64.setIcon(icon_52d0c2dde2c1487f8d0440b4168f62b4);
+        
+    
+            marker_04ecb66f39d74ded8e762b7a06556f64.bindTooltip(
+                `<div>
+                     정돈
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0fdeca41372b430cba37ae30d176eaca = L.marker(
+                [37.536373393, 126.901565021],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_b5f0cc5662894b8eb3cf4537ebffe444 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0fdeca41372b430cba37ae30d176eaca.setIcon(icon_b5f0cc5662894b8eb3cf4537ebffe444);
+        
+    
+            marker_0fdeca41372b430cba37ae30d176eaca.bindTooltip(
+                `<div>
+                     신진다이아
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7b7fdbfa58c448e39f79be51b37a65dc = L.marker(
+                [37.474455632, 127.049626199],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_931bf1a2f2274fb69dc2848e4643c8ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7b7fdbfa58c448e39f79be51b37a65dc.setIcon(icon_931bf1a2f2274fb69dc2848e4643c8ff);
+        
+    
+            marker_7b7fdbfa58c448e39f79be51b37a65dc.bindTooltip(
+                `<div>
+                     원조닭한마리 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a1e0f05c34d462cb3412226bd819782 = L.marker(
+                [37.551809939, 127.090240906],
+                {}
+            ).addTo(map_8e68d338ac1e483a9bbaded010d772c5);
+        
+    
+            var icon_7bce77f7aa9b4a53bfc5c45eb1116626 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6a1e0f05c34d462cb3412226bd819782.setIcon(icon_7bce77f7aa9b4a53bfc5c45eb1116626);
+        
+    
+            marker_6a1e0f05c34d462cb3412226bd819782.bindTooltip(
+                `<div>
+                      F 신의주찹쌀순대 아차산
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

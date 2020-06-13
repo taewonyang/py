@@ -75,7 +75,7 @@
         url: "/mylist", 
         data: { name_give:name, address_give:address, food_give : $('input[name="food"]:checked').val() , memo_give:memo },
         success: function(response){
-          if( response['result']=="success" ) {
+          if(response['result']=="success" ) {
             alert("등록완료!") ;
           } else {
             alert('서버 오류!')
