@@ -1,0 +1,60 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type ="text/javascript" href="{{url_for('static', filename='js/list_script.js')}}"></script>	
+	<title></title>
+	<script>
+		$(document).ready(function() {
+			$('#list_box').html(''); 
+			listing();  
+		})
+
+		function listing() {
+			$.ajax({
+				type: "GET",
+				url: "/mylist", 
+				data: { },
+				success: function(response){
+					rows = response['store']
+
+					for (i=0; i<rows.length; i++) {
+						server_name = rows[i]['name']
+						server_address = rows[i]['address']
+						server_visit = rows[i]['visit']
+						server_memo = rows[i]['memo']
+
+						table_plus = "<tr>\
+						<td>"+server_name+"</td>\
+						<td>"+server_address+"</td>\
+						<td>"+server_visit+"</td>\
+						<td>"+server_memo+"</td>\
+						</tr>"
+						$('#list_box').append(table_plus)
+					}
+				}
+			})
+
+		}
+	</script>
+</head>
+
+
+<body>
+	<div class="">
+		<table class="list_table" border=1>
+			<thead>
+				<tr>
+					<td>상호명</td>
+					<td>도로명주소</td>
+					<td>메모</td>
+					<td>구분</td>
+				</tr>
+			</thead>
+			<tbody id="list_box">
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

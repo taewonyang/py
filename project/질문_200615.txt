@@ -1,0 +1,30 @@
+<질문>
+
+1. 이유는?
+ 1) <script src="">으로 (자바스크립트) 읽어 실행함  :  오류발생
+ 2) 내부 HTML 파일에 (자바스크립트 내용 포함) 실행함 : 오류없음
+
+(해결!) 2. 방법은? 
+ <DIV 1> : 글자 (클릭)
+                ↓
+ <DIV 2> : 링크 내용이 뿌려지는 곳
+
+(해결!)3. flask에서 소스 가져오기.
+:href= "{{ url_for('static', filename='css/enrollment_style.css') }}"
+
+ex) flask에 올린다면, 해당건도 url_for 를 사용해야하나요? 
+ 
+1) case1
+<html>
+<script>
+$(document).ready(function() { 
+			$('#content').load("enrollment.html")   })
+</script>
+</html>
+
+2) case2
+<a link=""> 링크연결</a>
+
+
+4. 파이썬  folium 저장위치 변경 방법
+ m.save('index.html)

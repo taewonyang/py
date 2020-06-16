@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF8">
-	<title>Enrollment page</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel= "stylesheet" type="text/css" href="style.css">
-	<script type ="text/javascript" src="js/script.js"></script>
-</head>
-<body>
+{% extends "index.html" %}
+{% block content %}
+<div class="enrollment">
 	<section class="enrollment-form">
-		<h1>여긴가야돼</h1>
 		<form>
 			<div class = "int-area">
 				<input type = "text" name="name_input" id="name_input" autocomplete="off" required>
@@ -35,38 +27,40 @@
 			</div>
 		</form>
 	</section>
-<!-- 	<script>
-		function request_btn() {
-			name = $('#name_input').val()
-			address = $('#address_input').val()
-			memo = $('#memo_input').val()
+</div>
 
-			if (name == "") {
-				alert('여기상호 뭐야??') ;
-				$('#name_input').focus()
-				return
-			}
+<script>
+	function request_btn() {
+		name = $('#name_input').val()
+		address = $('#address_input').val()
+		memo = $('#memo_input').val()
 
-			if (address == "") {
-				alert('도로명 주소는??') ;
-				$('#address_input').focus()
-				return
-			}
-
-			$.ajax({
-				type: "POST",
-				url: "/mylist", 
-				data: { name_give:name, address_give:address, visit_give : $('input[name="visit_record"]:checked').val() , memo_give:memo },
-				success: function(response){
-					if(response['result']=="success" ) {
-						alert("등록완료!") ;
-					} else {
-						alert('서버 오류!')
-					}
-				}
-			})
+		if (name == "") {
+			alert('여기상호 뭐야??') ;
+			$('#name_input').focus()
+			return
 		}
-		</script> -->
-		<!-- <script type ="text/javascript" src="js/script.js"></script> -->
-	</body>
-	</html>
+
+		if (address == "") {
+			alert('도로명 주소는??') ;
+			$('#address_input').focus()
+			return
+		}
+
+		$.ajax({
+			type: "POST",
+			url: "/mylist", 
+			data: { name_give:name, address_give:address, visit_give : $('input[name="visit_record"]:checked').val() , memo_give:memo },
+			success: function(response){
+				if(response['result']=="success" ) {
+					alert("등록완료!") ;
+				} else {
+					alert('서버 오류!')
+					window.location.reload();
+				}
+			}
+		})
+
+	}
+</script>
+{% endblock %}
