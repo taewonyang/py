@@ -2,162 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f7ac04d-3352-4850-8998-a59101cb0b4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/distance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/jihachul.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/CODE_OF_CONDUCT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/License.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/Useful_Resources.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/datatables-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/datatables-select.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/datatables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/datatables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/directives.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/directives.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/flag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/flag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/rating.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/rating.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/zmd.hierarchical-display.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/addons/zmd.hierarchical-display.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/mdb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/mdb.lite.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/mdb.lite.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/mdb.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/modules/animations-extended.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/modules/animations-extended.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/css/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Light.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Light.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Light.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Medium.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Medium.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Medium.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Thin.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Thin.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/font/roboto/Roboto-Thin.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/flags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/lightbox/default-skin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/lightbox/default-skin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/lightbox/preloader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/overlays/09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/sample.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/svg/arrow_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/svg/arrow_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/img/svg/flags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/datatables-select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/datatables-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/datatables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/datatables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/imagesloaded.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/jquery.zmd.hierarchical-display.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/jquery.zmd.hierarchical-display.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/masonry.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/progressBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/progressBar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/addons/rating.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/mdb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/mdb.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/bs-custom-file-input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/default-file-input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/enhanced-modals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/forms-free.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/jquery.easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/scrolling-navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/velocity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/velocity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/waves.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/modules/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/re_design.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/_custom-skin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/_custom-styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/_custom-variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/addons/_datatables-select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/addons/_datatables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/addons/_directives.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/addons/_flags.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/addons/_hierarchical-display.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/addons/_rating.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_colors.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_helpers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_masks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_typography.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/_waves.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/bootstrap/_functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/bootstrap/_rfs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/core/bootstrap/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_animations-basic.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_badges.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_cards.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_carousels.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_depreciated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_dropdowns.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_footers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_list-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_loader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_modals.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_msc.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_navbars.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_steppers.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_switch.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/_treeview.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/modules/animations-extended/_module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/free/modules/animations-extended/animations-extended.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/mdb.lite.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/mdb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Landing-Page-Template-Bootstrap-master/Landing-Page-Template-Bootstrap-master/scss/style.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/how.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/all_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/bg.jpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/enrollment.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/enrollment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/images/bg.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/re_design.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,11 +22,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="335">
+              <caret line="91" column="19" lean-forward="true" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/jihachul.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-450">
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,6 +75,7 @@
       <find>report_nm</find>
       <find>rcp</find>
       <find>file</find>
+      <find>station_give</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,18 +93,21 @@
         <option value="$PROJECT_DIR$/혼자연습하기/(base)pandas.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/dart(2)_csv_down_pands_grph.py" />
         <option value="$PROJECT_DIR$/mail.py" />
-        <option value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py" />
         <option value="$PROJECT_DIR$/project/map.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/project/test.py" />
         <option value="$PROJECT_DIR$/project/routes.py" />
+        <option value="$PROJECT_DIR$/project/station.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/project/distance.py" />
+        <option value="$PROJECT_DIR$/project/jihachul.py" />
+        <option value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
+        <option value="$PROJECT_DIR$/project/test.py" />
         <option value="$PROJECT_DIR$/project/app.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
+    <option name="x" value="951" />
     <option name="y" value="-9" />
     <option name="width" value="978" />
     <option name="height" value="1048" />
@@ -235,7 +121,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/app.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sparta/sparta/etc/3주차/3week_homework_change.html" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -279,49 +166,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="routes (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="py" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../test" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../test/routes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="py" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/routes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="selenium_auto_login_crawling" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="crawling_beautifulsoup_find_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -333,7 +178,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/혼자연습하기/selenium_auto_login_crawling.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="distance" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/distance.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="jihachul" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/jihachul.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -366,10 +253,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.routes (1)" />
-        <item itemvalue="Python.routes" />
+        <item itemvalue="Python.crawling_beautifulsoup_find_all" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.selenium_auto_login_crawling" />
+        <item itemvalue="Python.distance" />
+        <item itemvalue="Python.jihachul" />
       </list>
     </recent_temporary>
   </component>
@@ -404,7 +291,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49739584" weight="0.32142857" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49739584" weight="0.31456044" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -417,6 +304,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12681638" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49739584" visible="true" weight="0.31868133" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3388203" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5026042" side_tool="true" weight="0.28434065" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32956153" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/formating.py" />
@@ -450,29 +356,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/selenium_popup-controll_ActionChains.py" />
-    <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_melon100_csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all_manypage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_url_img_down.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -530,24 +416,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test1.html" />
-    <entry file="file://$PROJECT_DIR$/project/templates/re_design.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="189" column="12" lean-forward="true" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/project/templates/re_design.html" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="888">
@@ -565,17 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/test.py" />
     <entry file="file://$PROJECT_DIR$/project/map.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -591,17 +449,125 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/routes.py" />
-    <entry file="file://$PROJECT_DIR$/../test/routes.py">
+    <entry file="file://$PROJECT_DIR$/../test/routes.py" />
+    <entry file="file://$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_url_img_down.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_melon100_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/station.py" />
+    <entry file="file://$PROJECT_DIR$/../sparta/sparta/etc/6주차/project/project1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sparta/sparta/etc/3주차/python/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="47" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/_compat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="2445" selection-start-line="2445" selection-end-line="2445" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../sparta/sparta/etc/3주차/3week_homework_change.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-975" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/jihachul.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="335">
+          <caret line="91" column="19" lean-forward="true" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="search_box">
+	<input id="station_name_input" type="datalist" placeholder="역이름 넣어주세요" autocomplete="">
+	<button type="button" onclick="find_place()">검색</button>
+</div>
+
+<div id ="map"></div>
+
+<div id ="list_box"></div>
+
+<script>
+	function find_place(){
+		station = $('#station_name_input').val()
+		if (station == ''){
+			alert('역이름을 입력해주세요');
+			$(station).focus();
+			return
+		}
+		
+		$.ajax({
+			type: "get",
+			url: `/mylist?station_give=${station}`, 
+			data: {},
+			success: function(response){
+				if(response['result']=="success" ) {
+					alert("검색완료!") ;
+				} else {
+					alert('서버 오류!')
+					window.location.reload();
+				}
+			}
+		})
+	}
+</script>
+{% endblock %}
