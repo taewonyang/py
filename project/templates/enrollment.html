@@ -5,15 +5,19 @@
 		<form>
 			<div class = "int-area">
 				<input type = "text" name="name_input" id="name_input" autocomplete="off" required>
-				<labe for ="name_input">Store Name</labe>
+				<labe for ="name_input">상호명</labe>
 			</div>
 			<div class = "int-area">
 				<input type = "text" name="address_input" id="address_input" autocomplete="off" placeholder="도로명주소요" required>
-				<labe for ="name_input">Address</labe>
+				<labe for ="name_input">주소</labe>
+			</div>
+			<div class = "int-area">
+				<input type = "text" name="station_input" id="station_input" autocomplete="option" required>
+				<labe for ="station_input">근처역</labe>
 			</div>
 			<div class = "int-area">
 				<input type = "text" name="memo_input" id="memo_input" autocomplete="off">
-				<labe for ="memo_input">memo</labe>
+				<labe for ="memo_input">MEMO</labe>
 			</div>
 			<div>
 				<select name=food_kind id="food_kind">
@@ -27,7 +31,7 @@
 			</div>
 			<div>
 				<fildset class="visit">
-					<input type="radio" name="visit_record" value="visit_no" id="visit_no" checked required>
+					<input type="radio" name="visit_record" value="visit_no" id="visit_no" checked>
 					<label for="visit_no">도전!</label>
 					<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
 					<label for="visit_ok">검완!</label>
@@ -45,6 +49,7 @@
 	function request_btn() {
 		name = $('#name_input').val()
 		address = $('#address_input').val()
+		station = $('#station_input').val()
 		memo = $('#memo_input').val()
 		food_kind = $('#food_kind').val()
 
@@ -60,7 +65,7 @@
 		$.ajax({
 			type: "POST",
 			url: "/mylist", 
-			data: {name_give:name, address_give:address, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
+			data: {name_give:name, address_give:address, station_give:station, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
 			success: function(response){
 				if(response['result']=="success" ) {
 					alert("등록완료!") ;

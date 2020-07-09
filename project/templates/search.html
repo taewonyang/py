@@ -1,28 +1,89 @@
 {% extends "index.html" %}
 {% block content %}
-<div class="search_box">
-	<input id="station_name_input" type="datalist" placeholder="역이름 넣어주세요" autocomplete="">
-	<button type="button" onclick="find_place()">검색</button>
+<!-- <style>
+	#food_kind{
+		background-color: white;
+		border: 1px solid purple;
+		border-radius: 10px;
+		display: inline-block;
+		font: inherit;
+		line-height: 1.5em;
+		padding: 0.5em 3.5em 0.5em 1em;
+
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+
+		background-image:
+		linear-gradient(45deg, transparent 50%, gray 50%),
+		linear-gradient(135deg, gray 50%, transparent 50%),
+		radial-gradient(#ddd 70%, transparent 72%);
+		background-position:
+		calc(100% - 20px) calc(1em + 2px),
+		calc(100% - 15px) calc(1em + 2px),
+		calc(100% - .5em) .5em;
+		background-size:
+		5px 5px,
+		5px 5px,
+		1.5em 1.5em;
+		background-repeat: no-repeat;
+	}
+</style> -->
+
+<div id="wrap1">
+	<div class="stationSearch_box">
+		<label for="search">역이름</label>
+		<input name="search" id="station_name_input" type="text">
+		<button type="button" onclick="find_station()" >검색</button>
+	</div>
+<!-- 	<div>
+		<label for ="food_kind>">음식종류 </label>
+		<select id="food_kind">
+			<option value="korea_food">한식</option>
+			<option value="china_food">중식</option>
+			<option value="japan_food">일식</option>
+			<option value="snack_food">분식</option>
+			<option value="world_food">양식/세계음식</option>
+			<option value="cafe_food">카페/브런치</option>
+		</select>
+	</div>
+	<div>
+		<fildset class="visit">
+			<legend>방문여부</legend>
+			<input type="radio" name="visit_record" value="visit_no" id="visit_no">
+			<label for="visit_no">도전!</label>
+			<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
+			<label for="visit_ok">검완!</label>
+		</fildset>
+	</div> -->
 </div>
 
-<div id ="map"></div>
-
-<div id ="list_box"></div>
+<div id="wrap2">
+	<div id ="list_box"></div>
+	<div id ="map"></div>
+</div>
 
 <script>
-	function find_place(){
+	
+	// food = $('#food_kind').val()
+	// visit = $('input[name="visit_record"]:checked').val()
+
+	function find_station(){
 		station = $('#station_name_input').val()
-		if (station == ''){
-			alert('역이름을 입력해주세요');
-			$(station).focus();
-			return
-		}
-		
 		$.ajax({
 			type: "get",
-			url: `/mylist?station_give=${station}`, 
+			url: `/mylist?station_give=${station}`,  
 			data: {},
 			success: function(response){
+				// console.log(response['store_info'])
+				rows = response['store_info']
+				for (i=0; i<rows.lenght; i++) {
+					console.log(rows[i])
+				}
 				if(response['result']=="success" ) {
 					alert("검색완료!") ;
 				} else {
@@ -31,6 +92,12 @@
 				}
 			}
 		})
+		function stationResultListing() {
+
+		}
+
 	}
 </script>
+
+
 {% endblock %}

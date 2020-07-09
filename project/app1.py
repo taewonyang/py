@@ -21,6 +21,26 @@ def CodinateMake(addr):
     y_code = re.findall('"y" : "(.*?)"}', html)[0]
     return [x_code, y_code]
 
+all_store = list(db.food_store.find({}))
+name_list = []
+address_list = []
+visit_list = []
+food_kind_list = []
+memo_list = []
+for store in all_store:
+    name = store['name']
+    address = store['address']
+    visit = store['visit']
+    food_kind = store['food_kind']
+    memo = store['memo']
+    name_list.append(name)
+    address_list.append(address)
+    visit_list.append(visit)
+    food_kind_list.append(food_kind)
+    memo_list.append(memo)
+
+
+
 app = Flask(__name__)
 @app.route('/')
 def home() :
@@ -72,6 +92,7 @@ def register() :
         memo_list.append(memo)
 
     #part1. 좌표-위도, 경도 리스트 추출
+
     x_code_list = []
     y_code_list = []
     for addr in address_list:
@@ -92,20 +113,24 @@ def register() :
 
 @app.route('/mylist', methods=['get'])
 def sarching() :
-    #지하철역 근처 매장조회
+    #지하철역 근처 정보조회
     station_receive = request.args.get('station_give')
-    stores = list(db.food_store.find({'station' : station_receive}, {'_id': 0}))
-    store_info = []
-    for store in stores :
+    store_info = list(db.food_store.find({'station' : station_receive}, {'_id': 0}))
+    print(store_info)
+    storeLink_title = []
+    storeLink_href = []
+    for store in store_info :
         storeName = store['name']
+        storeStaion = store['station']
+        storeVisit = store['visit']
+        storeFood = store['food_kind']
         storeAddress = store['address']
-        CodinateMake(storeAddress) #좌표추출 함수
-        x_code = CodinateMake(storeAddress)[0]
-        y_code = CodinateMake(storeAddress)[1]
-        store['x_code'] = x_code
-        store['y_code'] = y_code
-        storeBlog_title = []
-        storeBlog_href = []
+        x_code_list = []
+        y_code_list = []
+        for addr in storeAddress:
+            CodinateMake(addr)
+            x_code_list.append(CodinateMake(addr)[0])
+            y_code_list.append(CodinateMake(addr)[1])
 
         #블로그 크롤링
         base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
@@ -114,12 +139,9 @@ def sarching() :
         soup = BeautifulSoup (html,'html.parser')
         result = soup.find_all(class_='sh_blog_title')
         for i in result:
-            storeBlog_title.append(i.attrs['title'])
-            storeBlog_href.append(i.attrs['href'])
-        store['storeLinkTitle'] = storeBlog_title
-        store['storeLinkHref'] = storeBlog_href
-        store_info.append(store)
-    return jsonify({'result':'success', 'store_info': store_info})
+            storeLink_title.append(i.attrs['title'])
+            storeLink_href.append(i.attrs['href'])
+    return jsonify({'result':'success', 'storeLink_title': storeLink_title, 'storeLink_href': storeLink_href})
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000,debug=True)
