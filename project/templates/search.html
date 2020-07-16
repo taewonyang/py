@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
-<!-- <style>
+<style>
 	#food_kind{
 		background-color: white;
 		border: 1px solid purple;
@@ -32,15 +32,20 @@
 		1.5em 1.5em;
 		background-repeat: no-repeat;
 	}
-</style> -->
 
-<div id="wrap1">
-	<div class="stationSearch_box">
-		<label for="search">역이름</label>
-		<input name="search" id="station_name_input" type="text">
-		<button type="button" onclick="find_station()" >검색</button>
-	</div>
-<!-- 	<div>
+	#view_box{
+		display : grid;
+		grid-template-columns: 80% 20%
+	}
+</style>
+
+<div class="stationSearch_box">
+	<label for="search">역이름</label>
+	<input name="search" id="station_name_input" type="text">
+	<button type="button" onclick="find_station()" >검색</button>
+</div>
+<!-- <div class="searchFilter_box">
+	<div>
 		<label for ="food_kind>">음식종류 </label>
 		<select id="food_kind">
 			<option value="korea_food">한식</option>
@@ -59,16 +64,34 @@
 			<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
 			<label for="visit_ok">검완!</label>
 		</fildset>
-	</div> -->
+	</div>
+</div> -->
+
+<div id="view_box">
+	<div id="map" style="width:70%;height:580px;"></div>
+	<div id ="list_box">
+		<div class = "nameinput">
+			<labe>상호명</labe>
+			<div id="name_input">
+				<table>
+				</table>
+			</div>
+		</div>
+		<div class = "addressinput">
+			<labe for ="address_input">주소</labe>
+			<input type = "text" name="address_input" id="address_input">
+		</div>
+		<div class = "memoinput">
+			<labe for ="memo_input">메모</labe>
+			<input type = "text" name="memo_input" id="memo_input">
+		</div>
+		<div class = "blog">
+		</div>
+	</div>
 </div>
 
-<div id="wrap2">
-	<div id ="list_box"></div>
-	<div id ="map"></div>
-</div>
-
+<!--  -->
 <script>
-	
 	// food = $('#food_kind').val()
 	// visit = $('input[name="visit_record"]:checked').val()
 
@@ -79,23 +102,67 @@
 			url: `/mylist?station_give=${station}`,  
 			data: {},
 			success: function(response){
-				// console.log(response['store_info'])
-				rows = response['store_info']
-				for (i=0; i<rows.lenght; i++) {
-					console.log(rows[i])
+				if (response["result"]=="success") {
+					alert("검색완료!");
+					rows = response['store_info']
+					console.log(rows)					
+					for (i=0; i<rows.length; i++) {
+						server_name = rows[i]['name']
+						server_memo = rows[i]['memo']
+						server_visit = rows[i]['visit']
+						server_food_kind = rows[i]['food_kind']
+						server_x_code = rows[i]['x_code']
+						server_y_code = rows[i]['y_code']
+						server_storeLinkTitle = rows[i]['storeLinkTitle']
+						server_storeLinkHref = rows[i]['storeLinkHref']
+
+						displayMarker()
+					}
 				}
-				if(response['result']=="success" ) {
-					alert("검색완료!") ;
-				} else {
+				else {
 					alert('서버 오류!')
 					window.location.reload();
 				}
-			}
+			}	
 		})
-		function stationResultListing() {
+	}
+</script>
 
-		}
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
+<script>
+	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+	var mapContainer = document.getElementById('map'),
+	mapOption = {
+		center: new kakao.maps.LatLng(37.566826, 126.9786567),
+		level: 7
+	};  
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+	function displayMarker() {
+		var storeName = server_name
+		var blogTitle = server_storeLinkTitle
+		var blogLink = server_storeLinkHref
+		var marker = new kakao.maps.Marker({
+			map: map,
+			position: new kakao.maps.LatLng(server_y_code, server_x_code) 
+		});
+
+		kakao.maps.event.addListener(marker, 'click', function() {
+			infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
+			infowindow.open(map, marker);
+
+			for (i=0; i<blogTitle.length; i++) {
+				for (i=0; i<blogLink.length; i++) {
+					table_plus = "<tr>\
+					<td><a href='" + blogLink[i] + "'>"+ blogTitle[i] + "</a></td>\
+					</tr>"
+
+					$('#name_input').append(table_plus)
+				}
+			}
+
+		});
 	}
 </script>
 

@@ -80,7 +80,7 @@ def register() :
         y_code_list.append(CodinateMake(addr)[1])
 
     # part2.지도화 하기
-    m = folium.Map(location=[37.4838699, 127.0565831], zoom_start=12)
+    m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
     for x_code, y_code, name, visit, food_kind in zip(x_code_list, y_code_list, name_list, visit_list , food_kind_list):
         if visit == "visit_ok" :
             folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="blue", icon="star")).add_to(m)
