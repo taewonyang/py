@@ -83,7 +83,7 @@ def register() :
     m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
     for x_code, y_code, name, visit, food_kind in zip(x_code_list, y_code_list, name_list, visit_list , food_kind_list):
         if visit == "visit_ok" :
-            folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="blue", icon="star")).add_to(m)
+            folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="blue", icon="home")).add_to(m)
         else:
             folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="red", icon="star")).add_to(m)
     m.save('./templates/map.html')
@@ -94,6 +94,7 @@ def register() :
 def sarching() :
     #지하철역 근처 매장조회
     station_receive = request.args.get('station_give')
+    print(station_receive)
     stores = list(db.food_store.find({'station' : station_receive}, {'_id': 0}))
     store_info = []
     for store in stores :
