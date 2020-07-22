@@ -3,8 +3,7 @@
 <style>
 	#searchResult_box{
 		display: grid;
-		grid-template-columns : 80% 20%;
-	}
+		grid-template-columns : 80% 20%;}
 </style>
 
 <div class="stationSearch_box">
@@ -98,7 +97,7 @@
 						server_y_code = rows[i]['y_code']
 						server_storeLinkTitle = rows[i]['storeLinkTitle']
 						server_storeLinkHref = rows[i]['storeLinkHref']
-						drawMap()
+
 						displayMarker()	
 					}
 				}	
@@ -113,18 +112,20 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
 <script>
-	function drawMap() {
-		var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-		var first = new kakao.maps.LatLng(rows[0]['y_code'], rows[0]['x_code']);
-		var mapContainer = document.getElementById('map'),
-		mapOption = {
-			center: first,
-			level: 7
-		};  
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
-	}
+	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+	var mapContainer = document.getElementById('map'),
+	mapOption = {
+		center: new kakao.maps.LatLng(37.566826, 126.9786567),
+		level: 7
+	};  
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
 
 	function displayMarker() {
+		var storeName = server_name
+		var storeAddress = server_address
+		var storeMemo = server_memo
+		var blogTitle = server_storeLinkTitle
+		var blogLink = server_storeLinkHref
 		var marker = new kakao.maps.Marker({
 			map: map,
 			position: new kakao.maps.LatLng(server_y_code, server_x_code) 
@@ -134,12 +135,12 @@
 			infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
 			infowindow.open(map, marker);
 
-			for (i=0; i<server_storeLinkTitle.length; i++) {
-				for (i=0; i<server_storeLinkHref.length; i++) {
-					blog_plus = "<tr><td><a href='" + server_storeLinkHref[i] + "'>"+ server_storeLinkTitle[i] + "</a></td></tr>"
-					document.getElementById('name_result').value = server_name
-					document.getElementById('address_result').value = sserver_address
-					document.getElementById('memo_result').value = server_memo
+			for (i=0; i<blogTitle.length; i++) {
+				for (i=0; i<blogLink.length; i++) {
+					blog_plus = "<tr><td><a href='" + blogLink[i] + "'>"+ blogTitle[i] + "</a></td></tr>"
+					document.getElementById('name_result').value = storeName
+					document.getElementById('address_result').value = storeAddress
+					document.getElementById('memo_result').value = storeMemo
 
 					$('#blog_result').append(blog_plus)
 				}
