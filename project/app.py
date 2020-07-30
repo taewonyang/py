@@ -50,20 +50,20 @@ def register() :
     print('db등록성공')
 
     # 지도만들기
+    m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
     all_store = list(db.food_store.find({}))
     for store in all_store:
         name = store['name']
         visit = store['visit']
         x_code = store['x_code']
         y_code = store['y_code']
-        m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
         if visit == "visit_ok" :
             folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="blue", icon="home")).add_to(m)
         else:
             folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="red", icon="star")).add_to(m)
-        m.save('./templates/map.html')
-        print('지도화 성공!')
-        return jsonify({'result':'success'})
+    m.save('./templates/map.html')
+    print('지도화 성공!')
+    return jsonify({'result':'success'})
 
 @app.route('/mylist', methods=['get'])
 def sarching() :
@@ -74,7 +74,6 @@ def sarching() :
     store_info = []
     for store in stores :
         storeName = store['name']
-
         # 블로그 크롤링
         storeBlog_title = []
         storeBlog_href = []
@@ -89,7 +88,6 @@ def sarching() :
         store['storeLinkTitle'] = storeBlog_title
         store['storeLinkHref'] = storeBlog_href
         store_info.append(store)
-    print(store_info)
     return jsonify({'result':'success', 'store_info': store_info})
 
 if __name__ == '__main__':
