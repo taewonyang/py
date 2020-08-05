@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7130a124d2fe4653b934b31df491c9ae {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_7130a124d2fe4653b934b31df491c9ae" ></div>
+        
+</body>
+<script>    
+    
+            var map_7130a124d2fe4653b934b31df491c9ae = L.map(
+                "map_7130a124d2fe4653b934b31df491c9ae",
+                {
+                    center: [37.529471, 127.00892],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b01ae966b9a5401f9882b3e6988935c6 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var marker_70bdbfa13e8f475680049a8cf42a05da = L.marker(
+                [37.555185354, 126.907123649],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_8eb09df8da0740f2b44056d85b2e8db3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_70bdbfa13e8f475680049a8cf42a05da.setIcon(icon_8eb09df8da0740f2b44056d85b2e8db3);
+        
+    
+            marker_70bdbfa13e8f475680049a8cf42a05da.bindTooltip(
+                `<div>
+                     망원동 할머니 빈대떡
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e40aea3894fa4be083875fe9422b2b09 = L.marker(
+                [37.562678218, 126.925801108],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_04d530976e214c7ea67bd638fa7c4fd0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e40aea3894fa4be083875fe9422b2b09.setIcon(icon_04d530976e214c7ea67bd638fa7c4fd0);
+        
+    
+            marker_e40aea3894fa4be083875fe9422b2b09.bindTooltip(
+                `<div>
+                     오늘그대와
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e639c7a6ed24d4bacbd10b0d1911530 = L.marker(
+                [37.565188287, 126.924055655],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_bbadca273ffc48e2bba7c72c227eafa6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9e639c7a6ed24d4bacbd10b0d1911530.setIcon(icon_bbadca273ffc48e2bba7c72c227eafa6);
+        
+    
+            marker_9e639c7a6ed24d4bacbd10b0d1911530.bindTooltip(
+                `<div>
+                     툭툭누들타이
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c77f070fc0904074834cb4d1b4bec5fe = L.marker(
+                [37.503631184, 127.026953792],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_0b06f1248b65443eb20389caa5218216 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c77f070fc0904074834cb4d1b4bec5fe.setIcon(icon_0b06f1248b65443eb20389caa5218216);
+        
+    
+            marker_c77f070fc0904074834cb4d1b4bec5fe.bindTooltip(
+                `<div>
+                     정돈 강남점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2ca8aa7d5d214cb79b6bd51e8aa4359e = L.marker(
+                [37.534676545, 126.99814919],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_62389d0762ac4da9b7feaa04f9d794c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2ca8aa7d5d214cb79b6bd51e8aa4359e.setIcon(icon_62389d0762ac4da9b7feaa04f9d794c5);
+        
+    
+            marker_2ca8aa7d5d214cb79b6bd51e8aa4359e.bindTooltip(
+                `<div>
+                     스페인클럽 이태원점
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b9b5ae73c765435c9e9e605f9f2fa084 = L.marker(
+                [37.524060377, 127.038566534],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_609ebbfdea664b888d7be9eea233d8b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b9b5ae73c765435c9e9e605f9f2fa084.setIcon(icon_609ebbfdea664b888d7be9eea233d8b3);
+        
+    
+            marker_b9b5ae73c765435c9e9e605f9f2fa084.bindTooltip(
+                `<div>
+                     다운타우너 청담
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9fa4afd447864ff1bccfa72d58ebd039 = L.marker(
+                [37.534676545, 126.99814919],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_1d8d12d3cb8a4d0597d2cf1241a61f98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9fa4afd447864ff1bccfa72d58ebd039.setIcon(icon_1d8d12d3cb8a4d0597d2cf1241a61f98);
+        
+    
+            marker_9fa4afd447864ff1bccfa72d58ebd039.bindTooltip(
+                `<div>
+                     test
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_686ccbf9cfef410984c26ea8127fc8bd = L.marker(
+                [37.545647153, 126.922722144],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_ff40de105cde48a7a497cb298a8dd496 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_686ccbf9cfef410984c26ea8127fc8bd.setIcon(icon_ff40de105cde48a7a497cb298a8dd496);
+        
+    
+            marker_686ccbf9cfef410984c26ea8127fc8bd.bindTooltip(
+                `<div>
+                     test2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a018920dc3a4acf8126ece3b07f8dd9 = L.marker(
+                [37.539987925, 127.069353466],
+                {}
+            ).addTo(map_7130a124d2fe4653b934b31df491c9ae);
+        
+    
+            var icon_fbdf0ce7014f4f13baf9f89cc4412ee4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9a018920dc3a4acf8126ece3b07f8dd9.setIcon(icon_fbdf0ce7014f4f13baf9f89cc4412ee4);
+        
+    
+            marker_9a018920dc3a4acf8126ece3b07f8dd9.bindTooltip(
+                `<div>
+                     ㅁㄴㅇㄻㄴㅇㄻㄹ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

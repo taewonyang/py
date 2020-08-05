@@ -1,10 +1,10 @@
 {% extends "index.html" %}
 {% block content %}
+
 <style>
 	#searchResult_box{
 		display: grid;
 		grid-template-columns : 80% 20%;}
-		
 	</style>
 
 	<div class="stationSearch_box">
@@ -64,12 +64,7 @@
 
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
 	<script>
-		function find_station(){
-			$('#blog_result').empty()
-			document.getElementById('name_result').value = ""
-			document.getElementById('address_result').value = ""
-			document.getElementById('memo_result').value = ""
-
+		function find_station() {
 			stationName = $('#station_name_input').val()
 
 			$.ajax({
@@ -80,117 +75,215 @@
 					if (response["result"]=="success") {
 						alert("검색완료!");
 						rows = response['store_info']
-						for (i=0; i<rows.length; i++) {
-							server_name = rows[i]['name']
-							server_memo = rows[i]['memo']
-							server_address = rows[i]['address']
-							server_visit = rows[i]['visit']
-							server_food_kind = rows[i]['food_kind']
-							server_x_code = rows[i]['x_code']
-							server_y_code = rows[i]['y_code']
-							server_storeLinkTitle = rows[i]['storeLinkTitle']
-							server_storeLinkHref = rows[i]['storeLinkHref']
-							
-							mapping()
-							displayMarker()	
-						}	
-					}
-					else {
-						alert("서버 오류!")
-						window.location.reload();
+						
+						for (i=0; i<rows.length; i++) {	
+							storeName = rows[i]['name']
+							storeMemo = rows[i]['memo']
+							storeAddress = rows[i]['address']
+							storeVisit = rows[i]['visit']
+							foodCategory = rows[i]['food_kind']
+							mapX = rows[i]['x_code']
+							mapY = rows[i]['y_code']
+							blogTitle = rows[i]['storeLinkTitle']
+							blogLink = rows[i]['storeLinkHref']
+
+
+							switch (foodCategory) {
+								case "rice" :
+								var ricePositions = []
+								ricePositions.push(new kakao.maps.LatLng(mapY, mapX))
+								break;
+
+								case "meat" :
+								var meatPositions = []
+								meatPositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;
+
+								case "noodle" :
+								var noodlePositions = []
+								noodlePositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;
+
+								case "seaFood" :
+								var seaFoodPositions = []
+								seaFoodPositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;
+
+								case "worldFood" :
+								var worldFoodPositions = []
+								worldFoodPositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;	
+
+								case "bread" :
+								var breadPositions = []
+								breadPositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;
+
+								case "flourbasedFood" :
+								var flourbasedFoodPositions = []
+								flourbasedFoodPositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;
+
+								case "cafeBar" :
+								var cafeBarPositions = []
+								cafeBarPositions.push(new kakao.maps.LatLng(mapY, mapX))								
+								break;
+
+								// classification()
+								displayMarker()
+							}
+						} //for문 종료
 					}
 				}
 			})
 		}
 
-		function mapping() {
-			ricePositions = []
-			if(server_food_kind == 'rice') {
-				ricePosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				ricePositions.push(ricePosition)
-			}
+		// function classification() {			
+		// 	class classify{
+		// 		constructor(storeName, storeMemo, storeAddress, storeVisit, foodCategory, blogTitle, blogLink, mapX, mapY) {
+		// 			this.storeName = storeName ;
+		// 			this.storeAddress = storeAddress ;
+		// 			this.storeMemo = storeMemo ;
+		// 			this.storeVisit = storeVisit ;
+		// 			this.foodCategory = foodCategory ; 
+		// 			this.blogTitle = blogTitle ;
+		// 			this.blogLink = blogLink ;
+		// 		}
+		// 		markerPlace() {
+		// 			switch (foodCategory) {
+		// 				case "rice" :
+		// 				var ricePositions = []
+		// 				ricePositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return ricePositions
+		// 				break;
 
-			meatPositions = []
-			if(server_food_kind == 'meat') {
-				meatPosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				meatPositions.push(meatPosition)
-			}
+		// 				case "meat" :
+		// 				var meatPositions = []
+		// 				meatPositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return meatPositions
+		// 				break;
 
-			noodlePositions = []
-			if(server_food_kind == 'noodle') {
-				noodlePosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				noodlePositions.push(noodlePosition)
-			}
+		// 				case "noodle" :
+		// 				var noodlePositions = []
+		// 				noodlePositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return noodlePositions
+		// 				break;
 
-			seaFoodPositions = []
-			if(server_food_kind == 'seaFood') {
-				seaFoodPosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				seaFoodPositions.push(seaFoodPosition)
-			}
+		// 				case "seaFood" :
+		// 				var seaFoodPositions = []
+		// 				seaFoodPositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return seaFoodPositions
+		// 				break;
 
-			worldFoodPositions = []
-			if(server_food_kind == 'worldFood') {
-				worldFoodPosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				worldFoodPositions.push(worldFoodPosition)
-			}
+		// 				case "worldFood" :
+		// 				var worldFoodPositions = []
+		// 				worldFoodPositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return worldFoodPositions
+		// 				break;	
 
-			breadPositions = []
-			if(server_food_kind == 'bread') {
-				breadPosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				breadPositions.push(breadPosition)
-			}
+		// 				case "bread" :
+		// 				var breadPositions = []
+		// 				breadPositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return breadPositions
+		// 				break;
 
-			flourbasedFoodPositions = []
-			if(server_food_kind == 'flourbasedFood') {
-				flourbasedFoodPosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				flourbasedFoodPositions.push(flourbasedFoodPosition)
-			}
+		// 				case "flourbasedFood" :
+		// 				var flourbasedFoodPositions = []
+		// 				flourbasedFoodPositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return flourbasedFoodPositions 
+		// 				break;
 
-			cafeBarPositions = []
-			if(server_food_kind == 'cafeBar') {
-				cafeBarPosition = new kakao.maps.LatLng(server_y_code, server_x_code)
-				cafeBarPositions.push(cafeBarPosition)
-			}
-		}
+		// 				case "cafeBar" :
+		// 				var cafeBarPositions = []
+		// 				cafeBarPositions.push(new kakao.maps.LatLng(mapY, mapX))
+		// 				return cafeBarPositions
+		// 				break;
+		// 			}
+		// 		}
+		// 	}
+
+		// 	var classification = new classify(storeName, storeMemo, storeAddress, storeVisit, foodCategory, blogTitle, blogLink)
+
+		// 	markerList = []
+		// 	for (i=0; i<rows.length; i++) {
+		// 		markerList.push(classification.markerPlace())
+		// 	}
+
+		// 	console.log(markerList)
+
+		// 	// for (i=0; i<markerList.length; i++) {
+		// 	// 	console.log(markerList[i].pop())
+		// 	// }
+
+		// }
 
 
-		var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-		var mapContainer = document.getElementById('map'),
-		mapOption = {
-			center: new kakao.maps.LatLng(37.566826, 126.9786567),
-			level: 7
-		};  
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-		function displayMarker() {
-			var storeName = server_name
-			var storeAddress = server_address
-			var storeMemo = server_memo
-			var blogTitle = server_storeLinkTitle
-			var blogLink = server_storeLinkHref
-			var marker = new kakao.maps.Marker({
-				map: map,
-				position: new kakao.maps.LatLng(server_y_code, server_x_code) 
-			});
 
-			kakao.maps.event.addListener(marker, 'click', function() {
-				infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
-				infowindow.open(map, marker);
+				// 2)여기서 분류 되어있기에 이미 표시되어 있는 마커 지우는 구문 추가 
 
-				for (i=0; i<blogTitle.length; i++) {
-					for (i=0; i<blogLink.length; i++) {
-						blog_plus = "<tr><td><a href='" + blogLink[i] + "'>"+ blogTitle[i] + "</a></td></tr>"
-						document.getElementById('name_result').value = storeName
-						document.getElementById('address_result').value = storeAddress
-						document.getElementById('memo_result').value = storeMemo
+			// class MarkerDel extends kakao.maps.Marker {
+			// 	del() {
+			// 		return position.empty()
+			// 	}
+			// }
 
-						$('#blog_result').append(blog_plus)
+			// var markerDel = new MarkerDel({ 
+			// 	map: map,
+			// 	position: new kakao.maps.LatLng(mapY, mapY)
+			// });
+			// markerDel.del()
+
+
+			
+			// 1. 이전 표시 되어있던 마커 지우기
+			// 2. 카테코리 체크박스 선택된 내용의 id가져오기 
+			// 3. if문과 for문 이용해서 선택한 마커를 표시하기 pop(append참고사항)으로 가져오기.
+
+
+
+			var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+			var mapContainer = document.getElementById('map'),
+			mapOption = {
+				center: new kakao.maps.LatLng(37.566826, 126.9786567),
+				level: 7
+			};  
+			var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+			function displayMarker() {
+
+				// check_count = document.getElementsByName("category").length;
+				// for (i=0; i<check_count; i++) {
+				// 	if (document.getElementsByName("category")[i].checked == true) {
+				// 		checkedCategory = document.getElementsByName("category")[i].value	
+				// 		console.log(checkedCategory)
+				// 		}	
+				// 	}
+
+
+				var marker = new kakao.maps.Marker({
+					map: map,
+					position: new kakao.maps.LatLng(mapY, mapX) 
+				});
+
+				kakao.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
+					infowindow.open(map, marker);
+
+					for (i=0; i<blogTitle.length; i++) {
+						for (i=0; i<blogLink.length; i++) {
+							blog_plus = "<tr><td><a href='" + blogLink[i] + "'>"+ blogTitle[i] + "</a></td></tr>"
+							document.getElementById('name_result').value = storeName
+							document.getElementById('address_result').value = storeAddress
+							document.getElementById('memo_result').value = storeMemo
+
+							$('#blog_result').append(blog_plus)
+						}
 					}
-				}
 
-			});
-		}
-	</script>
+				});
+			}
 
+		</script>
+		{% endblock %}
 
-	{% endblock %}
