@@ -100,29 +100,6 @@
 							foodCategory = rows[i]['food_kind']
 							Groupping()
 						}
-						
-						
-
-						categoryList = []
-						check_count = document.getElementsByName("category").length;
-						for (i=0; i<check_count; i++) {
-							if (document.getElementsByName("category")[i].checked == true) {
-								checkedCategory = document.getElementsByName("category")[i].value ;
-								categoryList.push(checkedCategory)
-							}
-						}
-
-						for (i=0; i<categoryList.length; i++) {
-							for (i=0; i<Object.keys(markerGroup).length; i++) {
-								console.log(markerGroup[Object.keys(markerGroup)[i]] + "db에 있는")
-								console.log(categoryList[i] + "체크박스")
-								if(categoryList[i] == markerGroup[Object.keys(markerGroup)[i]]) {
-									console.log('일치')
-								}
-							}
-						}
-
-
 
 						displayMarker()
 					}
@@ -182,27 +159,28 @@
 
 		function displayMarker() {
 
-			//https://ourcstory.tistory.com/158 (자바스크립트 자료구조)
+			var isEmpty = function(value){
+				if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
+					return true
+				}else{
+					return false
+				}
+			}
+
 
 			check_count = document.getElementsByName("category").length;
-
-			// for (i=0; i<check_count; i++) {
-			// 	if (document.getElementsByName("category")[i] == true) {
-			// 		console.log(document.getElementsByName("category")[i].value)
-					// checkedCategory = document.getElementsByName("category")[i].value	
-					// console.log(checkedCategory)
-					// }	
-				// }
-			// }
-
-			// storeName = rows[i]['name']
-			// storeMemo = rows[i]['memo']
-			// storeAddress = rows[i]['address']
-			// storeVisit = rows[i]['visit']
-			// blogTitle = rows[i]['storeLinkTitle']
-			// blogLink = rows[i]['storeLinkHref']
-
-			// console.log(markerGroup.noodle)
+			for (i=0; i<check_count; i++) {
+				if (document.getElementsByName("category")[i].checked == true) {
+					checkedCategory = document.getElementsByName("category")[i].value ;
+					if(isEmpty(markerGroup[checkedCategory])==false) {
+						console.log(markerGroup[checkedCategory])
+					}
+				}
+				else {
+					alert('내용이없다네ㅠ 분발하자...')
+					break;
+				}
+			}
 
 			var marker = new kakao.maps.Marker({
 				map: map,
