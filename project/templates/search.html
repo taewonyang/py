@@ -65,6 +65,11 @@
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
 	<script>
 		function find_station() {
+			$('#blog_result').empty()
+			document.getElementById('name_result').value = ""
+			document.getElementById('address_result').value = ""
+			document.getElementById('memo_result').value = ""
+
 			stationName = $('#station_name_input').val()
 
 			$.ajax({
@@ -73,31 +78,37 @@
 				data: {},
 				success: function(response){
 					if (response["result"]=="success") {
-						alert("검색완료!");
 						rows = response['store_info']
 
-						ricePositions = []
-						meatPositions = []
-						noodlePositions = []
-						seaFoodPositions = []
-						worldFoodPositions = []
-						breadPositions = []
-						flourbasedFoodPositions = []
-						cafeBarPositions = []
+						allDataList = []
 
-						markerGroup = {
-							rice : ricePositions,
-							meat : meatPositions,
-							noodle : noodlePositions,
-							seaFood : seaFoodPositions,
-							worldFood : worldFoodPositions,
-							bread : breadPositions,
-							flourbasedFood : flourbasedFoodPositions,
-							cafeBar : cafeBarPositions,
+						for (i=0; i<rows.length; i++) {
+							
+							allData = {
+								name: rows[i]['name'],
+								address : rows[i]['address'],
+								memo : rows[i]['memo'],
+								visit : rows[i]['visit'],
+								foodCategory : rows[i]['food_kind'],
+								position : new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']),
+								storeLinkTitle : rows[i]['storeLinkTitle'],
+								storeLinkHref : rows[i]['storeLinkHref']
+							}
+
+							allDataList.push(allData) 
+
+						} //for문 종료
+						groupedData = {
+							rice : [],
+							meat : [],
+							noodle : [],
+							seaFood : [],
+							worldFood : [],
+							bread : [],
+							flourbasedFood : [],
+							cafeBar : []	
 						}
-
-						for (i=0; i<rows.length; i++) {	
-							foodCategory = rows[i]['food_kind']
+						for (i=0; i<allDataList.length; i++) {
 							Groupping()
 						}
 
@@ -108,40 +119,42 @@
 		}
 
 		function Groupping() {	
-			switch (foodCategory) {
+			switch (allDataList[i]['foodCategory']) {
 				case "rice" :							
-				ricePositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))
+				groupedData['rice'].push(allDataList[i])
 				break;
 
 				case "meat" :								
-				meatPositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))							
+				groupedData['meat'].push(allDataList[i])
 				break;
 
 				case "noodle" :	
-				noodlePositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))					
+				groupedData['noodle'].push(allDataList[i])
 				break;
 
-				case "seaFood" :								
-				seaFoodPositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))												
+				case "seaFood" :
+				groupedData['seaFood'].push(allDataList[i])
 				break;
 
 				case "worldFood" :
-				worldFoodPositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))
+				groupedData['worldFood'].push(allDataList[i])
 				break;	
 
 				case "bread" :								
-				breadPositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))
+				groupedData['bread'].push(allDataList[i])
 				break;
 
 				case "flourbasedFood" :
-				flourbasedFoodPositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))
+				groupedData['flourbasedFood'].push(allDataList[i])
 				break;				
 
 				case "cafeBar" :
-				cafeBarPositions.push(new kakao.maps.LatLng(rows[i]['y_code'], rows[i]['x_code']))		
+				groupedData['cafeBar'].push(allDataList[i])
 				break;
 			}			
 		}
+
+
 
 		// 1. 이전 표시 되어있던 마커 지우기
 		// 2. 카테코리 체크박스 선택된 내용의 id가져오기 
@@ -158,7 +171,6 @@
 
 
 		function displayMarker() {
-
 			var isEmpty = function(value){
 				if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
 					return true
@@ -167,42 +179,69 @@
 				}
 			}
 
+			filteredCategory = []
 
 			check_count = document.getElementsByName("category").length;
 			for (i=0; i<check_count; i++) {
 				if (document.getElementsByName("category")[i].checked == true) {
-					checkedCategory = document.getElementsByName("category")[i].value ;
-					if(isEmpty(markerGroup[checkedCategory])==false) {
-						console.log(markerGroup[checkedCategory])
+					checkedCategory = document.getElementsByName("category")[i].value ;					
+					if(isEmpty(groupedData[checkedCategory])==false) {
+						filteredCategory.push(checkedCategory) 
 					}
-				}
-				else {
-					alert('내용이없다네ㅠ 분발하자...')
-					break;
 				}
 			}
 
-			var marker = new kakao.maps.Marker({
-				map: map,
-				position: noodlePositions[0]
-			});
+
+			for (i=0; i<filteredCategory.length; i++) {
+				var category = groupedData[filteredCategory[i]]
+				for (j=0; j<category.length; j++) {
+					markerPosition = category[j]['position']
+
+					var marker = new kakao.maps.Marker({
+						map: map,
+						position: markerPosition
+					});
+				}
+			}
+
 
 			kakao.maps.event.addListener(marker, 'click', function() {
-				infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
-				infowindow.open(map, marker);
 
-				for (i=0; i<blogTitle.length; i++) {
-					for (i=0; i<blogLink.length; i++) {
-						blog_plus = "<tr><td><a href='" + blogLink[i] + "'>"+ blogTitle[i] + "</a></td></tr>"
-						document.getElementById('name_result').value = storeName
-						document.getElementById('address_result').value = storeAddress
-						document.getElementById('memo_result').value = storeMemo
+				for (i=0; i<filteredCategory.length; i++) {
+					var category = groupedData[filteredCategory[i]]
+					for (j=0; j<category.length; j++) {
 
-						$('#blog_result').append(blog_plus)
+						storeName = category[j]['name']
+						storeAddress = category[j]['address']
+						storeMmeo = category[j]['memo']
+						storeVisit = category[j]['visit']
+						storeBlogTitle = category[j]['storeLinkTitle']
+						storeBlogLink =category[j]['storeLinkHref']
+
+						console.log(storeName)
+
+						infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
+						infowindow.open(map, marker);
+
+						for (i=0; i<storeBlogTitle.length; i++) {
+							for (i=0; i<storeBlogLink.length; i++) {
+								blog_plus = "<tr><td><a href='" + storeBlogLink[i] + "'>"+ storeBlogTitle[i] + "</a></td></tr>"
+								document.getElementById('name_result').value = storeName
+								document.getElementById('address_result').value = storeAddress
+								document.getElementById('memo_result').value = storeMemo
+
+								$('#blog_result').append(blog_plus)
+							}
+						}
 					}
 				}
-
 			});
+
+
+
+
+
+
 		}
 
 	</script>
