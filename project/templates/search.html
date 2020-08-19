@@ -192,36 +192,46 @@
 			}
 
 
+			function dataPop(value) {
+				var count = value.length
+				a = 0 ;
+				while(a < count) {
+					return value.pop()
+					a++;	
+				}
+			}
+
+
+			storeName =[]
+			storeAddress = []
+			storeMemo = []
+			storeVisit = []
+			storeBlogTitle = []
+			storeBlogLink = []
+
+
 			for (i=0; i<filteredCategory.length; i++) {
 				var category = groupedData[filteredCategory[i]]
 				for (j=0; j<category.length; j++) {
 					markerPosition = category[j]['position']
 
+					storeName.push(category[j]['name'])
+					storeAddress.push(category[j]['address'])
+					storeMemo.push(category[j]['memo'])
+					storeVisit.push(category[j]['visit'])
+					storeBlogTitle.push(category[j]['storeLinkTitle'])
+					storeBlogLink.push(category[j]['storeLinkHref'])
+
 					var marker = new kakao.maps.Marker({
 						map: map,
 						position: markerPosition
 					});
-				}
-			}
 
 
-			kakao.maps.event.addListener(marker, 'click', function() {
-
-				for (i=0; i<filteredCategory.length; i++) {
-					var category = groupedData[filteredCategory[i]]
-					for (j=0; j<category.length; j++) {
-
-						storeName = category[j]['name']
-						storeAddress = category[j]['address']
-						storeMmeo = category[j]['memo']
-						storeVisit = category[j]['visit']
-						storeBlogTitle = category[j]['storeLinkTitle']
-						storeBlogLink =category[j]['storeLinkHref']
-
-						console.log(storeName)
-
-						infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
+					kakao.maps.event.addListener(marker, 'click', function() {
+						infowindow.setContent('<div style="padding:5px;font-size:12px;">' + dataPop(storeName) + '</div>');
 						infowindow.open(map, marker);
+
 
 						for (i=0; i<storeBlogTitle.length; i++) {
 							for (i=0; i<storeBlogLink.length; i++) {
@@ -233,17 +243,11 @@
 								$('#blog_result').append(blog_plus)
 							}
 						}
-					}
+
+					});
 				}
-			});
-
-
-
-
-
-
+			}
 		}
-
 	</script>
 	{% endblock %}
 
