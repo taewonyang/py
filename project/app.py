@@ -70,24 +70,29 @@ def sarching() :
     #지하철역 근처 매장조회
     station_receive = request.args.get('station_give')
     print(station_receive)
-    stores = list(db.food_store.find({'station' : station_receive}, {'_id': 0}))
+    station = station_receive.split()[0]
+    checkedList = station_receive.split()[1].split(',')
+    print(station)
+    print(checkedList)
     store_info = []
-    for store in stores :
-        storeName = store['name']
-        # 블로그 크롤링
-        storeBlog_title = []
-        storeBlog_href = []
-        base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
-        url = base_url + urllib.parse.quote_plus(storeName)
-        html = req.urlopen(url).read()
-        soup = BeautifulSoup (html,'html.parser')
-        result = soup.find_all(class_='sh_blog_title')
-        for i in result:
-            storeBlog_title.append(i.attrs['title'])
-            storeBlog_href.append(i.attrs['href'])
-        store['storeLinkTitle'] = storeBlog_title
-        store['storeLinkHref'] = storeBlog_href
-        store_info.append(store)
+    for checkedCategory in checkedList :
+        stores = list(db.food_store.find({'station' : station, 'food_kind': checkedCategory}, {'_id': 0}))
+        for store in stores :
+            storeName = store['name']
+            # 블로그 크롤링
+            storeBlog_title = []
+            storeBlog_href = []
+            base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
+            url = base_url + urllib.parse.quote_plus(storeName)
+            html = req.urlopen(url).read()
+            soup = BeautifulSoup (html,'html.parser')
+            result = soup.find_all(class_='sh_blog_title')
+            for i in result:
+                storeBlog_title.append(i.attrs['title'])
+                storeBlog_href.append(i.attrs['href'])
+            store['storeLinkTitle'] = storeBlog_title
+            store['storeLinkHref'] = storeBlog_href
+            store_info.append(store)
     return jsonify({'result':'success', 'store_info': store_info})
 
 if __name__ == '__main__':
