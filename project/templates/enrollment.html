@@ -12,8 +12,11 @@
 				<label for ="name_input">도로명주소</label>
 			</div>
 			<div class = "int-area">
-				<input type = "text" name="station_input" id="station_input" autocomplete="option" required>
-				<label for ="station_input">근처역</label>
+				<input list="stationList" id="station_input" name="station_input" />
+				<datalist id="stationList">
+
+				</datalist>
+				<label for="station_input">근처역</label>
 			</div>
 			<div class = "int-area">
 				<input type = "text" name="memo_input" id="memo_input" autocomplete="off">
@@ -70,6 +73,7 @@
 			data: {name_give:name, address_give:address, station_give:station, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
 			success: function(response){
 				if(response['result']=="success" ) {
+
 					alert("등록완료!") ;
 				} else {
 					alert('서버 오류!')
@@ -79,6 +83,8 @@
 		})
 
 	}	
+
+	{{alarmInfo}}
 
 </script>
 <!-- <script src="{{url_for('static',filename='js/script.js')}}"></script> -->

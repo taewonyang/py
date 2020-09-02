@@ -2,9 +2,14 @@
 {% block content %}
 
 <style>
+	html,
+	body {
+		width : 100%;
+		height : 100%;
+	}
 	#searchResult_box{
 		display: grid;
-		grid-template-columns : 80% 20%;
+		grid-template-columns : 70% 30%;
 	}
 
 	#searchFilter_box {
@@ -13,8 +18,8 @@
 </style>
 
 <div id="stationSearch_box">
-	<label for="search">역이름</label>
-	<input name="search" id="station_name_input" type="text" placeholder="ex) 역삼역(x), 역삼(O)">
+	<label for="station_input">역이름</label>
+	<input list="stationList" id="station_input" name="station_input" placeholder="ex) 역삼역(x), 역삼(O)" required>
 	<button type="button" onclick="find_station()" >검색</button>
 	<input type="button" id="searchFilter_btn" onclick="openclose()" value = "+">
 </div>
@@ -48,18 +53,18 @@
 	<div id ="resultList_box">
 		<div class = "name_result">
 			<label for ="name_result">상호명</label>
-			<input type="text" name = "name_result" id="name_result">   
+			<input type="text" name = "name_result" id="name_result" >   
 		</div>
 		<div class = "address_result">
 			<label for ="address_result">주소</label>
-			<input type = "text" name="address_result" id="address_result">
+			<input type = "text" name="address_result" id="address_result" >
 		</div>
 		<div class = "memo_result">
 			<label for ="memo_result">메모</label>
-			<input type = "text" name="memo_result" id="memo_result">
+			<input type = "text" name="memo_result" id="memo_result" >
 		</div>
 		<div class = "blog_result">
-			<table>
+			<table border="1">
 				<thead>
 					<tr>블로그</tr>
 				</thead>
@@ -73,24 +78,23 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
 <script>
+	//체크박스 전체 선택하기
 	var $checkAll = $('#checkAll');
 	$checkAll.change(function () {
 		var $this = $(this);
-    var checked = $this.prop('checked'); // checked 문자열 참조(true, false)
-    // console.log(checked);
-    $('input[name="category"]').prop('checked', checked);
-});
+		var checked = $this.prop('checked');
+		$('input[name="category"]').prop('checked', checked);
+	});
 
+	//체크박스 일부 선택시, 전체선택 해제
 	var boxes = $('input[name="category"]');
 	boxes.change(function () {
 		var boxLength = boxes.length;
-    // 체크된 체크박스 갯수를 확인하기 위해 :checked 필터를 사용하여 체크박스만 선택한 후 length 프로퍼티를 확인
-    var checkedLength = $('input[name="category"]:checked').length;
-    var selectAll = (boxLength == checkedLength);
-    $checkAll.prop('checked', selectAll);
-});
+		var checkedLength = $('input[name="category"]:checked').length;
+		var selectAll = (boxLength == checkedLength);
+		$checkAll.prop('checked', selectAll);
+	});
 
-	
 	function openclose() {
 		if ( $('#searchFilter_box').css('display') == 'block' ) {
 			$('#searchFilter_box').hide();
@@ -100,6 +104,21 @@
 			document.getElementById('searchFilter_btn').value = "-"
 		}
 	}
+
+
+
+	//지도 띄우기
+	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+	var mapContainer = document.getElementById('map'),
+	mapOption = {
+		center: new kakao.maps.LatLng(37.566826, 126.9786567),
+		level: 7
+	};  
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+	
+
+	markerList = []
 
 	function find_station() {
 		checkedList=[]
@@ -111,6 +130,7 @@
 			}
 		}
 
+		//객체가 비어있는지 확인
 		var isEmpty = function(value){
 			if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
 				return true
@@ -120,11 +140,11 @@
 		}
 
 		radioVal = $('input[name="visit_record"]:checked').val()
-		stationName = $('#station_name_input').val()
+		stationName = $('#station_input').val()
 		
 		if(stationName == "") {
 			alert('역이름을 입력해주세요.')
-			$('#station_name_input').focus();
+			$('#station_input').focus();
 			return
 		}
 		else if(isEmpty(checkedList)==true) {
@@ -132,14 +152,26 @@
 			return
 		}
 
-
 		$.ajax({
 			type: "get",
 			url: `/mylist?station_give=${stationName} ${checkedList} ${radioVal}`,  
 			data: {},
 			success: function(response){
+				$('#blog_result').empty()
+				document.getElementById('name_result').value = ""
+				document.getElementById('address_result').value = ""
+				document.getElementById('memo_result').value = ""
+
+				//이전 마커삭제
+				if(markerList.length >= 1) {
+					for(i=0; i<markerList.length; i++) {
+						// markerList[i].setVisible(false)
+						markerList[i].setMap(null);
+					}
+				}
+
 				if (response["result"]=="success") {
-					alert("검색완료!");
+					alert("검색완료!");	
 					rows = response['store_info']
 					for (i=0; i<rows.length; i++) {
 						server_name = rows[i]['name']
@@ -158,16 +190,6 @@
 		})
 	}
 
-
-	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-	var mapContainer = document.getElementById('map'),
-	mapOption = {
-		center: new kakao.maps.LatLng(37.566826, 126.9786567),
-		level: 7
-	};  
-	var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-
 	function displayMarker() {
 		var storeName = server_name
 		var storeAddress = server_address
@@ -176,9 +198,13 @@
 		var blogLink = server_storeLinkHref
 
 		var marker = new kakao.maps.Marker({
-			map: map,
+			// map: map,
 			position: new kakao.maps.LatLng(server_y_code, server_x_code) 
 		});
+
+		infowindow.close();
+		marker.setMap(map)
+		markerList.push(marker)
 
 		kakao.maps.event.addListener(marker, 'click', function() {
 			$('#blog_result').empty()
@@ -191,18 +217,15 @@
 
 			for (i=0; i<blogTitle.length; i++) {
 				for (i=0; i<blogLink.length; i++) {
-					blog_plus = "<tr><td><a href='" + blogLink[i] + "'>"+ blogTitle[i] + "</a></td></tr>"
+					blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank'>"+ blogTitle[i] + "</a></td></tr>"
 					document.getElementById('name_result').value = storeName
 					document.getElementById('address_result').value = storeAddress
 					document.getElementById('memo_result').value = storeMemo
-
 					$('#blog_result').append(blog_plus)
 				}      
 			}
 		})
 	}
-
 </script>
 {% endblock %}
-
 

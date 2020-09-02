@@ -10,6 +10,18 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 db = client.project
 
+wb = load_workbook("station.xlsx", data_only=True)
+excel = wb['Sheet2']
+
+temp = []
+for i in excel.rows:
+    temp.append(i)
+
+stationList = []
+for row in temp:
+    name = row[0].value
+    stationList.append(name)
+
 app = Flask(__name__)
 @app.route('/')
 def home() :
@@ -22,7 +34,6 @@ def MapView() :
 @app.route('/enrollment')
 def enrollment() :
     return render_template('enrollment.html')
-
 @app.route('/search')
 def search() :
     return render_template('search.html')
@@ -35,6 +46,9 @@ def register() :
     memo_receive = request.form['memo_give']
     visit_receive = request.form['visit_give']
     food_kind_receive = request.form['food_kind_give']
+
+    if(station_receive not in stationList) :
+        print("정확한 역이름을 넣어주세요!")
 
     #위도,경도 추출하기
     api_key = '340094C7-00E9-3582-9DDE-6566D6A8605C'
