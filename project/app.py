@@ -22,6 +22,7 @@ for row in temp:
     name = row[0].value
     stationList.append(name)
 
+
 app = Flask(__name__)
 @app.route('/')
 def home() :
@@ -47,8 +48,12 @@ def register() :
     visit_receive = request.form['visit_give']
     food_kind_receive = request.form['food_kind_give']
 
-    if(station_receive not in stationList) :
-        print("정확한 역이름을 넣어주세요!")
+    if((station_receive in stationList) == True ) :
+        stationInput_result = 'success'
+        print('올바른 역명칭 입력완료')
+    else :
+        stationInput_result = 'fail'
+        print('잘못된 역명칭 입력!')
 
     #위도,경도 추출하기
     api_key = '340094C7-00E9-3582-9DDE-6566D6A8605C'
@@ -78,55 +83,61 @@ def register() :
             folium.Marker(location=[y_code, x_code], tooltip=name, icon=folium.Icon(color="red", icon="star")).add_to(m)
     m.save('./templates/map.html')
     print('지도화 성공!')
-    return jsonify({'result':'success'})
+    return jsonify({'stationInput_result': stationInput_result})
 
 @app.route('/mylist', methods=['get'])
 def sarching() :
     #지하철역 근처 매장조회
-    station_receive = request.args.get('station_give')
-    station = station_receive.split()[0]
-    checkedList = station_receive.split()[1].split(',')
-    radioVal = station_receive.split()[2]
-    print(station)
+    inputBox_receive = request.args.get('inputBox_give')
+    station = inputBox_receive.split()[0]
+    checkedList = inputBox_receive.split()[1].split(',')
+    radioVal = inputBox_receive.split()[2]
     store_info = []
-    for checkedCategory in checkedList :
-        if(radioVal == "visit_all") :
-            stores = list(db.food_store.find({'station' : station, 'food_kind': checkedCategory}, {'_id': 0}))
-            for store in stores :
-                storeName = store['name']
-                # 블로그 크롤링
-                storeBlog_title = []
-                storeBlog_href = []
-                base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
-                url = base_url + urllib.parse.quote_plus(storeName)
-                html = req.urlopen(url).read()
-                soup = BeautifulSoup (html,'html.parser')
-                result = soup.find_all(class_='sh_blog_title')
-                for i in result:
-                    storeBlog_title.append(i.attrs['title'])
-                    storeBlog_href.append(i.attrs['href'])
-                store['storeLinkTitle'] = storeBlog_title
-                store['storeLinkHref'] = storeBlog_href
-                store_info.append(store)
-        else :
-            stores = list(db.food_store.find({'station': station, 'visit': radioVal,'food_kind': checkedCategory }, {'_id': 0}))
-            for store in stores :
-                storeName = store['name']
-                # 블로그 크롤링
-                storeBlog_title = []
-                storeBlog_href = []
-                base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
-                url = base_url + urllib.parse.quote_plus(storeName)
-                html = req.urlopen(url).read()
-                soup = BeautifulSoup (html,'html.parser')
-                result = soup.find_all(class_='sh_blog_title')
-                for i in result:
-                    storeBlog_title.append(i.attrs['title'])
-                    storeBlog_href.append(i.attrs['href'])
-                store['storeLinkTitle'] = storeBlog_title
-                store['storeLinkHref'] = storeBlog_href
-                store_info.append(store)
-    return jsonify({'result':'success', 'store_info': store_info})
+    print(station)
+    if((station in stationList) == True ) :
+        stationInput_result = 'success'
+        print('올바른 역명칭 입력완료')
+        for checkedCategory in checkedList :
+            if(radioVal == "visit_all") :
+                stores = list(db.food_store.find({'station' : station, 'food_kind': checkedCategory}, {'_id': 0}))
+                for store in stores :
+                    storeName = store['name']
+                    # 블로그 크롤링
+                    storeBlog_title = []
+                    storeBlog_href = []
+                    base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
+                    url = base_url + urllib.parse.quote_plus(storeName)
+                    html = req.urlopen(url).read()
+                    soup = BeautifulSoup (html,'html.parser')
+                    result = soup.find_all(class_='sh_blog_title')
+                    for i in result:
+                        storeBlog_title.append(i.attrs['title'])
+                        storeBlog_href.append(i.attrs['href'])
+                    store['storeLinkTitle'] = storeBlog_title
+                    store['storeLinkHref'] = storeBlog_href
+                    store_info.append(store)
+            else :
+                stores = list(db.food_store.find({'station': station, 'visit': radioVal,'food_kind': checkedCategory }, {'_id': 0}))
+                for store in stores :
+                    storeName = store['name']
+                    # 블로그 크롤링
+                    storeBlog_title = []
+                    storeBlog_href = []
+                    base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
+                    url = base_url + urllib.parse.quote_plus(storeName)
+                    html = req.urlopen(url).read()
+                    soup = BeautifulSoup (html,'html.parser')
+                    result = soup.find_all(class_='sh_blog_title')
+                    for i in result:
+                        storeBlog_title.append(i.attrs['title'])
+                        storeBlog_href.append(i.attrs['href'])
+                    store['storeLinkTitle'] = storeBlog_title
+                    store['storeLinkHref'] = storeBlog_href
+                    store_info.append(store)
+    else :
+        stationInput_result = 'fail'
+        print('아무작업 안함')
+    return jsonify({'stationInput_result': stationInput_result, 'store_info': store_info})
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000,debug=True)

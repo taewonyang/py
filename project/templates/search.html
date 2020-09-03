@@ -2,11 +2,6 @@
 {% block content %}
 
 <style>
-	html,
-	body {
-		width : 100%;
-		height : 100%;
-	}
 	#searchResult_box{
 		display: grid;
 		grid-template-columns : 70% 30%;
@@ -154,7 +149,7 @@
 
 		$.ajax({
 			type: "get",
-			url: `/mylist?station_give=${stationName} ${checkedList} ${radioVal}`,  
+			url: `/mylist?inputBox_give=${stationName} ${checkedList} ${radioVal}`,  
 			data: {},
 			success: function(response){
 				$('#blog_result').empty()
@@ -170,7 +165,7 @@
 					}
 				}
 
-				if (response["result"]=="success") {
+				if (response["stationInput_result"]=="success") {
 					alert("검색완료!");	
 					rows = response['store_info']
 					for (i=0; i<rows.length; i++) {
@@ -185,6 +180,9 @@
 						server_storeLinkHref = rows[i]['storeLinkHref']
 						displayMarker()   
 					}   
+				}
+				else {
+					alert('정확한 역명을 입력해주세요!')
 				}
 			}
 		})

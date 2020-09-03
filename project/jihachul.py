@@ -11,5 +11,5 @@ temp1 = []
 for row in temp:
     name = row[0].value
     temp1.append(name)
-print(str(temp1))
 
+print('건대입구' not in temp1)
