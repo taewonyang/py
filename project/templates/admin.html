@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+<div id="storeSearch_box">
+	<label for="storeName_input">상호명</label>
+	<input id="storeName_input" name="storeName_input">
+	<button type="button" onclick="find_station()" >검색</button>
+</div>
+
+<div class="table_box">		
+	<table border=1>
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>상호명</th>
+				<th>근처역</th>
+				<th>카테고리</th>
+				<th>방문유무</th>
+				<th>도로명주소</th>
+				<th>메모</th>
+			</tr>
+		</thead>
+		<tbody id="table_body">
+		</tbody>
+	</table>
+</div>
+
+
+<script>
+	$(document).ready(function(){
+		listing();
+	});
+	function listing() {
+		storeName = $('#storeName_input').val()
+		console.log(storeName)
+
+		$.ajax({
+			type: "get",
+			url: `/revise?storeName_give=${storeName}`,
+			data: { },
+			success: function(response){
+				if (response['result'] == 'success') {
+					// alert("잘받아왔음요-get사용")
+					rows = response['store_info']
+					console.log(rows)
+
+					for (i=0; i<rows.length; i++) {
+						server_no = rows[i]['no']
+						server_name = rows[i]['name']
+						server_station = rows[i]['station']
+						server_food_kind = rows[i]['food_kind']
+						server_visit = rows[i]['visit']
+						server_address = rows[i]['address']
+						server_memo = rows[i]['memo']
+						
+						table_plus = "<tr>\
+						<td>"+server_no+"</td>\
+						<td>"+server_name+"</td>\
+						<td>"+server_station+"</td>\
+						<td>"+server_food_kind+"</td>\
+						<td>"+server_visit+"</td>\
+						<td>"+server_address+"</td>\
+						<td>"+server_memo+"</td>\
+						</tr>"
+						$('#table_body').append(table_plus)
+					}
+
+				} 
+				else {
+					alert('자료를 받아오지 못했습니다');
+				}
+			}
+		})
+	}
+</script>
+
+{% endblock %}

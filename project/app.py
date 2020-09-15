@@ -29,21 +29,21 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
 @app.route('/MapView')
 def MapView():
     return render_template('map.html')
-
 
 @app.route('/enrollment')
 def enrollment():
     return render_template('enrollment.html')
 
-
 @app.route('/search')
 def search():
     return render_template('search.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
 
 @app.route('/mylist', methods=['post'])
 def register():
@@ -155,8 +155,33 @@ def sarching():
     else:
         stationSearch_result = 'fail'
         print('아무작업 안함')
+    print(store_info)
     return jsonify({'stationSearch_result': stationSearch_result, 'store_info': store_info})
 
+@app.route('/revise', methods=['get'])
+def revise():
+    storeName_receive = request.args.get('storeName_give')
+    print(storeName_receive)
+    if storeName_receive=="" :
+       store_info = list(db.food_store.find({}, {'_id': 0}))
+       result = "success"
+    else :
+        store_info = list(db.food_store.find({'name':storeName_receive}, {'_id': 0}))
+        result = "success"
+    return jsonify({'result':result, 'store_info':store_info})
+
+
+# @app.route('/revise', methods=['post'])
+# def revise():
+    # stationBox_receive = request.args.get('stationBox_give')
+    # if stationBox_receive=="" :
+    #    store_info = list(db.food_store.find({}, {'_id': 0}))
+    #    result = "success"
+    # else :
+    #     store_info = list(db.food_store.find({'station':stationBox_receive}, {'_id': 0}))
+    #     result = "success"
+    # return jsonify({'result':result, 'store_info':store_info})
+    # return jsonify({'result': 'result'})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
