@@ -2,18 +2,26 @@
 {% block content %}
 
 <style>
-   #stationSearch_box, #station_input{
-      font-size: larger;
-   }
+   #search_box, #searchResult_box, #search_btn, #searchFilter_btn, #station_input, #name_result, #address_result, #memo_result {
+      font-size: 40px;
+  }
 
-   #searchResult_box{
+  input[type=checkbox], input[type=radio] {
+      -ms-transform: scale(2.5); /* IE */
+      -moz-transform: scale(2.5); /* FF */
+      -webkit-transform: scale(2.5); /* Safari and Chrome */
+      -o-transform: scale(2.5); /* Opera */
+      padding: 20px;
+  }
+
+  #searchResult_box{
       display: grid;
       grid-template-columns : 30% 70%;
-   }
+  }
 
-   #searchFilter_box {
+  #searchFilter_box, #searchResult_box {
       display: none;
-   }
+  }
 </style>
 
 <div id="map" style="width:100%; height:60vh;"></div>
@@ -22,10 +30,10 @@
    <div id="stationSearch_box">
       <label for="station_input">역이름</label>
       <input list="stationList" id="station_input" name="station_input" placeholder="ex) 역삼역(x), 역삼(O)" required>
-      <button type="button" onclick="find_station()" >검색</button>
+      <button type="button" id="search_btn"  onclick="find_station()" >검색</button>
       <input type="button" id="searchFilter_btn" onclick="openclose()" value = "+">
-   </div>
-   <div id="searchFilter_box">
+  </div>
+  <div id="searchFilter_box">
       <div class="foodCategory">
          <legend>분류 (select all<input type="checkbox" name="" id="checkAll" checked>)</legend>
          <input type ="checkbox" name ="category" value="rice" checked>밥/국/찌개
@@ -36,8 +44,8 @@
          <input type ="checkbox" name ="category" value="bread" checked>빵
          <input type ="checkbox" name ="category" value="flourbasedFood" checked>분식
          <input type ="checkbox" name ="category" value="cafeBar" checked>카페/음료/바
-      </div>
-      <div id="visit">
+     </div>
+     <div id="visit">
          <fildset>
             <legend>방문여부</legend>
             <input type="radio" name="visit_record" value="visit_all" checked>
@@ -46,9 +54,9 @@
             <label for="visit_no">도전!</label>
             <input type="radio" name="visit_record" value="visit_ok">
             <label for="visit_ok">검완!</label>
-         </fildset>
-      </div>
-   </div>
+        </fildset>
+    </div>
+</div>
 </div>
 
 <div id="searchResult_box">
@@ -56,25 +64,25 @@
       <div class = "name_result">
          <label for ="name_result">상호명</label>
          <input type="text" name = "name_result" id="name_result" >   
-      </div>
-      <div class = "address_result">
+     </div>
+     <div class = "address_result">
          <label for ="address_result">주소</label>
          <input type = "text" name="address_result" id="address_result" >
-      </div>
-      <div class = "memo_result">
+     </div>
+     <div class = "memo_result">
          <label for ="memo_result">메모</label>
          <input type = "text" name="memo_result" id="memo_result" >
-      </div>
-   </div>
-   <div class = "blog_result">
-      <table border="1">
-         <thead>
-            <tr>블로그</tr>
-         </thead>
-         <tbody id = "blog_result">
-         </tbody>
-      </table>
-   </div>
+     </div>
+ </div>
+ <div class = "blog_result">
+  <table border="1">
+     <thead>
+        <tr></tr>
+    </thead>
+    <tbody id = "blog_result">
+    </tbody>
+</table>
+</div>
 
 </div>
 
@@ -85,29 +93,29 @@
    //체크박스 전체 선택하기
    var $checkAll = $('#checkAll');
    $checkAll.change(function () {
-      var $this = $(this);
-      var checked = $this.prop('checked');
-      $('input[name="category"]').prop('checked', checked);
-   });
+    var $this = $(this);
+    var checked = $this.prop('checked');
+    $('input[name="category"]').prop('checked', checked);
+});
 
    //체크박스 일부 선택시, 전체선택 해제
    var boxes = $('input[name="category"]');
    boxes.change(function () {
-      var boxLength = boxes.length;
-      var checkedLength = $('input[name="category"]:checked').length;
-      var selectAll = (boxLength == checkedLength);
-      $checkAll.prop('checked', selectAll);
-   });
+    var boxLength = boxes.length;
+    var checkedLength = $('input[name="category"]:checked').length;
+    var selectAll = (boxLength == checkedLength);
+    $checkAll.prop('checked', selectAll);
+});
 
    function openclose() {
-      if ( $('#searchFilter_box').css('display') == 'block' ) {
-         $('#searchFilter_box').hide();
-         document.getElementById('searchFilter_btn').value = "+"
-      } else {
-         $('#searchFilter_box').show();
-         document.getElementById('searchFilter_btn').value = "-"
-      }
+    if ( $('#searchFilter_box').css('display') == 'block' ) {
+       $('#searchFilter_box').hide();
+       document.getElementById('searchFilter_btn').value = "+"
+   } else {
+       $('#searchFilter_box').show();
+       document.getElementById('searchFilter_btn').value = "-"
    }
+}
 
 
 
@@ -115,56 +123,56 @@
    var infowindow = new kakao.maps.InfoWindow({zIndex:1});
    var mapContainer = document.getElementById('map'),
    mapOption = {
-      center: new kakao.maps.LatLng(37.526826, 126.9986567),
-      level: 7
-   };  
-   var map = new kakao.maps.Map(mapContainer, mapOption); 
+    center: new kakao.maps.LatLng(37.526826, 126.9986567),
+    level: 7
+};  
+var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-   
 
-   markerList = []
 
-   function find_station() {
-      checkedList=[]
-      check_count = document.getElementsByName("category").length;
-      for (i=0; i<check_count; i++) {
-         if (document.getElementsByName("category")[i].checked == true) {
-            checkedCategory = document.getElementsByName("category")[i].value ;   
-            checkedList.push(checkedCategory)
-         }
+markerList = []
+
+function find_station() {
+    checkedList=[]
+    check_count = document.getElementsByName("category").length;
+    for (i=0; i<check_count; i++) {
+       if (document.getElementsByName("category")[i].checked == true) {
+          checkedCategory = document.getElementsByName("category")[i].value ;   
+          checkedList.push(checkedCategory)
       }
+  }
 
       //객체가 비어있는지 확인
       var isEmpty = function(value){
          if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
             return true
-         }else{
+        }else{
             return false
-         }
-      }
+        }
+    }
 
-      radioVal = $('input[name="visit_record"]:checked').val()
-      stationName = $('#station_input').val()
-      
-      if(stationName == "") {
-         alert('역이름을 입력해주세요.')
-         $('#station_input').focus();
-         return
-      }
-      else if(isEmpty(checkedList)==true) {
-         alert('카테고리를 선택해주세요.')
-         return
-      }
+    radioVal = $('input[name="visit_record"]:checked').val()
+    stationName = $('#station_input').val()
 
-      $.ajax({
-         type: "get",
-         url: `/mylist?inputBox_give=${stationName} ${checkedList} ${radioVal}`,  
-         data: {},
-         success: function(response){
-            $('#blog_result').empty()
-            document.getElementById('name_result').value = ""
-            document.getElementById('address_result').value = ""
-            document.getElementById('memo_result').value = ""
+    if(stationName == "") {
+       alert('역이름을 입력해주세요.')
+       $('#station_input').focus();
+       return
+   }
+   else if(isEmpty(checkedList)==true) {
+       alert('카테고리를 선택해주세요.')
+       return
+   }
+
+   $.ajax({
+       type: "get",
+       url: `/mylist?inputBox_give=${stationName} ${checkedList} ${radioVal}`,  
+       data: {},
+       success: function(response){
+          $('#blog_result').empty()
+          document.getElementById('name_result').value = ""
+          document.getElementById('address_result').value = ""
+          document.getElementById('memo_result').value = ""
 
             //이전 마커삭제
             if(markerList.length >= 1) {
@@ -188,50 +196,52 @@
                 server_storeLinkTitle = rows[i]['storeLinkTitle']
                 server_storeLinkHref = rows[i]['storeLinkHref']
                 displayMarker()   
-             }   
-          }
-          else {
-             alert('정확한 역명을 입력해주세요!')
-          }
-      }
-  })
-  }
+            }   
+        }
+        else {
+           alert('정확한 역명을 입력해주세요!')
+       }
+   }
+})
+}
 
-  function displayMarker() {
-     var storeName = server_name
-     var storeAddress = server_address
-     var storeMemo = server_memo
-     var blogTitle = server_storeLinkTitle
-     var blogLink = server_storeLinkHref
+function displayMarker() {
+ var storeName = server_name
+ var storeAddress = server_address
+ var storeMemo = server_memo
+ var blogTitle = server_storeLinkTitle
+ var blogLink = server_storeLinkHref
 
-     var marker = new kakao.maps.Marker({
+ var marker = new kakao.maps.Marker({
          // map: map,
          position: new kakao.maps.LatLng(server_y_code, server_x_code) 
      });
 
-     infowindow.close();
-     marker.setMap(map)
-     markerList.push(marker)
+ infowindow.close();
+ marker.setMap(map)
+ markerList.push(marker)
 
-     kakao.maps.event.addListener(marker, 'click', function() {
-        $('#blog_result').empty()
-        document.getElementById('name_result').value = ""
-        document.getElementById('address_result').value = ""
-        document.getElementById('memo_result').value = ""
+ kakao.maps.event.addListener(marker, 'click', function() {
+    $('#searchResult_box').css('display') == 'block'
+    
+    $('#blog_result').empty()
+    document.getElementById('name_result').value = ""
+    document.getElementById('address_result').value = ""
+    document.getElementById('memo_result').value = ""
 
-        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
-        infowindow.open(map, marker);
+    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + storeName + '</div>');
+    infowindow.open(map, marker);
 
-        for (i=0; i<blogTitle.length; i++) {
-           for (i=0; i<blogLink.length; i++) {
-              blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank'>"+ blogTitle[i] + "</a></td></tr>"
-              document.getElementById('name_result').value = storeName
-              document.getElementById('address_result').value = storeAddress
-              document.getElementById('memo_result').value = storeMemo
-              $('#blog_result').append(blog_plus)
-           }      
-        }
-     })
+    for (i=0; i<blogTitle.length; i++) {
+       for (i=0; i<blogLink.length; i++) {
+          blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank'>"+ blogTitle[i] + "</a></td></tr>"
+          document.getElementById('name_result').value = storeName
+          document.getElementById('address_result').value = storeAddress
+          document.getElementById('memo_result').value = storeMemo
+          $('#blog_result').append(blog_plus)
+      }      
   }
+})
+}
 </script>
 {% endblock %}

@@ -8,7 +8,7 @@ from openpyxl import load_workbook
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://taewon:qlalfqjsgh@54.180.80.43', 27017)
 db = client.project
 
 wb = load_workbook("station.xlsx", data_only=True)

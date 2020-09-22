@@ -11,7 +11,7 @@ body {
   
 header {
   background-color: #2B2B2B;
-  height: 35px;
+  height: 60px;
   width: 100%;
   opacity: .9;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@ header {
  
 header h1.logo {
   margin: 0;
-  font-size: 1.7em;
+  font-size: 3em;
   color: #fff;
   text-transform: uppercase;
   float: left;
@@ -35,7 +35,7 @@ header h1.logo:hover {
  */
   
 .content {
-  width: 940px;
+  width: 100%;
   margin: 0 auto;
 }
  
@@ -74,10 +74,11 @@ h3 {
  
 .menu li {
   display: inline;
+  font-size: 40px;
 }
  
 .menu li + li {
-  margin-left: 35px;
+  margin-left: 30px;
 }
  
 .menu li a {
