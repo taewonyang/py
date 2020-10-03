@@ -1,0 +1,48 @@
+1. 사이트 
+jsbin.com : 설치없이 실시간으로 결과가 나오는 
+can i use : 호환가능성 페이지
+MDN : 기본적인 설명들
+
+2. css요소
+block : 한줄을 다 사용
+inline : 한줄에 여러개 배열
+position : 
+- relative : 있어야할 위치에서 상대적으로 이동
+- absolute : 내가 담겨있는 상자안에서 움직임
+- fixed : 상자에서 벗어나서 페이지 상에서 움직임
+- sticky : 원래 있어야될 위치에 있으면서, 스크롤링을 해도 그자리 그대로
+- static : 기본값
+
+3. flexbox
+ container / item
+
+ 1) container 정렬
+- display : flex
+- flex-direction : row / column
+- flex-wrap : norwap(묶임) / 	wrap(화면에 꽉차면 아래로 일부가 넘어감)
+
+- justify-content :
+ : flex-start : 아이템들을 왼쪽부터 /위에부터 정렬
+ : flex-end : 아이템들을 오른쪽부터 / 아래부터 정렬
+ : space-around : 아이템에 마진(space를 넣어줌)
+ : space-evenly : 똑같은 간격으로 아이템을 배치
+ : space-between : 아이템을 왼쪽과 오른쪽은 화면에 맞게 배치
+
+- align-items : 
+ : center
+ : baseline (안에 text의 위치가 균등하게 정렬)
+
+ 2) item정렬
+ - flex-basis : 50% 
+:  div(item)가 여러개 있을때 container가 width가 작아지고 커짐에 따라 div(item)가 어떤 비율로 조정되느냐 설정
+ - align-self : 
+
+4. 반응형 웹(단위)
+기본적으로 브라우저에서 할당된 폰트사이즈 : 16px
+1em == 16px
+
+em : 부모대비 크
+px : 절대적인 글자크기
+
+rem : root대비 크기
+vh / vw

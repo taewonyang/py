@@ -1,28 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>여긴가야되</title>
-	<link rel= "stylesheet" type="text/css" href= "{{ url_for('static', filename='css/main.css') }}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<link rel= "stylesheet" type="text/css" href= "{{ url_for('static', filename='css/index.css') }}">
+	<script type ="text/javascript" href="{{ url_for('static', filename='js/index.js') }}"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type ="text/javascript" href="{{ url_for('static', filename='js/script.js') }}"></script>
-	</head>
-	<body>
-		<header>
-			<div class="container">
-				<h1 class="logo">Must Go!</h1>
-				<strong><nav>
-					<ul class="menu">
-						<li><a href="{{ url_for('MapView') }}">MAP</a></li>
-						<li><a href="{{ url_for('enrollment') }}">등록하기</a></li>
-						<li><a href="{{ url_for('search') }}">조회하기</a></li>
-						<li><a href="{{ url_for('admin') }}">데이터관리</a></li>
-					</ul>
-				</nav></strong>
-			</div>	
-		</header>
-		<div class="contents">
-			{% block content %}
-			{% endblock %}
+	<script	src="https://kit.fontawesome.com/2d323a629b.js" crossorigin="anonymous"></script>
+	<title>여긴가야되</title>
+
+	<style>
+		:root {
+			--text-color : #f0f4f5;
+			--background-color: #263343;
+			--accent-color : #d49466 ;
+		}
+
+		body {
+			margin:0;
+			font-family: 'Source Sans Pro' 
+		}
+
+		.navbar a {
+			text-decoration: none;
+			color: --text-color;
+		}
+
+		.navbar {
+			display : flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: --background-color;
+			padding: 8px 12px; 
+		}
+
+		.navbar_logo {
+			font-size: 2.5em
+
+		}
+
+		.navbar_logo i {
+			color:#FF7878
+		}
+
+		.navbar_menu {
+			display: flex;
+			list-style : none;
+			padding-left :0;
+		}
+
+		.navbar_menu li {
+			padding : 8px 12px;
+			border-radius : 4px;
+			font-size: 1.25em
+		}
+
+		.navbar_menu li:hover {
+			background-color: --accent-color;
+			border-radius : 4px;
+		}
+
+		.navbar_icons {
+			display: flex;
+			list-style : none;
+			color : #d2d2d2 ;
+			padding-left:0;
+		}
+
+		.navbar_icons li {
+			padding : 8px 2px;
+		}
+
+		.navbar_toggleBtn {
+			position : absolute;
+			right : 32px;
+			font-size : 24px;
+			color :#FF7878 ;
+			display: none;
+		}
+
+		@media screen and (max-width : 48em) {
+			.navbar {
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 8px 24px;
+			}
+
+			.navbar_menu {
+				display : none;
+				flex-direction: column;
+				align-items: center;
+				width : 100%;
+			}
+
+			.navbar_menu li {
+				width : 100%;
+				text-align: center;
+			}
+
+			.navbar_icons {
+				display : none;
+				justify-content: center;
+				width : 100%;
+			}
+
+			.navbar_toggleBtn {
+				display: block;
+			}
+
+			.navbar_menu.active,
+			.navbar_icons.active {
+				display: flex;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar_logo">
+			<a href="">MustGO~Eun!</a>	
+			<i class="far fa-smile-wink"></i>
 		</div>
-	</body>
-	</html>
+
+		<ul class="navbar_menu">
+			<li><a href="{{ url_for('MapView') }}">MAP</a></li>
+			<li><a href="{{ url_for('enrollment') }}">등록하기</a></li>
+			<li><a href="{{ url_for('search') }}">조회하기</a></li>
+			<li><a href="{{ url_for('admin') }}">데이터관리</a></li>
+		</ul>
+
+		<ul class="navbar_icons">
+			<li><i class="fas fa-hashtag"></i></li>
+			<li>TW_E♥</li>
+		</ul>
+
+		<a href="#" class="navbar_toggleBtn">
+			<i class="fas fa-bars"></i>
+		</a>
+	</nav>
+
+	<div class="contents">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+<script>
+	const toggleBtn = document.querySelector('.navbar_toggleBtn');
+	const menu = document.querySelector('.navbar_menu');
+	const icons = document.querySelector('.navbar_icons');
+
+	toggleBtn.addEventListener('click', () => {
+		menu.classList.toggle('active')
+		icons.classList.toggle('active')
+	})
+</script>
+</html>

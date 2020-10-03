@@ -1,0 +1,99 @@
+1. variable 변수
+1) var
+: hoisting (move declaration from bottom to top)
+즉, 아래에 변수를 선언하여도 윗부분으로 끌어 올리는 특징이있다.
+그래서, block { }을 무시하는 경향이 있다.
+-> 따라서 사용하지 않는것이 좋다. 
+(유연성은 좋다. but 문제점이 많이 생길 수 있다.)
+
+2) let
+: 가장 많이 쓰여짐 (덮어쓰기 가능)  
+mutable data type
+
+3) Constant
+: 한번 변수를 설정하면 추후에는 변경할 수 없다. 
+immutable data type 
+- 보안상의 이유로 사용할수 있다.
+- 안정성을 가질수 있다. 
+
+2. Operators
+1) Assignment operators
+x +=y;  //  x= x+y
+x -=y;  //  x= x-y
+x *=y;  //  x= x*y
+x /=y;  //  x=x/y 
+
+2) logical operators  :  || (or),  && (and),  ! (not)  
+ex)  연산로직1  || 연산로직2  || 연산로직3   경우,
+ 포인트1)  앞부분(연산로직1)이 true 인경우,  뒷부분은 실행x
+ 포인트2)  따라서 무거운 연산로직일수록 뒷부분(연산로직3)부분의 위치에 배치
+-> 그래야 효율적인 빠른연산처리 가능함! 
+
+3. 효과적인 logic의 사용방법>
+1) 이러한방법 선호x
+function upgradeUser(user) {
+ if( user.point > 10) {
+  //  long upgrade logic.....
+   }
+)
+
+2) 이러한방법 추천!
+function upgradeUser(user) {
+ if( user.point <= 10) {
+    return ;
+   }
+ //  long upgrade logic.....
+ }
+
+
+3. function expression VS function declarations
+1) function expression : 변수에 함수를 다시 담는 방식
+ : function hoisting이 불가능하다. 
+  (즉, 할당이 된 다음에 함수 호출이 가능하다.)
+ex)
+ㄱ)anonymos function 
+   print = function() {   
+      console.log("hello") }
+
+ㄴ) named function
+    print = function print() {
+         console.log("hello") }
+-->(공통) 실행시,  print()
+  
+ 2) function declarations
+ : function hoisting이 가능하다. 
+
+4. Callback function>
+ex)
+function printYes() {
+    console.log("yes")}
+
+function printNo() {
+    console.log("no")}
+
+function randomQuiz (answer, printYes, printNo) {
+  if (answer === "love you") {
+  printYes() ;
+  } else {
+  printNo() ; 
+  }
+}
+
+5. Arrow function
+: 항상 anonymous function 이어야함.
+ex) case1
+ const  simplePrint = function () {
+ console.log("simplePrint!");
+ };
+	↓ Arrow function으로 변환하면
+	↓  
+ const  simplePrint = () => CONSOLE.LOG("simplePrint!")
+
+ex) case2
+ const  add = (a, b) => a+b
+
+ex) case3
+ simpleMultiply = (a, b) => {
+   //  do something more
+  return  a * b ;
+ } 
