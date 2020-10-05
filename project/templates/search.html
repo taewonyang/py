@@ -4,8 +4,22 @@
 <style>
 	* {font-family: 'Source Sans Pro' }
 
-	#search_box, #searchResult_box, #search_btn, #searchFilter_btn, #station_input, #name_result, #address_result, #memo_result {
-		font-size: 1.2em;
+	#stationSearch_box, #name_result, #station_input {
+		font-size: 1.3em
+
+	}
+
+	#searchFilter_box, #visit {
+		font-size : 1.1em;
+		display: none;
+	}
+
+	#searchFilter_box fieldset {
+		padding : 3px;
+	}
+
+	#searchResult_box, #search_btn, #searchFilter_btn, #address_result, #memo_result {
+		font-size: 1.15em;
 	}
 
 	input[type=checkbox], input[type=radio] {
@@ -18,16 +32,19 @@
 
 	#wrap {
 		display: flex;
-		
 	}
 
-
-	#searchFilter_box{
-		display: none;
+	.category_section {
+		display:flex;
 	}
 
-	a {
-		color: black;
+	.category_section ul {
+		margin: 2px
+	}
+
+	.category_section li {
+		list-style: none;
+		padding: 5px
 	}
 
 	@media screen and (max-width : 48em) {
@@ -35,9 +52,23 @@
 			display: flex;
 			flex-direction: column;
 		}
+
+		#search_box {
+			width : 100%;
+		}
+		
+		#searchFilter_box div{
+			display: flex;
+			flex-direction: row;
+		}
+
+		#searchResult_box input, textarea {
+			width : 100%
+		}
+
+
 	}
 </style>
-
 
 <div id="map" style="width:100%; height:50vh; position: relative"></div>
 
@@ -49,57 +80,59 @@
 			<button type="button" id="search_btn"  onclick="find_station()" >검색</button>
 			<input type="button" id="searchFilter_btn" onclick="openclose()" value = "+">
 		</div>
-		<div id="searchResult_box">
-			<div id ="result_info">
-				<div class = "name_result">
-					<label for ="name_result">상호명</label>
-					<input type="text" name = "name_result" id="name_result" >   
-				</div>
-				<div class = "address_result">
-					<label for ="address_result">주소</label>
-					<input type = "text" name="address_result" id="address_result" >
-				</div>
-				<div class = "memo_result">
-					<label for ="memo_result">메모</label>
-					<input type = "text" name="memo_result" id="memo_result" >
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="searchFilter_box">
-		<div class="foodCategory">
+		
+		<div id="searchFilter_box">
 			<fieldset>
 				<legend>
 					<label for="checkAll"> 분류 (select all)</label>
 					<input type="checkbox" name="" id="checkAll" checked>
 				</legend>
-
-				<label for="rice">밥/국/찌개</label>
-				<input type ="checkbox" name ="category" id ="rice" value ="rice" checked>
-
-				<label for="meat">고기/육류</label>
-				<input type ="checkbox" name ="category" id="meat" value ="meat" checked>
-
-				<label for="noodle">면류</label>
-				<input type ="checkbox" name ="category" id="noodle" value ="noodle" checked>
-
-				<label for="seaFood">해산물</label>
-				<input type ="checkbox" name ="category" id="seaFood" value ="seaFood" checked>
-
-				<label for="worldFood">세계음식</label>
-				<input type ="checkbox" name ="category" id="worldFood" value ="worldFood" checked>
-
-				<label for="bread">빵</label>
-				<input type ="checkbox" name ="category" id="bread" value ="bread" checked>
-
-				<label for="flourbasedFood">분식</label>
-				<input type ="checkbox" name ="category" id="flourbasedFood" value ="flourbasedFood" checked>
-
-				<label for="cafeBar">카페/음료/바</label>
-				<input type ="checkbox" name ="category" id="cafeBar" value ="cafeBar" checked>
+				
+				<div class="category_section">
+					<div class="category_section1">
+						<ul>
+							<li>
+								<label for="rice">밥/국/찌개</label>
+								<input type ="checkbox" name ="category" id ="rice" value ="rice" checked>
+							</li>
+							<li>
+								<label for="meat">고기/육류</label>
+								<input type ="checkbox" name ="category" id="meat" value ="meat" checked>
+							</li>
+							<li>
+								<label for="noodle">면류</label>
+								<input type ="checkbox" name ="category" id="noodle" value ="noodle" checked>
+							</li>
+							<li>
+								<label for="seaFood">해산물</label>
+								<input type ="checkbox" name ="category" id="seaFood" value ="seaFood" checked>
+							</li>
+						</ul>
+					</div>
+					<div class="category_section2">
+						<ul>
+							<li>
+								<label for="worldFood">세계음식</label>
+								<input type ="checkbox" name ="category" id="worldFood" value ="worldFood" checked>
+							</li>
+							<li>
+								<label for="bread">빵</label>
+								<input type ="checkbox" name ="category" id="bread" value ="bread" checked>
+							</li>
+							<li>
+								<label for="flourbasedFood">분식</label>
+								<input type ="checkbox" name ="category" id="flourbasedFood" value ="flourbasedFood" checked>
+							</li>
+							<li>
+								<label for="cafeBar">카페/음료/바</label>
+								<input type ="checkbox" name ="category" id="cafeBar" value ="cafeBar" checked>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</fieldset>
 		</div>
+
 		<div id="visit">
 			<fieldset>
 				<legend>방문여부</legend>
@@ -112,17 +145,35 @@
 			</fieldset>
 		</div>
 	</div>
+</div>
 
-	<div class = "blog_result">
-		<table border="1">
-			<thead>
-				<tr></tr>
-			</thead>
-			<tbody id = "blog_result">
-			</tbody>
-		</table>
-	</div>
+<div id="searchResult_box">
+	<fieldset>
+		<legend>조회결과</legend>
+		<div class = "name_result">
+			<div><label for ="name_result">상호명</label></div>
+			<input type="text" name = "name_result" id="name_result" disabled>   
+		</div>
+		<div class = "address_result">
+			<div><label for ="address_result">주소</label></div>
+			<input type = "text" name="address_result" id="address_result" disabled>
+		</div>
+		<div class = "memo_result">
+			<div><label for ="memo_result">메모</label></div>
+			<textarea name="memo_result" id="memo_result" disabled> </textarea>
+		</div>
+	</fieldset>
+</div>
 
+<div class = "blog_result">
+	<table border="1">
+		<thead>
+			<tr></tr>
+		</thead>
+		<tbody id = "blog_result">
+		</tbody>
+	</table>
+</div>
 </div>
 </div>
 
@@ -270,7 +321,7 @@
 
   		for (i=0; i<blogTitle.length; i++) {
   			for (i=0; i<blogLink.length; i++) {
-  				blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank'>"+ blogTitle[i] + "</a></td></tr>"
+  				blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank' style='color:black'>"+ blogTitle[i] + "</a></td></tr>"
   				document.getElementById('name_result').value = storeName
   				document.getElementById('address_result').value = storeAddress
   				document.getElementById('memo_result').value = storeMemo
