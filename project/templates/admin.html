@@ -1,13 +1,16 @@
 {% extends "index.html" %}
 {% block content %}
 
+
 <div id="storeSearch_box">
 	<label for="storeName_input">상호명</label>
 	<input id="storeName_input" name="storeName_input">
-	<button type="button" onclick="find_station()" >검색</button>
+	<button type="button" onclick="listing()" >검색</button>
+	<button type="button" onclick="revise()" >수정</button>
+	<button type="button" onclick="del()" >삭제</button>
 </div>
 
-<div class="table_box">		
+<div class="table_box">      
 	<table border=1>
 		<thead>
 			<tr>
@@ -40,7 +43,7 @@
 			data: { },
 			success: function(response){
 				if (response['result'] == 'success') {
-					// alert("잘받아왔음요-get사용")
+					alert("검색완료!")
 					rows = response['store_info']
 					console.log(rows)
 
@@ -52,7 +55,7 @@
 						server_visit = rows[i]['visit']
 						server_address = rows[i]['address']
 						server_memo = rows[i]['memo']
-						
+
 						table_plus = "<tr>\
 						<td>"+server_no+"</td>\
 						<td>"+server_name+"</td>\
@@ -64,10 +67,9 @@
 						</tr>"
 						$('#table_body').append(table_plus)
 					}
-
 				} 
 				else {
-					alert('자료를 받아오지 못했습니다');
+					alert('정확한 역이름을 입력해주세요. \n ex) 역삼역(x), 역삼(O)');
 				}
 			}
 		})

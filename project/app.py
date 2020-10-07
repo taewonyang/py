@@ -166,8 +166,11 @@ def revise():
        store_info = list(db.food_store.find({}, {'_id': 0}))
        result = "success"
     else :
-        store_info = list(db.food_store.find({'name':storeName_receive}, {'_id': 0}))
-        result = "success"
+        if ((station in stationList) == True):
+            store_info = list(db.food_store.find({'name':storeName_receive}, {'_id': 0}))
+            result = "success"
+        else :
+            result = "fail"
     return jsonify({'result':result, 'store_info':store_info})
 
 

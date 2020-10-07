@@ -113,6 +113,10 @@
 			.navbar_icons.active {
 				display: flex;
 			}
+
+			.contents img {
+				width : 100%;
+			}
 		}
 	</style>
 </head>
@@ -120,7 +124,7 @@
 <body>
 	<nav class="navbar">
 		<div class="navbar_logo">
-			<a href="">MustGO~Eun!</a>	
+			<a href="{{ url_for('home') }}">MustGO~Eun!</a>	
 			<i class="far fa-smile-wink"></i>
 		</div>
 
@@ -141,10 +145,11 @@
 		</a>
 	</nav>
 
-	<div class="contents">
-		{% block content %}
-		{% endblock %}
-	</div>
+      <div class="contents">
+         {% block content %}
+            <img src="{{ url_for('static', filename='/img/tw_e.jpg') }}" />
+         {% endblock %}
+      </div>
 </body>
 <script>
 	const toggleBtn = document.querySelector('.navbar_toggleBtn');

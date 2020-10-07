@@ -4,32 +4,6 @@
 <style>
 	* {font-family: 'Source Sans Pro' }
 
-	#stationSearch_box, #name_result, #station_input {
-		font-size: 1.3em
-
-	}
-
-	#searchFilter_box, #visit {
-		font-size : 1.1em;
-		display: none;
-	}
-
-	#searchFilter_box fieldset {
-		padding : 3px;
-	}
-
-	#searchResult_box, #search_btn, #searchFilter_btn, #address_result, #memo_result {
-		font-size: 1.15em;
-	}
-
-	input[type=checkbox], input[type=radio] {
-		-ms-transform: scale(2); /* IE */
-		-moz-transform: scale(2); /* FF */
-		-webkit-transform: scale(2); /* Safari and Chrome */
-		-o-transform: scale(2); /* Opera */
-		padding: 0.5em;
-	}
-
 	#wrap {
 		display: flex;
 	}
@@ -47,6 +21,31 @@
 		padding: 5px
 	}
 
+	#stationSearch_box, #name_result, #station_input {
+		font-size: 1.25em
+
+	}
+
+	#searchFilter_box, #searchResult_box {
+		display: none;
+	}
+
+	#searchFilter_box fieldset {
+		padding : 3px;
+	}
+
+	#searchFilter_box, #searchResult_box, #search_btn, #searchFilter_btn, #address_result, #memo_result {
+		font-size: 1.15em;
+	}
+
+	input[type=checkbox], input[type=radio] {
+		-ms-transform: scale(2); /* IE */
+		-moz-transform: scale(2); /* FF */
+		-webkit-transform: scale(2); /* Safari and Chrome */
+		-o-transform: scale(2); /* Opera */
+		padding: 0.5em;
+	}
+
 	@media screen and (max-width : 48em) {
 		#wrap {
 			display: flex;
@@ -57,7 +56,11 @@
 			width : 100%;
 		}
 		
-		#searchFilter_box div{
+		#stationSearch_box {
+			display: inline-block;
+		}
+
+		#category_section div{
 			display: flex;
 			flex-direction: row;
 		}
@@ -73,7 +76,9 @@
 <div id="map" style="width:100%; height:50vh; position: relative"></div>
 
 <div id="wrap">
+
 	<div id="search_box">
+		
 		<div id="stationSearch_box">
 			<label for="station_input">역이름</label>
 			<input list="stationList" id="station_input" name="station_input" placeholder="ex) 역삼역(x), 역삼(O)" required>
@@ -131,52 +136,52 @@
 					</div>
 				</div>
 			</fieldset>
+
+			<div id="visit">
+				<fieldset>
+					<legend>방문여부</legend>
+					<input type="radio" name="visit_record" value="visit_all" id="visit_all" checked>
+					<label for="visit_all">전체</label>
+					<input type="radio" name="visit_record" value="visit_no" id="visit_no">
+					<label for="visit_no">도전!</label>
+					<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
+					<label for="visit_ok">검완!</label>
+				</fieldset>
+			</div>
+
 		</div>
 
-		<div id="visit">
-			<fieldset>
-				<legend>방문여부</legend>
-				<input type="radio" name="visit_record" value="visit_all" id="visit_all" checked>
-				<label for="visit_all">전체</label>
-				<input type="radio" name="visit_record" value="visit_no" id="visit_no">
-				<label for="visit_no">도전!</label>
-				<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
-				<label for="visit_ok">검완!</label>
-			</fieldset>
-		</div>
 	</div>
-</div>
 
-<div id="searchResult_box">
-	<fieldset>
-		<legend>조회결과</legend>
-		<div class = "name_result">
-			<div><label for ="name_result">상호명</label></div>
-			<input type="text" name = "name_result" id="name_result" disabled>   
-		</div>
-		<div class = "address_result">
-			<div><label for ="address_result">주소</label></div>
-			<input type = "text" name="address_result" id="address_result" disabled>
-		</div>
-		<div class = "memo_result">
-			<div><label for ="memo_result">메모</label></div>
-			<textarea name="memo_result" id="memo_result" disabled> </textarea>
-		</div>
-	</fieldset>
-</div>
+	<div id="searchResult_box">
+		<fieldset>
+			<legend>조회결과</legend>
+			<div class = "name_result">
+				<div><label for ="name_result">상호명</label></div>
+				<input type="text" name = "name_result" id="name_result" disabled>   
+			</div>
+			<div class = "address_result">
+				<div><label for ="address_result">주소</label></div>
+				<input type = "text" name="address_result" id="address_result" disabled>
+			</div>
+			<div class = "memo_result">
+				<div><label for ="memo_result">메모</label></div>
+				<textarea name="memo_result" id="memo_result" disabled> </textarea>
+			</div>
+		</fieldset>
+	</div>
 
-<div class = "blog_result">
-	<table border="1">
-		<thead>
-			<tr></tr>
-		</thead>
-		<tbody id = "blog_result">
-		</tbody>
-	</table>
-</div>
-</div>
-</div>
+	<div class = "blog_result">
+		<table border="1">
+			<thead>
+				<tr></tr>
+			</thead>
+			<tbody id = "blog_result">
+			</tbody>
+		</table>
+	</div>
 
+</div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
 <script>
@@ -270,7 +275,9 @@
           }
 
           if (response["stationSearch_result"]=="success") {
-          	alert("검색완료!");   
+          	alert("검색완료!");  
+          	$('#searchResult_box').show()
+
           	rows = response['store_info']
           	for (i=0; i<rows.length; i++) {
           		server_name = rows[i]['name']
