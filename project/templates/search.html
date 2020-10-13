@@ -2,340 +2,381 @@
 {% block content %}
 
 <style>
-	* {font-family: 'Source Sans Pro' }
+   * {
+      font-family: 'Source Sans Pro'
+   }
 
-	#wrap {
-		display: flex;
-	}
+   #wrap {
+      display: flex;
+   }
 
-	.category_section {
-		display:flex;
-	}
+   .category_section {
+      display: flex;
+   }
 
-	.category_section ul {
-		margin: 2px
-	}
+   .category_section ul {
+      margin: 2px
+   }
 
-	.category_section li {
-		list-style: none;
-		padding: 5px
-	}
+   .category_section li {
+      list-style: none;
+      padding: 5px
+   }
 
-	#stationSearch_box, #name_result, #station_input {
-		font-size: 1.25em
+   #stationSearch_box,
+   #name_result,
+   #station_input {
+      font-size: 1.25em
+   }
 
-	}
+   #searchFilter_box,
+   #searchResult_box {
+      display: none;
+   }
 
-	#searchFilter_box, #searchResult_box {
-		display: none;
-	}
+   #searchFilter_box fieldset {
+      padding: 3px;
+   }
 
-	#searchFilter_box fieldset {
-		padding : 3px;
-	}
+   #searchFilter_box,
+   #searchResult_box,
+   #search_btn,
+   #searchFilter_btn,
+   #address_result,
+   #memo_result {
+      font-size: 1.15em;
+   }
 
-	#searchFilter_box, #searchResult_box, #search_btn, #searchFilter_btn, #address_result, #memo_result {
-		font-size: 1.15em;
-	}
+   input[type=checkbox],
+   input[type=radio] {
+      -ms-transform: scale(2);
+      /* IE */
+      -moz-transform: scale(2);
+      /* FF */
+      -webkit-transform: scale(2);
+      /* Safari and Chrome */
+      -o-transform: scale(2);
+      /* Opera */
+      padding: 0.5em;
+   }
 
-	input[type=checkbox], input[type=radio] {
-		-ms-transform: scale(2); /* IE */
-		-moz-transform: scale(2); /* FF */
-		-webkit-transform: scale(2); /* Safari and Chrome */
-		-o-transform: scale(2); /* Opera */
-		padding: 0.5em;
-	}
+   @media screen and (max-width : 48em) {
+      #wrap {
+         display: flex;
+         flex-direction: column;
+      }
 
-	@media screen and (max-width : 48em) {
-		#wrap {
-			display: flex;
-			flex-direction: column;
-		}
+      #search_box {
+         width: 100%;
+      }
 
-		#search_box {
-			width : 100%;
-		}
-		
-		#stationSearch_box {
-			display: inline-block;
-		}
+      #stationSearch_box {
+         display: inline-block;
+      }
 
-		#category_section div{
-			display: flex;
-			flex-direction: row;
-		}
+      #category_section div {
+         display: flex;
+         flex-direction: row;
+      }
 
-		#searchResult_box input, textarea {
-			width : 100%
-		}
+      #searchResult_box input,
+      textarea {
+         width: 100%
+      }
 
 
-	}
+   }
 </style>
 
 <div id="map" style="width:100%; height:50vh; position: relative"></div>
 
 <div id="wrap">
 
-	<div id="search_box">
-		
-		<div id="stationSearch_box">
-			<label for="station_input">역이름</label>
-			<input list="stationList" id="station_input" name="station_input" placeholder="ex) 역삼역(x), 역삼(O)" required>
-			<button type="button" id="search_btn"  onclick="find_station()" >검색</button>
-			<input type="button" id="searchFilter_btn" onclick="openclose()" value = "+">
-		</div>
-		
-		<div id="searchFilter_box">
-			<fieldset>
-				<legend>
-					<label for="checkAll"> 분류 (select all)</label>
-					<input type="checkbox" name="" id="checkAll" checked>
-				</legend>
-				
-				<div class="category_section">
-					<div class="category_section1">
-						<ul>
-							<li>
-								<label for="rice">밥/국/찌개</label>
-								<input type ="checkbox" name ="category" id ="rice" value ="rice" checked>
-							</li>
-							<li>
-								<label for="meat">고기/육류</label>
-								<input type ="checkbox" name ="category" id="meat" value ="meat" checked>
-							</li>
-							<li>
-								<label for="noodle">면류</label>
-								<input type ="checkbox" name ="category" id="noodle" value ="noodle" checked>
-							</li>
-							<li>
-								<label for="seaFood">해산물</label>
-								<input type ="checkbox" name ="category" id="seaFood" value ="seaFood" checked>
-							</li>
-						</ul>
-					</div>
-					<div class="category_section2">
-						<ul>
-							<li>
-								<label for="worldFood">세계음식</label>
-								<input type ="checkbox" name ="category" id="worldFood" value ="worldFood" checked>
-							</li>
-							<li>
-								<label for="bread">빵</label>
-								<input type ="checkbox" name ="category" id="bread" value ="bread" checked>
-							</li>
-							<li>
-								<label for="flourbasedFood">분식</label>
-								<input type ="checkbox" name ="category" id="flourbasedFood" value ="flourbasedFood" checked>
-							</li>
-							<li>
-								<label for="cafeBar">카페/음료/바</label>
-								<input type ="checkbox" name ="category" id="cafeBar" value ="cafeBar" checked>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</fieldset>
+   <div id="search_box">
 
-			<div id="visit">
-				<fieldset>
-					<legend>방문여부</legend>
-					<input type="radio" name="visit_record" value="visit_all" id="visit_all" checked>
-					<label for="visit_all">전체</label>
-					<input type="radio" name="visit_record" value="visit_no" id="visit_no">
-					<label for="visit_no">도전!</label>
-					<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
-					<label for="visit_ok">검완!</label>
-				</fieldset>
-			</div>
+      <div id="stationSearch_box">
+         <label for="station_input">역이름</label>
+         <input list="stationList" id="station_input" name="station_input" placeholder="ex) 역삼역(x), 역삼(O)" required>
+         <button type="button" id="search_btn" onclick="find_station()">검색</button>
+         <input type="button" id="searchFilter_btn" onclick="openclose()" value="+">
+      </div>
 
-		</div>
+      <div id="searchFilter_box">
+         <fieldset>
+            <legend>
+               <label for="checkAll"> 분류 (select all)</label>
+               <input type="checkbox" name="" id="checkAll" checked>
+            </legend>
 
-	</div>
+            <div class="category_section">
+               <div class="category_section1">
+                  <ul>
+                     <li>
+                        <label for="rice">밥/국/찌개</label>
+                        <input type="checkbox" name="category" id="rice" value="rice" checked>
+                     </li>
+                     <li>
+                        <label for="meat">고기/육류</label>
+                        <input type="checkbox" name="category" id="meat" value="meat" checked>
+                     </li>
+                     <li>
+                        <label for="noodle">면류</label>
+                        <input type="checkbox" name="category" id="noodle" value="noodle" checked>
+                     </li>
+                     <li>
+                        <label for="seaFood">해산물</label>
+                        <input type="checkbox" name="category" id="seaFood" value="seaFood" checked>
+                     </li>
+                  </ul>
+               </div>
+               <div class="category_section2">
+                  <ul>
+                     <li>
+                        <label for="worldFood">세계음식</label>
+                        <input type="checkbox" name="category" id="worldFood" value="worldFood" checked>
+                     </li>
+                     <li>
+                        <label for="bread">빵</label>
+                        <input type="checkbox" name="category" id="bread" value="bread" checked>
+                     </li>
+                     <li>
+                        <label for="flourbasedFood">분식</label>
+                        <input type="checkbox" name="category" id="flourbasedFood" value="flourbasedFood"
+                           checked>
+                     </li>
+                     <li>
+                        <label for="cafeBar">카페/음료/바</label>
+                        <input type="checkbox" name="category" id="cafeBar" value="cafeBar" checked>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </fieldset>
 
-	<div id="searchResult_box">
-		<fieldset>
-			<legend>조회결과</legend>
-			<div class = "name_result">
-				<div><label for ="name_result">상호명</label></div>
-				<input type="text" name = "name_result" id="name_result" disabled>   
-			</div>
-			<div class = "address_result">
-				<div><label for ="address_result">주소</label></div>
-				<input type = "text" name="address_result" id="address_result" disabled>
-			</div>
-			<div class = "memo_result">
-				<div><label for ="memo_result">메모</label></div>
-				<textarea name="memo_result" id="memo_result" disabled> </textarea>
-			</div>
-		</fieldset>
-	</div>
+         <div id="visit">
+            <fieldset>
+               <legend>방문여부</legend>
+               <input type="radio" name="visit_record" value="visit_all" id="visit_all" checked>
+               <label for="visit_all">전체</label>
+               <input type="radio" name="visit_record" value="visit_no" id="visit_no">
+               <label for="visit_no">도전!</label>
+               <input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
+               <label for="visit_ok">검완!</label>
+            </fieldset>
+         </div>
 
-	<div class = "blog_result">
-		<table border="1">
-			<thead>
-				<tr></tr>
-			</thead>
-			<tbody id = "blog_result">
-			</tbody>
-		</table>
-	</div>
+      </div>
+
+   </div>
+
+   <div id="searchResult_box">
+      <div class="searchedList">
+         <table border="1">
+            <thead>
+               <tr></tr>
+            </thead>
+            <tbody id="">
+            </tbody>
+         </table>
+      </div>
+      <div>
+         <fieldset>
+            <legend>조회결과</legend>
+            <div class="name_result">
+               <div><label for="name_result">상호명</label></div>
+               <input type="text" name="name_result" id="name_result" disabled>
+            </div>
+            <div class="address_result">
+               <div><label for="address_result">주소</label></div>
+               <input type="text" name="address_result" id="address_result" disabled>
+            </div>
+            <div class="memo_result">
+               <div><label for="memo_result">메모</label></div>
+               <textarea name="memo_result" id="memo_result" disabled> </textarea>
+            </div>
+         </fieldset>
+      </div>
+   </div>
+
+   <div class="blog_result">
+      <table border="1">
+         <thead>
+            <tr></tr>
+         </thead>
+         <tbody id="blog_result">
+         </tbody>
+      </table>
+   </div>
 
 </div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
+<script type="text/javascript"
+   src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
 <script>
    //체크박스 전체 선택하기
    let $checkAll = $('#checkAll');
    $checkAll.change(function () {
-   	let $this = $(this);
-   	let checked = $this.prop('checked');
-   	$('input[name="category"]').prop('checked', checked);
+      let $this = $(this);
+      let checked = $this.prop('checked');
+      $('input[name="category"]').prop('checked', checked);
    });
 
    //체크박스 일부 선택시, 전체선택 해제
    let boxes = $('input[name="category"]');
    boxes.change(function () {
-   	let boxLength = boxes.length;
-   	let checkedLength = $('input[name="category"]:checked').length;
-   	let selectAll = (boxLength == checkedLength);
-   	$checkAll.prop('checked', selectAll);
+      let boxLength = boxes.length;
+      let checkedLength = $('input[name="category"]:checked').length;
+      let selectAll = (boxLength == checkedLength);
+      $checkAll.prop('checked', selectAll);
    });
 
    function openclose() {
-   	if ( $('#searchFilter_box').css('display') == 'block' ) {
-   		$('#searchFilter_box').hide();
-   		document.getElementById('searchFilter_btn').value = "+"
-   	} else {
-   		$('#searchFilter_box').show();
-   		document.getElementById('searchFilter_btn').value = "-"
-   	}
+      if ($('#searchFilter_box').css('display') == 'block') {
+         $('#searchFilter_box').hide();
+         document.getElementById('searchFilter_btn').value = "+"
+      } else {
+         $('#searchFilter_box').show();
+         document.getElementById('searchFilter_btn').value = "-"
+      }
    }
 
    //지도 띄우기
-   var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+   var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
    var mapContainer = document.getElementById('map'),
-   mapOption = {
-   	center: new kakao.maps.LatLng(37.526826, 126.9986567),
-   	level: 7
-   };  
-   var map = new kakao.maps.Map(mapContainer, mapOption); 
+      mapOption = {
+         center: new kakao.maps.LatLng(37.526826, 126.9986567),
+         level: 7
+      };
+   var map = new kakao.maps.Map(mapContainer, mapOption);
 
 
    markerList = []
 
    function find_station() {
-   	checkedList=[]
-   	check_count = document.getElementsByName("category").length;
-   	for (i=0; i<check_count; i++) {
-   		if (document.getElementsByName("category")[i].checked == true) {
-   			checkedCategory = document.getElementsByName("category")[i].value ;   
-   			checkedList.push(checkedCategory)
-   		}
-   	}
+      checkedList = []
+      check_count = document.getElementsByName("category").length;
+      for (i = 0; i < check_count; i++) {
+         if (document.getElementsByName("category")[i].checked == true) {
+            checkedCategory = document.getElementsByName("category")[i].value;
+            checkedList.push(checkedCategory)
+         }
+      }
 
       //객체가 비어있는지 확인
-      let isEmpty = function(value){
-      	if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
-      		return true
-      	}else{
-      		return false
-      	}
+      let isEmpty = function (value) {
+         if (value == "" || value == null || value == undefined || (value != null && typeof value == "object" && !Object.keys(value).length)) {
+            return true
+         } else {
+            return false
+         }
       }
 
       radioVal = $('input[name="visit_record"]:checked').val()
       stationName = $('#station_input').val()
 
-      if(stationName == "") {
-      	alert('역이름을 입력해주세요.')
-      	$('#station_input').focus();
-      	return
+      if (stationName == "") {
+         alert('역이름을 입력해주세요.')
+         $('#station_input').focus();
+         return
       }
-      else if(isEmpty(checkedList)==true) {
-      	alert('카테고리를 선택해주세요.')
-      	return
+      else if (isEmpty(checkedList) == true) {
+         alert('카테고리를 선택해주세요.')
+         return
       }
 
       $.ajax({
-      	type: "get",
-      	url: `/mylist?inputBox_give=${stationName} ${checkedList} ${radioVal}`,  
-      	data: {},
-      	success: function(response){
-      		$('#blog_result').empty()
-      		document.getElementById('name_result').value = ""
-      		document.getElementById('address_result').value = ""
-      		document.getElementById('memo_result').value = ""
+         type: "get",
+         url: `/mylist?inputBox_give=${stationName} ${checkedList} ${radioVal}`,
+         data: {},
+         success: function (response) {
+            $('#blog_result').empty()
+            document.getElementById('name_result').value = ""
+            document.getElementById('address_result').value = ""
+            document.getElementById('memo_result').value = ""
 
             //이전 마커삭제
-            if(markerList.length >= 1) {
-            	for(i=0; i<markerList.length; i++) {
+            if (markerList.length >= 1) {
+               for (i = 0; i < markerList.length; i++) {
                   // markerList[i].setVisible(false)
                   markerList[i].setMap(null);
-              }
-          }
+               }
+            }
 
-          if (response["stationSearch_result"]=="success") {
-          	alert("검색완료!");  
-          	$('#searchResult_box').show()
+            if (response["stationSearch_result"] == "success") {
+               alert("검색완료!");
+               $('#searchResult_box').show()
 
-          	rows = response['store_info']
-          	for (i=0; i<rows.length; i++) {
-          		server_name = rows[i]['name']
-          		server_memo = rows[i]['memo']
-          		server_address = rows[i]['address']
-          		server_visit = rows[i]['visit']
-          		server_food_kind = rows[i]['food_kind']
-          		server_x_code = rows[i]['x_code']
-          		server_y_code = rows[i]['y_code']
-          		server_storeLinkTitle = rows[i]['storeLinkTitle']
-          		server_storeLinkHref = rows[i]['storeLinkHref']
-          		displayMarker()   
-          	}   
-          }
-          else {
-          	alert('정확한 역명을 입력해주세요!')
-          }
-      }
-  })
-  }
+               rows = response['store_info']
+               for (i = 0; i < rows.length; i++) {
+                  server_name = rows[i]['name']
+                  server_memo = rows[i]['memo']
+                  server_address = rows[i]['address']
+                  server_visit = rows[i]['visit']
+                  server_food_kind = rows[i]['food_kind']
+                  server_x_code = rows[i]['x_code']
+                  server_y_code = rows[i]['y_code']
+                  displayMarker()
+               }
+            }
 
-  function displayMarker() {
-  	let storeName = server_name
-  	let storeAddress = server_address
-  	let storeMemo = server_memo
-  	let blogTitle = server_storeLinkTitle
-  	let blogLink = server_storeLinkHref
+            else if(response["stationSearch_result"] == "fail") {
+               alert('정확한 역명을 입력해주세요!')
+            }
 
-  	var marker = new kakao.maps.Marker({
+            else {
+            	alert('등록된 정보가 없어요ㅠ')	
+            }
+         }
+      })
+   }
+
+   function displayMarker() {
+      let storeName = server_name
+      let storeAddress = server_address
+      let storeMemo = server_memo
+
+      var marker = new kakao.maps.Marker({
          // map: map,
-         position: new kakao.maps.LatLng(server_y_code, server_x_code) 
-     });
+         position: new kakao.maps.LatLng(server_y_code, server_x_code)
+      });
 
-  	infowindow.close();
-  	marker.setMap(map)
-  	markerList.push(marker)
+      infowindow.close();
+      marker.setMap(map)
+      markerList.push(marker)
 
-  	kakao.maps.event.addListener(marker, 'click', function() {
-  		$('#searchResult_box').css('display') == 'block'
+      kakao.maps.event.addListener(marker, 'click', function () {
+         $('#searchResult_box').css('display') == 'block'
 
-  		$('#blog_result').empty()
-  		document.getElementById('name_result').value = ""
-  		document.getElementById('address_result').value = ""
-  		document.getElementById('memo_result').value = ""
+         $('#blog_result').empty()
+         document.getElementById('name_result').value = ""
+         document.getElementById('address_result').value = ""
+         document.getElementById('memo_result').value = ""
 
-  		infowindow.setContent('<div style="padding:0.3em;font-size:1.3em;">' + storeName + '</div>');
-  		infowindow.open(map, marker);
+         infowindow.setContent('<div style="padding:0.3em;font-size:1.3em;">' + storeName + '</div>');
+         infowindow.open(map, marker);
 
-  		for (i=0; i<blogTitle.length; i++) {
-  			for (i=0; i<blogLink.length; i++) {
-  				blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank' style='color:black'>"+ blogTitle[i] + "</a></td></tr>"
-  				document.getElementById('name_result').value = storeName
-  				document.getElementById('address_result').value = storeAddress
-  				document.getElementById('memo_result').value = storeMemo
-  				$('#blog_result').append(blog_plus)
-  			}      
-  		}
-  	})
-  }
+         $.ajax({
+            type: "get",
+            url: `/crawling?nameClick_give=${storeName}`,
+            data: {},
+            success: function (response) {
+               if (response["crawling_result"] == "success") {
+                  blog = response['stores']
+                  blogTitle = blog['storeBlog_title']
+                  blogLink = blog['storeBlog_href']
+
+                  for (i = 0; i < blogTitle.length; i++) {
+                     blog_plus = "<tr><td><a href='" + blogLink[i] + "' target='_blank' style='color:black'>" + blogTitle[i] + "</a></td></tr>"
+                     document.getElementById('name_result').value = storeName
+                     document.getElementById('address_result').value = storeAddress
+                     document.getElementById('memo_result').value = storeMemo
+                     $('#blog_result').append(blog_plus)
+                  }
+               }
+            }
+         })
+      })
+   }
+
 </script>
 {% endblock %}
