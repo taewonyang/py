@@ -1,6 +1,8 @@
-a = '강원도 춘천시 남산면 강촌로 34'
-b = '서울특별시 중랑구 송림길 147'
+a = '서울'
+b = ['서울특별시', '가나다', '마바사']
 
-c = a.split()
-d = len(c) # a의 갯수
-print(c[d-2])
+for aa in b :
+    if (a in aa) == True :
+        print(aa)
+else :
+    print('없어요')

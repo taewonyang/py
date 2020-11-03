@@ -2,86 +2,91 @@
 {% block content %}
 
 
-<div id="storeSearch_box">
-   <div class="searchBar">
-      <label for="storeName_input">상호명</label>
-      <input id="storeName_input" name="storeName_input">
-      <button type="button" onclick="listing()">검색</button>
-   </div>
-<!--    <div class="commandBtn">
-      <button type="button" onclick="">정렬</button>
-      <button type="button" onclick="revise()">수정</button>
-      <button type="button" onclick="del()">삭제</button>
-   </div> -->
+<div id="MenuBOX">
+	<div class="searchBar">
+		<label for="storeName_input">상호명</label>
+		<input id="storeName_input" name="storeName_input">
+		<button type="button" onclick="listing()">검색</button>
+		<button type="button" onclick="clean()">clean</button>
+	</div>
+
+	<!-- <div class="commandBtn">
+		<button type="button" onclick="revise()">데이터<br>수정</button>
+		<button type="button" onclick="del()">데이터<br>삭제</button>	
+	</div> -->
 </div>
 
 <div class="table_box">
-   <table border=1>
-      <thead>
-         <tr>
-            <th>NO</th>
-            <th>상호명</th>
-            <th>근처역</th>
-            <th>카테고리</th>
-            <th>방문유무</th>
-            <th>도로명주소</th>
-            <th>메모</th>
-         </tr>
-      </thead>
-      <tbody id="table_body">
-      </tbody>
-   </table>
+	<table border=1>
+		<thead>
+			<tr>
+				<th></th>
+				<th>NO</th>
+				<th>상호명</th>
+				<th>근처역</th>
+				<th>카테고리</th>
+				<th>방문유무</th>
+				<th>도로명주소</th>
+				<th>메모</th>
+			</tr>
+		</thead>
+		<tbody id="table_body">
+		</tbody>
+	</table>
 </div>
 
 
 <script>
-   $(document).ready(function () {
-      listing();
-   });
-   function listing() {
-      storeName = $('#storeName_input').val()
-      console.log(storeName)
+	$(document).ready(function () {
+		listing();
+	});
 
-      $.ajax({
-         type: "get",
-         url: `/revise?storeName_give=${storeName}`,
-         data: {},
-         success: function (response) {
-            if (response['result'] == 'success') {
-               // alert("검색완료!")
+	function clean() {
+		$('#storeName_input').val('')
+	}
+
+	function listing() {
+		storeName = $('#storeName_input').val()
+		console.log(storeName)
+
+		$.ajax({
+			type: "get",
+			url: `/revise?storeName_give=${storeName}`,
+			data: {},
+			success: function (response) {
+				if (response['result'] == 'success') {
                rows = response['store_info']
-               console.log(rows)
 
-               // for (i=0; i<rows.length; i++) {
-               for (i = (rows.length-1) ; i >= 0; i--) {
-                  server_no = rows[i]['no']
-                  server_name = rows[i]['name']
-                  server_station = rows[i]['station']
-                  server_food_kind = rows[i]['food_kind']
-                  server_visit = rows[i]['visit']
-                  server_address = rows[i]['address']
-                  server_memo = rows[i]['memo']
+               $('#table_body').empty()
 
+               	for (i = (rows.length-1) ; i >= 0; i--) {
+               		server_no = rows[i]['no']
+               		server_name = rows[i]['name']
+               		server_station = rows[i]['station']
+               		server_food_kind = rows[i]['food_kind']
+               		server_visit = rows[i]['visit']
+               		server_address = rows[i]['address']
+               		server_memo = rows[i]['memo']
 
-                  // <td><input type='radio' name='no' value='" + server_no + "' id='no'> </td>\
-                  table_plus = "<tr>\
-                  <td>"+ server_no + "</td>\
-                  <td>"+ server_name + "</td>\
-                  <td>"+ server_station + "</td>\
-                  <td>"+ server_food_kind + "</td>\
-                  <td>"+ server_visit + "</td>\
-                  <td>"+ server_address + "</td>\
-                  <td>"+ server_memo + "</td>\
-                  </tr>"
-                  $('#table_body').append(table_plus)
+               		table_plus = "<tr>\
+               		<td><input type='radio' name='no' value='" + server_no + "' id='no'> </td>\
+               		<td>"+ server_no + "</td>\
+               		<td>"+ server_name + "</td>\
+               		<td>"+ server_station + "</td>\
+               		<td>"+ server_food_kind + "</td>\
+               		<td>"+ server_visit + "</td>\
+               		<td>"+ server_address + "</td>\
+               		<td>"+ server_memo + "</td>\
+               		</tr>"
+               		$('#table_body').append(table_plus)
+               	}
                }
-            }
-            else {
-               alert('정확한 역이름을 입력해주세요. \n ex) 역삼역(x), 역삼(O)');
-            }
-         }
-      })
-   }
+               else {
+               	alert('정확한 역이름을 입력해주세요. \n ex) 역삼역(x), 역삼(O)');
+               }
+           }
+       })
+	}
 </script>
 
 {% endblock %}

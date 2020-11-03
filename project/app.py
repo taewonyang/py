@@ -172,11 +172,12 @@ def revise():
        store_info = list(db.food_store.find({}, {'_id': 0}))
        result = "success"
     else :
-        if ((storeName_receive in stationList) == True):
-            store_info = list(db.food_store.find({'name':storeName_receive}, {'_id': 0}))
-            result = "success"
-        else :
-            result = "fail"
+        all = list(db.food_store.find({}, {'_id': 0}))
+        for i in all :
+            one = i['name']
+            if (storeName_receive in one) == True :
+                store_info = list(db.food_store.find({'name': one}, {'_id': 0}))
+                result = "success"
     return jsonify({'result':result, 'store_info':store_info})
 
 # @app.route('/revise', methods=['post'])

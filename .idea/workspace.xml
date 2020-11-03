@@ -8,82 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/[기재정정]반기보고서 (2011.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/[첨부추가]사업보고서 (2011.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2011.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2012.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2013.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2014.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2015.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2016.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2017.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2018.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/반기보고서 (2019.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2011.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2011.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2012.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2012.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2013.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2013.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2014.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2014.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2015.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2015.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2016.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2016.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2017.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2017.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2018.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2018.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2019.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/분기보고서 (2019.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2012.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2013.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2014.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2015.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2016.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2017.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/DART-pandas_excel data/사업보고서 (2018.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/dart(1)_csv_down.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/dart(2)_csv_down_pands_grph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2017.06)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2017.06)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2017.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2018.06)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2018.06)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2018.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2019.06)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2019.06)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/반기보고서 (2019.06)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2017.03)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2017.03)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2017.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2017.09)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2017.09)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2017.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2018.03)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2018.03)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2018.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2018.09)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2018.09)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2018.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2019.03)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2019.03)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2019.03)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2019.09)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2019.09)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/분기보고서 (2019.09)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2016.12)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2016.12)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2016.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2017.12)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2017.12)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2017.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2018.12)삼성전자연결 손익계산서.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2018.12)삼성전자연결 재무상태표.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/혼자연습하기/사업보고서 (2018.12)삼성전자연결 포괄손익계산서.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2625">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="2700">
+              <caret line="120" column="35" lean-forward="true" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -146,14 +72,15 @@
         <option value="$PROJECT_DIR$/project/map.py" />
         <option value="$PROJECT_DIR$/project/routes.py" />
         <option value="$PROJECT_DIR$/project/station.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/project/distance.py" />
         <option value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
         <option value="$PROJECT_DIR$/project/app1.py" />
         <option value="$PROJECT_DIR$/project/jihachul.py" />
         <option value="$PROJECT_DIR$/project/test.py" />
         <option value="$PROJECT_DIR$/../sparta/SPARTA_WarmUP/Class2.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/project/app.py" />
+        <option value="$PROJECT_DIR$/../app-1.py" />
       </list>
     </option>
   </component>
@@ -172,7 +99,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sparta/SPARTA_WarmUP/Class2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/app.py" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -238,27 +165,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="crawling_beautifulsoup_find_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="py" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/혼자연습하기" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/혼자연습하기/crawling_beautifulsoup_find_all.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="jihachul" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -301,13 +207,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.Class2" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.jihachul" />
-        <item itemvalue="Python.crawling_beautifulsoup_find_all" />
       </list>
     </recent_temporary>
   </component>
@@ -452,13 +379,6 @@
     <entry file="file://$PROJECT_DIR$/../test/routes.py" />
     <entry file="file://$PROJECT_DIR$/project/station.py" />
     <entry file="file://$PROJECT_DIR$/../sparta/sparta/etc/6주차/project/project1.py" />
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../sparta/sparta/etc/3주차/python/app.py" />
     <entry file="file://$PROJECT_DIR$/project/distance.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/app.py">
@@ -540,10 +460,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../app-1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4175">
+          <caret line="167" column="13" lean-forward="true" selection-start-line="167" selection-start-column="13" selection-end-line="167" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="2700">
+          <caret line="120" column="35" lean-forward="true" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
