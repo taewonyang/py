@@ -69,6 +69,7 @@ def register():
                    'station': station_receive, 'memo': memo_receive, 'visit': visit_receive,
                    'food_kind': food_kind_receive}
             db.food_store.insert_one(doc)
+            stationInput_result = 'success'
             print('db등록성공')
         else:
             all = list(db.food_store.find({}))
@@ -78,7 +79,9 @@ def register():
                    'station': station_receive, 'memo': memo_receive, 'visit': visit_receive,
                    'food_kind': food_kind_receive}
             db.food_store.insert_one(doc)
+            stationInput_result = 'success'
             print('db등록성공')
+
         # 지도만들기
         m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
         all_store = list(db.food_store.find({}))
@@ -94,7 +97,6 @@ def register():
                 folium.Marker(location=[y_code, x_code], tooltip=name,
                               icon=folium.Icon(color="red", icon="star")).add_to(m)
         m.save('./templates/map.html')
-        stationInput_result = 'success'
         print('지도화 성공!')
     else:
         stationInput_result = 'fail'
@@ -145,32 +147,37 @@ def crawling():
     print(nameClick_receive)
     storeBlog_title = []
     storeBlog_href = []
-    stores = {'storeBlog_title': storeBlog_title, 'storeBlog_href': storeBlog_href}
     base_url = 'https://search.naver.com/search.naver?where=post&sm=tab_jum&query='
     url = base_url + urllib.parse.quote_plus(nameClick_receive)
     html = req.urlopen(url).read()
     soup = BeautifulSoup(html, 'html.parser')
-    result = soup.find_all(class_='sh_blog_title')
-    for i in result:
-        storeBlog_title.append(i.attrs['title'])
-        storeBlog_href.append(i.attrs['href'])
+
+    result = soup.find_all(class_='api_txt_lines total_tit')
+    result = result[:5]
+
+    for blog in result :
+        href = blog.attrs['href']
+        title = blog.text
+        storeBlog_title.append(title)
+        storeBlog_href.append(href)
+    stores = {'storeBlog_title': storeBlog_title, 'storeBlog_href': storeBlog_href}
     return jsonify({'crawling_result': crawling_result, 'stores': stores})
 
 
-# @app.route('/revise', methods=['get'])
-# def revise():
-#     storeName_receive = request.args.get('storeName_give')
-#     print(storeName_receive)
-#     if storeName_receive=="" :
-#        store_info = list(db.food_store.find({}, {'_id': 0}))
-#        result = "success"
-#     else :
-#         if ((station in stationList) == True):
-#             store_info = list(db.food_store.find({'name':storeName_receive}, {'_id': 0}))
-#             result = "success"
-#         else :
-#             result = "fail"
-#     return jsonify({'result':result, 'store_info':store_info})
+@app.route('/revise', methods=['get'])
+def revise():
+    storeName_receive = request.args.get('storeName_give')
+    print(storeName_receive)
+    if storeName_receive=="" :
+       store_info = list(db.food_store.find({}, {'_id': 0}))
+       result = "success"
+    else :
+        if ((storeName_receive in stationList) == True):
+            store_info = list(db.food_store.find({'name':storeName_receive}, {'_id': 0}))
+            result = "success"
+        else :
+            result = "fail"
+    return jsonify({'result':result, 'store_info':store_info})
 
 # @app.route('/revise', methods=['post'])
 # def revise():
