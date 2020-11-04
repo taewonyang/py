@@ -172,11 +172,14 @@ def revise():
        store_info = list(db.food_store.find({}, {'_id': 0}))
        result = "success"
     else :
+        store_info = []
         all = list(db.food_store.find({}, {'_id': 0}))
         for i in all :
-            one = i['name']
-            if (storeName_receive in one) == True :
-                store_info = list(db.food_store.find({'name': one}, {'_id': 0}))
+            name = i['name']
+            if (storeName_receive in name) == True :
+                stores = list(db.food_store.find({'name': name}, {'_id': 0}))
+                for store in stores :
+                    store_info.append(store)
                 result = "success"
     return jsonify({'result':result, 'store_info':store_info})
 
