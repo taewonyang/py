@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="commandBtn">
-		<button type="button" onclick="revise()">데이터 수정</button>
+		<button type="button" onclick="showPopup()">데이터 수정</button>
 		<button type="button" onclick="del()">데이터 삭제</button>	
 	</div>
 </div>
@@ -55,41 +55,47 @@
 			data: {},
 			success: function (response) {
 				if (response['result'] == 'success') {
-               rows = response['store_info']
+					rows = response['store_info']
 
-               $('#table_body').empty()
+					$('#table_body').empty()
 
-               	for (i = (rows.length-1) ; i >= 0; i--) {
-               		server_no = rows[i]['no']
-               		server_name = rows[i]['name']
-               		server_station = rows[i]['station']
-               		server_food_kind = rows[i]['food_kind']
-               		server_visit = rows[i]['visit']
-               		server_address = rows[i]['address']
-               		server_memo = rows[i]['memo']
+					for (i = (rows.length-1) ; i >= 0; i--) {
+						server_no = rows[i]['no']
+						server_name = rows[i]['name']
+						server_station = rows[i]['station']
+						server_food_kind = rows[i]['food_kind']
+						server_visit = rows[i]['visit']
+						server_address = rows[i]['address']
+						server_memo = rows[i]['memo']
 
-               		table_plus = "<tr>\
-               		<td><input type='radio' name='no' value='" + server_no + "' id='no'> </td>\
-               		<td>"+ server_no + "</td>\
-               		<td>"+ server_name + "</td>\
-               		<td>"+ server_station + "</td>\
-               		<td>"+ server_food_kind + "</td>\
-               		<td>"+ server_visit + "</td>\
-               		<td>"+ server_address + "</td>\
-               		<td>"+ server_memo + "</td>\
-               		</tr>"
-               		$('#table_body').append(table_plus)
-               	}
-               }
-               else {
-               	alert('정확한 역이름을 입력해주세요. \n ex) 역삼역(x), 역삼(O)');
-               }
-           }
-       })
+						table_plus = "<tr>\
+						<td><input type='radio' name='no' value='" + server_no + "' id='no'> </td>\
+						<td>"+ server_no + "</td>\
+						<td>"+ server_name + "</td>\
+						<td>"+ server_station + "</td>\
+						<td>"+ server_food_kind + "</td>\
+						<td>"+ server_visit + "</td>\
+						<td>"+ server_address + "</td>\
+						<td>"+ server_memo + "</td>\
+						</tr>"
+						$('#table_body').append(table_plus)
+					}
+				}
+				else {
+					alert('정확한 역이름을 입력해주세요. \n ex) 역삼역(x), 역삼(O)');
+				}
+			}
+		})
 	}
 
-	function revise() {
-		
+	function showPopup() {
+		let  selectedNo= $('input[name="no"]:checked').val();
+		if(selectedNo != undefined ) {
+			var win = window.open("revise_popup.html", "revise_popup", "width=400, height=300, left=100, top=50");
+			win.document.alert('hi')
+			
+		}
+
 
 	}
 

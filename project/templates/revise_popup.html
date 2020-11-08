@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+	</script>
+</head>
+<body>
+	<div class="revise">
+	<section class="revise-form">
+		<form>
+			<div>
+				<label for ="name_input">상호명</label>
+				<input type = "text" name="name_input" id="name_input" autocomplete="off" required>
+			</div>
+			<div>
+				<label for ="name_input">도로명주소</label>
+				<input type = "text" name="address_input" id="address_input" autocomplete="off" placeholder="도로명주소입력" required>
+			</div>
+			<div>
+				<label for="station_input">근처역</label>
+				<input list="stationList" id="station_input" name="station_input" required/>
+			</div>
+			<div>
+				<label for ="memo_input">MEMO</label>
+				<input type = "text" name="memo_input" id="memo_input" autocomplete="off">
+			</div>
+			<div>
+				<select name=food_kind id="food_kind">
+					<option value="rice">밥/국/찌개</option>
+					<option value="meat">고기/육류</option>
+					<option value="noodle">면류</option>
+					<option value="seaFood">해산물</option>
+					<option value="worldFood">세계음식</option>
+					<option value="bread">빵</option>
+					<option value="flourbasedFood">분식</option>
+					<option value="cafeBar">카페/음료/바</option>
+				</select>
+			</div>
+			<div>
+				<fildset class="visit">
+					<input type="radio" name="visit_record" value="visit_no" id="visit_no" checked>
+					<label for="visit_no">도전!</label>
+					<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
+					<label for="visit_ok">검완!</label>
+				</fildset>
+			</div>
+
+			<div class="btn-area">			
+				<button type="submit" onclick="request_btn()">수정완료</button>
+				<button onclick="window.close()">닫기</button>
+			</div>
+		</form>
+	</section>
+</div>
+</body>
+</html>
