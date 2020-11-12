@@ -1,8 +1,13 @@
 {% extends "index.html" %}
 {% block content %}
 
+<style>
+	.revise {
+		display: none
+	}
+</style>
 
-<div id="MenuBOX">
+<div class="MenuBOX">
 	<div class="searchBar">
 		<label for="storeName_input">상호명</label>
 		<input id="storeName_input" name="storeName_input">
@@ -35,6 +40,58 @@
 	</table>
 </div>
 
+<div class="revise">
+	<section class="revise-form">
+		<form>
+			<div>
+				<label for ="no_input">순번</label>
+				<input type = "text" name="no_input" id="no_input" disabled>
+			</div>
+			<div>
+				<label for ="name_input">상호명</label>
+				<input type = "text" name="name_input" id="name_input" required>
+			</div>
+			<div>
+				<label for ="name_input">도로명주소</label>
+				<input type = "text" name="address_input" id="address_input" placeholder="도로명주소입력" required>
+			</div>
+			<div>
+				<label for="station_input">근처역</label>
+				<input list="stationList" id="station_input" name="station_input" required/>
+			</div>
+			<div>
+				<label for ="memo_input">MEMO</label>
+				<input type = "text" name="memo_input" id="memo_input">
+			</div>
+			<div>
+				<select name=food_kind id="food_kind">
+					<option value="rice">밥/국/찌개</option>
+					<option value="meat">고기/육류</option>
+					<option value="noodle">면류</option>
+					<option value="seaFood">해산물</option>
+					<option value="worldFood">세계음식</option>
+					<option value="bread">빵</option>
+					<option value="flourbasedFood">분식</option>
+					<option value="cafeBar">카페/음료/바</option>
+				</select>
+			</div>
+			<div>
+				<fildset class="visit">
+					<input type="radio" name="visit_record" value="visit_no" id="visit_no">
+					<label for="visit_no">도전!</label>
+					<input type="radio" name="visit_record" value="visit_ok" id="visit_ok">
+					<label for="visit_ok">검완!</label>
+				</fildset>
+			</div>
+
+			<div class="btn-area">			
+				<button type="submit" onclick="revise_btn()">수정하기</button>
+				<button type="submit" onclick="cancel_btn()">돌아가기</button>
+			</div>
+		</form>
+	</section>
+</div>
+
 
 <script>
 	$(document).ready(function () {
@@ -47,11 +104,9 @@
 
 	function listing() {
 		storeName = $('#storeName_input').val()
-		console.log(storeName)
-
 		$.ajax({
 			type: "get",
-			url: `/revise?storeName_give=${storeName}`,
+			url: `/reviseMainPage?storeName_give=${storeName}`,
 			data: {},
 			success: function (response) {
 				if (response['result'] == 'success') {
@@ -69,7 +124,7 @@
 						server_memo = rows[i]['memo']
 
 						table_plus = "<tr>\
-						<td><input type='radio' name='no' value='" + server_no + "' id='no'> </td>\
+						<td><input type='radio' name='storeID' value='" + server_name + "' id='no'> </td>\
 						<td>"+ server_no + "</td>\
 						<td>"+ server_name + "</td>\
 						<td>"+ server_station + "</td>\
@@ -82,21 +137,95 @@
 					}
 				}
 				else {
-					alert('정확한 역이름을 입력해주세요. \n ex) 역삼역(x), 역삼(O)');
+					
+					alert('검색하신 상호명은 없습니다.');
 				}
 			}
 		})
 	}
 
+
 	function showPopup() {
-		let  selectedNo= $('input[name="no"]:checked').val();
-		if(selectedNo != undefined ) {
-			var win = window.open("revise_popup.html", "revise_popup", "width=400, height=300, left=100, top=50");
-			win.document.alert('hi')
+		let  selectedStore= $('input[name="storeID"]:checked').val();
+		if(selectedStore != undefined ) {
+			$('.table_box').hide()
+			$('.MenuBOX').hide()
+			$('.revise').show()
 			
+			$.ajax({
+				type: "get",
+				url: `/revise_changeboxListing?store_give=${selectedStore}`,
+				data: {},
+				success: function (response) {
+					if (response['result'] == 'success') {
+						rows = response['store_info']
+						for (i = (rows.length-1) ; i >= 0; i--) {
+							server_no = rows[i]['no']
+							server_name = rows[i]['name']
+							server_address = rows[i]['address']
+							server_station = rows[i]['station']
+							server_memo = rows[i]['memo']
+							server_food_kind = rows[i]['food_kind']
+							server_visit = rows[i]['visit']
+
+							document.getElementById('no_input').value = server_no
+							document.getElementById('name_input').value = server_name
+							document.getElementById('address_input').value = server_address
+							document.getElementById('station_input').value = server_station
+							document.getElementById('memo_input').value = server_memo
+							document.getElementById('food_kind').value = server_food_kind
+							$("input:radio[name='visit_record']:input[value="+server_visit+"]").prop('checked', true);
+
+						}
+					}
+				}
+			})
 		}
+	}
+
+	function revise_btn() {
+		if(confirm("데이터 수정을 실행할까요?") ==true ) {
+
+			no = $('#no_input').val()
+			name = $('#name_input').val()
+			address = $('#address_input').val()
+			station = $('#station_input').val()
+			memo = $('#memo_input').val()
+			food_kind = $('#food_kind').val()
+
+			if (name == ''){
+				alert('상호명은??')
+				$('#name_input').focus()
+				return
+			} else if (address == ''){
+				alert('도로명주소 뭐야?')
+				$('#address_input').focus()
+				return
+			}
+
+			$.ajax({
+				type: "POST",
+				url: "/DataUpdate", 
+				data: {no_give:no, name_give:name, address_give:address, station_give:station, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
+				success: function(response){
+					if(response["result"]=="success" ) {
+						alert('데이터 수정완료!') ;
+					} else {
+						alert('다시 확인해 주세요.')
+					}
+				}
+			})
+		} 
 
 
+		else {
+
+		}
+	}
+
+
+	function cancel() {
+		history.back()
 	}
 
 </script>

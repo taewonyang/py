@@ -344,6 +344,8 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
           		serachedList()
           		displayMarker()
           	}
+          	var moveLatLon = new kakao.maps.LatLng(server_y_code, server_x_code);
+          	map.panTo(moveLatLon);
           }
 
           else if (response["stationSearch_result"] == "fail") {
