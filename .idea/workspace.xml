@@ -7,11 +7,9 @@
     <list default="true" id="1f7ac04d-3352-4850-8998-a59101cb0b4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/enrollment.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/enrollment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/revise_popup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/test.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +22,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1419">
-              <caret line="171" column="25" lean-forward="true" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
+            <state relative-caret-position="725">
+              <caret line="98" column="8" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="26" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1605187182313" expanded="true" signature="8967:9736" ph="..." />
+                <marker date="1605192280658" expanded="true" signature="8892:9661" ph="..." />
               </folding>
             </state>
           </provider>
@@ -274,7 +272,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49739584" weight="0.3186969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49739584" weight="0.26770538" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -475,11 +473,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1419">
-          <caret line="171" column="25" lean-forward="true" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
+        <state relative-caret-position="725">
+          <caret line="98" column="8" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="26" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1605187182313" expanded="true" signature="8967:9736" ph="..." />
+            <marker date="1605192280658" expanded="true" signature="8892:9661" ph="..." />
           </folding>
         </state>
       </provider>

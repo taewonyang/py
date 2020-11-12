@@ -69,7 +69,7 @@ def register():
                    'station': station_receive, 'memo': memo_receive, 'visit': visit_receive,
                    'food_kind': food_kind_receive}
             db.food_store.insert_one(doc)
-            stationInput_result = 'success'
+
             print('db등록성공')
         else:
             all = list(db.food_store.find({}))
@@ -79,7 +79,6 @@ def register():
                    'station': station_receive, 'memo': memo_receive, 'visit': visit_receive,
                    'food_kind': food_kind_receive}
             db.food_store.insert_one(doc)
-            stationInput_result = 'success'
             print('db등록성공')
 
         # 지도만들기
@@ -97,12 +96,13 @@ def register():
                 folium.Marker(location=[y_code, x_code], tooltip=name,
                               icon=folium.Icon(color="red", icon="star")).add_to(m)
         m.save('./templates/map.html')
+        result = 'success'
         print('지도화 성공!')
     else:
-        stationInput_result = 'fail'
+        result = 'fail'
         print('잘못된 역명칭 입력!')
 
-    return jsonify({'stationInput_result': stationInput_result})
+    return jsonify({'result': result})
 
 @app.route('/mylist', methods=['get'])
 def sarching():
@@ -179,9 +179,11 @@ def reviseMainPage():
                 stores = list(db.food_store.find({'name': name}, {'_id': 0}))
                 for store in stores :
                     store_info.append(store)
-                result = "success"
-            else :
-                result = "fail"
+
+        if(len(store_info) >= 1) :
+            result = "success"
+        else :
+            result = "fail"
     return jsonify({'result':result, 'store_info':store_info})
 
 
