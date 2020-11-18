@@ -35,11 +35,11 @@ def MapView():
 
 @app.route('/enrollment')
 def enrollment():
-    return render_template('enrollment.html')
+    return render_template('enrollment.html', stationList = stationList)
 
 @app.route('/search')
 def search():
-    return render_template('search.html')
+    return render_template('search.html', stationList = stationList)
 
 @app.route('/admin')
 def admin():
@@ -53,6 +53,8 @@ def register():
     memo_receive = request.form['memo_give']
     visit_receive = request.form['visit_give']
     food_kind_receive = request.form['food_kind_give']
+
+    print(station_receive + ": 등록 역명")
 
     if ((station_receive in stationList) == True):
         # 위도,경도 추출하기
@@ -71,6 +73,7 @@ def register():
             db.food_store.insert_one(doc)
 
             print('db등록성공')
+            result = 'success'
         else:
             all = list(db.food_store.find({}))
             no = all[len(all) - 1]['no']
@@ -80,6 +83,7 @@ def register():
                    'food_kind': food_kind_receive}
             db.food_store.insert_one(doc)
             print('db등록성공')
+            result = 'success'
 
         # 지도만들기
         m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
@@ -96,7 +100,7 @@ def register():
                 folium.Marker(location=[y_code, x_code], tooltip=name,
                               icon=folium.Icon(color="red", icon="star")).add_to(m)
         m.save('./templates/map.html')
-        result = 'success'
+        # result = 'success'
         print('지도화 성공!')
     else:
         result = 'fail'
@@ -226,24 +230,24 @@ def DataUpdate():
 
         print(name_receive, '입력받은값')
         db.food_store.update_one( { 'no' : no_receive }, doc )  #update is deprecated. Use replace_one, update_one or update_many instead
-        print(list(db.food_store.find({'no': no_receive}, {'_id': 0})), '변경된내용')
+        # print(list(db.food_store.find({'no': no_receive}, {'_id': 0})), '변경된내용')
 
-        # # 데이터 수정한 지도만들기
-        # m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
-        # all_store = list(db.food_store.find({}))
-        # for store in all_store:
-        #     name = store['name']
-        #     visit = store['visit']
-        #     x_code = store['x_code']
-        #     y_code = store['y_code']
-        #     if visit == "visit_ok":
-        #         folium.Marker(location=[y_code, x_code], tooltip=name,
-        #                       icon=folium.Icon(color="blue", icon="home")).add_to(m)
-        #     else:
-        #         folium.Marker(location=[y_code, x_code], tooltip=name,
-        #                       icon=folium.Icon(color="red", icon="star")).add_to(m)
-        # m.save('./templates/map.html')
-        # print('지도화 성공!')
+        # 데이터 수정한 지도만들기
+        m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)
+        all_store = list(db.food_store.find({}))
+        for store in all_store:
+            name = store['name']
+            visit = store['visit']
+            x_code = store['x_code']
+            y_code = store['y_code']
+            if visit == "visit_ok":
+                folium.Marker(location=[y_code, x_code], tooltip=name,
+                              icon=folium.Icon(color="blue", icon="home")).add_to(m)
+            else:
+                folium.Marker(location=[y_code, x_code], tooltip=name,
+                              icon=folium.Icon(color="red", icon="star")).add_to(m)
+        m.save('./templates/map.html')
+        print('지도화 성공!')
         result = "success"
     else :
         result = 'fail'

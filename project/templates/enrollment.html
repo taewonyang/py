@@ -12,8 +12,10 @@
 				<label for ="name_input">도로명주소</label>
 			</div>
 			<div class = "int-area">
-				<input list="stationList" id="station_input" name="station_input" required />
-				<label for="station_input">근처역</label>
+				<label for = "stationList">역이름</label>
+				<select id="stationList" name="stationList">
+					<option>--역을 선택해주세요--</option>
+				</select>
 			</div>
 			<div class = "int-area">
 				<input type = "text" name="memo_input" id="memo_input" autocomplete="off">
@@ -40,45 +42,63 @@
 				</fildset>
 			</div>
 
-			<div class="btn-area">			
+			<div class="btn-area">
 				<button type="submit" onclick="request_btn()">여기인정!</button>
 			</div>
 		</form>
 	</section>
 </div>
 
-<script>
-	function request_btn() {
-		name = $('#name_input').val()
-		address = $('#address_input').val()
-		station = $('#station_input').val()
-		memo = $('#memo_input').val()
-		food_kind = $('#food_kind').val()
 
-		if (name == ''){
-			alert('상호명은??')
-			$('#name_input').focus()
-			return
-		} else if (address == ''){
-			alert('도로명주소 뭐야?')
-			$('#address_input').focus()
-			return
-		}
-		$.ajax({
-			type: "POST",
-			url: "/mylist", 
-			data: {name_give:name, address_give:address, station_give:station, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
-			success: function(response){
-				if(response["result"]=="success" ) {
-					alert('ㅊㅋㅊㅋ~ 등록완료!') ;
-				} else {
-					alert('등록실패ㅠ 다시확인해주세요')
-					
-				}
-			}
-		})
+<script>   
+   //역검색 선택창 만들기
+   stationList = {{stationList|safe}}
+   for (i = 0; i < stationList.length; i++) {
+   	stationOption = "<option value='" + stationList[i] + "'>" + stationList[i] + "</option>"
+   	$('#stationList').append(stationOption)
+   }
 
-	}	
+   $(document).ready(function () {
+   	$("#stationList").select2();
+   });
+
+
+   function request_btn() {
+   	name = $('#name_input').val()
+   	address = $('#address_input').val()
+   	station = $('#stationList option:selected').val()
+   	memo = $('#memo_input').val()
+   	food_kind = $('#food_kind').val()
+
+   	if (name == ''){
+   		alert('상호명은??')
+   		$('#name_input').focus()
+   		return
+   	} else if (address == ''){
+   		alert('도로명주소 뭐야?')
+   		$('#address_input').focus()
+   		return
+   	} else if (stationName == "--역을 선택해주세요--"){
+   		alert('역을 선택해주세요.')
+   		$('#stationList').focus()
+   	}
+
+   	$.ajax({
+   		type: "POST",
+   		url: "/mylist",
+   		data: {name_give:name, address_give:address, station_give:station, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
+   		success: function(response){
+   			if(response["result"] == "success" ) {
+   				alert("ㅊㅋㅊㅋ~ 등록완료!")
+   			} else {
+   				alert('등록실패ㅠ 역이름을 선택해주세요!')
+
+   			}
+   		}
+   	})
+
+   }
+
 
 </script>
 <!-- <script src="{{url_for('static',filename='js/script.js')}}"></script> -->

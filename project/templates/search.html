@@ -24,8 +24,7 @@
 	}
 
 	#stationSearch_box,
-	#name_result,
-	#station_input {
+	#name_result{
 		font-size: 1.25em
 	}
 
@@ -101,8 +100,11 @@
 
 		<div id="stationSearch_box">
 			<div>
-				<label for="station_input">역이름</label>
-				<input list="stationList" id="station_input" name="station_input" placeholder="ex) 역삼역(x), 역삼(O)" required>
+				<label for = "stationList">역이름</label>
+				<select id="stationList" name="stationList">
+					<option>--역을 선택해주세요--</option>
+				</select>
+
 				<button type="button" id="search_btn" onclick="find_station()">검색</button>
 				<input type="button" id="searchFilter_btn" onclick="openclose()" value="+">
 			</div>
@@ -227,6 +229,7 @@
 
 <script type="text/javascript"
 src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&libraries=services"></script>
+
 <script>
    //체크박스 전체 선택하기
    let $checkAll = $('#checkAll');
@@ -263,6 +266,17 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
    	}
    }
 
+   //역검색 선택창 만들기
+   stationList = {{stationList|safe}}
+   for (i = 0; i < stationList.length; i++) {
+   	stationOption = "<option value='" + stationList[i] + "'>" + stationList[i] + "</option>"
+   	$('#stationList').append(stationOption)
+   }
+
+   $(document).ready(function () {
+   	$("#stationList").select2();
+   });
+
    //지도 띄우기
    var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
    var mapContainer = document.getElementById('map'),
@@ -295,11 +309,10 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
       }
 
       radioVal = $('input[name="visit_record"]:checked').val()
-      stationName = $('#station_input').val()
+      stationName = $('#stationList option:selected').val()
 
-      if (stationName == "") {
-      	alert('역이름을 입력해주세요.')
-      	$('#station_input').focus();
+      if (stationName == "--역을 선택해주세요--") {
+      	alert('역을 선택해주세요.')
       	return
       }
       else if (isEmpty(checkedList) == true) {
@@ -328,35 +341,35 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
           }
 
           if (response["stationSearch_result"] == "success") {
-          	// alert("검색완료!");
-          	$('#searchResult_box').show()
+             // alert("검색완료!");
+             $('#searchResult_box').show()
 
-          	rows = response['store_info']
+             rows = response['store_info']
 
-          	for (i = 0; i < rows.length; i++) {
-          		server_name = rows[i]['name']
-          		server_memo = rows[i]['memo']
-          		server_address = rows[i]['address']
-          		server_visit = rows[i]['visit']
-          		server_food_kind = rows[i]['food_kind']
-          		server_x_code = rows[i]['x_code']
-          		server_y_code = rows[i]['y_code']
-          		serachedList()
-          		displayMarker()
-          	}
-          	var moveLatLon = new kakao.maps.LatLng(server_y_code, server_x_code);
-          	map.panTo(moveLatLon);
-          }
+             for (i = 0; i < rows.length; i++) {
+             	server_name = rows[i]['name']
+             	server_memo = rows[i]['memo']
+             	server_address = rows[i]['address']
+             	server_visit = rows[i]['visit']
+             	server_food_kind = rows[i]['food_kind']
+             	server_x_code = rows[i]['x_code']
+             	server_y_code = rows[i]['y_code']
+             	serachedList()
+             	displayMarker()
+             }
+             var moveLatLon = new kakao.maps.LatLng(server_y_code, server_x_code);
+             map.panTo(moveLatLon);
+         }
 
-          else if (response["stationSearch_result"] == "fail") {
-          	alert('정확한 역명을 입력해주세요!')
-          }
+         else if (response["stationSearch_result"] == "fail") {
+         	alert('정확한 역명을 입력해주세요!')
+         }
 
-          else {
-          	alert('등록된 정보가 없어요ㅠ')
-          }
-      }
-  })
+         else {
+         	alert('등록된 정보가 없어요ㅠ')
+         }
+     }
+ })
   }
 
   function serachedList() {
@@ -403,7 +416,7 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
   			success: function (response) {
   				if (response["crawling_result"] == "success") {
   					blog = response['stores']
-  					
+
   					blogTitle = blog['storeBlog_title']
   					blogLink = blog['storeBlog_href']
 
@@ -416,6 +429,7 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
   		})
   	})
   }
+
 
 </script>
 {% endblock %}
