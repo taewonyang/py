@@ -43,7 +43,14 @@ def search():
 
 @app.route('/admin')
 def admin():
-    return render_template('admin.html')
+    store_info = list(db.food_store.find({}, {'_id': 0}))
+    # 모든 스토어의 상호명리스트
+    store_names = []
+    all = store_info
+    for i in all:
+        name = i['name']
+        store_names.append(name)
+    return render_template('admin.html', store_names = store_names, stationList = stationList)
 
 @app.route('/mylist', methods=['post'])
 def register():
@@ -66,6 +73,7 @@ def register():
         html = res.content.decode('utf8')
         x_code = re.findall('"x" : "(.*?)", "y', html)[0]
         y_code = re.findall('"y" : "(.*?)"}', html)[0]
+
         if not (list(db.food_store.find({}))):
             doc = {'no': 1, 'name': name_receive, 'address': address_receive, 'x_code': x_code, 'y_code': y_code,
                    'station': station_receive, 'memo': memo_receive, 'visit': visit_receive,
@@ -142,7 +150,7 @@ def sarching():
         stationSearch_result = 'fail'
         print('아무작업 안함')
 
-    return jsonify({'stationSearch_result': stationSearch_result, 'store_info': store_info})
+    return jsonify({'stationSearch_result': stationSearch_result, 'store_info' : store_info})
 
 @app.route('/crawling', methods=['get'])
 def crawling():
@@ -171,7 +179,8 @@ def crawling():
 @app.route('/reviseMainPage', methods=['get']) #데이터관리 메인페이지
 def reviseMainPage():
     storeName_receive = request.args.get('storeName_give')
-    if storeName_receive=="" :
+
+    if storeName_receive=="--상호명을 선택해주세요--" :
        store_info = list(db.food_store.find({}, {'_id': 0}))
        result = "success"
     else : #데이터관리 페이지에서 검색시
@@ -229,8 +238,7 @@ def DataUpdate():
                'food_kind': food_kind_receive}
 
         print(name_receive, '입력받은값')
-        db.food_store.update_one( { 'no' : no_receive }, doc )  #update is deprecated. Use replace_one, update_one or update_many instead
-        # print(list(db.food_store.find({'no': no_receive}, {'_id': 0})), '변경된내용')
+        db.food_store.update_one( { 'no' : no_receive }, doc )
 
         # 데이터 수정한 지도만들기
         m = folium.Map(location=[37.529471, 127.008920], zoom_start=12)

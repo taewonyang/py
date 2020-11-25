@@ -12,10 +12,10 @@
 				<label for ="name_input">도로명주소</label>
 			</div>
 			<div class = "int-area">
-				<label for = "stationList">역이름</label>
 				<select id="stationList" name="stationList">
 					<option>--역을 선택해주세요--</option>
 				</select>
+				<label for = "stationList">역이름</label>
 			</div>
 			<div class = "int-area">
 				<input type = "text" name="memo_input" id="memo_input" autocomplete="off">
@@ -50,7 +50,7 @@
 </div>
 
 
-<script>   
+<script>
    //역검색 선택창 만들기
    stationList = {{stationList|safe}}
    for (i = 0; i < stationList.length; i++) {
@@ -78,9 +78,8 @@
    		alert('도로명주소 뭐야?')
    		$('#address_input').focus()
    		return
-   	} else if (stationName == "--역을 선택해주세요--"){
+   	} else if (station == "--역을 선택해주세요--"){
    		alert('역을 선택해주세요.')
-   		$('#stationList').focus()
    	}
 
    	$.ajax({
@@ -91,7 +90,7 @@
    			if(response["result"] == "success" ) {
    				alert("ㅊㅋㅊㅋ~ 등록완료!")
    			} else {
-   				alert('등록실패ㅠ 역이름을 선택해주세요!')
+   				alert('등록실패ㅠ 다시 진행해주세요!')
 
    			}
    		}
