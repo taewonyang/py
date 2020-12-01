@@ -341,33 +341,33 @@ src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932f62c2719eabbf4e13cd00cd133311&lib
           }
 
           if (response["stationSearch_result"] == "success") {
-             $('#searchResult_box').show()
-             rows = response['store_info']
+          	$('#searchResult_box').show()
+          	rows = response['store_info']
 
-             for (i = 0; i < rows.length; i++) {
-             	server_name = rows[i]['name']
-             	server_memo = rows[i]['memo']
-             	server_address = rows[i]['address']
-             	server_visit = rows[i]['visit']
-             	server_food_kind = rows[i]['food_kind']
-             	server_x_code = rows[i]['x_code']
-             	server_y_code = rows[i]['y_code']
-             	serachedList()
-             	displayMarker()
-             }
-             var moveLatLon = new kakao.maps.LatLng(server_y_code, server_x_code);
-             map.panTo(moveLatLon);
-         }
+          	for (i = 0; i < rows.length; i++) {
+          		server_name = rows[i]['name']
+          		server_memo = rows[i]['memo']
+          		server_address = rows[i]['address']
+          		server_visit = rows[i]['visit']
+          		server_food_kind = rows[i]['food_kind']
+          		server_x_code = rows[i]['x_code']
+          		server_y_code = rows[i]['y_code']
+          		serachedList()
+          		displayMarker()
+          	}
+          	var moveLatLon = new kakao.maps.LatLng(server_y_code, server_x_code);
+          	map.panTo(moveLatLon);
+          }
 
-         else if (response["stationSearch_result"] == "fail") {
-         	alert('정확한 역명을 입력해주세요!')
-         }
+          else if (response["stationSearch_result"] == "fail") {
+          	alert('정확한 역명을 입력해주세요!')
+          }
 
-         else {
-         	alert('등록된 정보가 없어요ㅠ')
-         }
-     }
- })
+          else {
+          	alert('등록된 정보가 없어요ㅠ')
+          }
+      }
+  })
   }
 
   function serachedList() {

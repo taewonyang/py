@@ -178,25 +178,37 @@ def crawling():
 
 @app.route('/reviseMainPage', methods=['get']) #데이터관리 메인페이지
 def reviseMainPage():
-    storeName_receive = request.args.get('storeName_give')
+    searchValue_receive = request.args.get('searchValue_give')
+    searchValue  = searchValue_receive.split('-')[0]
+    searchCategory = searchValue_receive.split('-')[1]
+    # print('입력값:' + searchValue_receive)
+    # print('찾는값:' + searchValue )
+    # print('분류:' + searchCategory)
+    if searchCategory == "store" :
+        if searchValue =="" :
+           store_info = list(db.food_store.find({}, {'_id': 0}))
+           result = "success"
+        else : #데이터관리 페이지에서 검색시
+            store_info = []
+            all = list(db.food_store.find({}, {'_id': 0}))
+            for i in all :
+                name = i['name']
+                if (searchValue in name) == True :
+                    stores = list(db.food_store.find({'name': name}, {'_id': 0}))
+                    for store in stores :
+                        store_info.append(store)
 
-    if storeName_receive=="--상호명을 선택해주세요--" :
-       store_info = list(db.food_store.find({}, {'_id': 0}))
-       result = "success"
-    else : #데이터관리 페이지에서 검색시
-        store_info = []
-        all = list(db.food_store.find({}, {'_id': 0}))
-        for i in all :
-            name = i['name']
-            if (storeName_receive in name) == True :
-                stores = list(db.food_store.find({'name': name}, {'_id': 0}))
-                for store in stores :
-                    store_info.append(store)
+            if(len(store_info) >= 1) :
+                result = "success"
+            else :
+                result = "fail"
+    elif searchCategory == "food" :
+        store_info = list(db.food_store.find({'food_kind': searchValue}, {'_id': 0}))
+        result = "success"
+    else :
+        store_info = list(db.food_store.find({'visit': searchValue}, {'_id': 0}))
+        result = "success"
 
-        if(len(store_info) >= 1) :
-            result = "success"
-        else :
-            result = "fail"
     return jsonify({'result':result, 'store_info':store_info})
 
 
@@ -262,6 +274,15 @@ def DataUpdate():
         print('잘못된 역명칭 입력!')
 
     return jsonify({'result': result})
+
+
+# @app.route('/DataDelete', methods=['post']) #데이터관리 - 데이터삭제
+# def DataDelete() :
+#     store_receive = request.args.get('store_give')
+#     print(store_receive,'삭제데이터')
+#     db.food_store.remove({name: store_receive})
+#     result = "success"
+#     return jsonify({'result' : result})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

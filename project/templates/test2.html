@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select id="category2"></select>
+	
+	<script>
+		var target = document.getElementById("category2") ;
+		target.options.length = 0 ;
+
+		foodCategory = {'밥/국/찌개':'rice', '고기/육류':'meat', '면류':'noodle', '해산물':'seaFood', '세계음식':'worldFood', '빵':'bread', '분식':'flourbasedFood', '카페/음료/바':'cafeBar'}
+		
+		for (x in foodCategory) {
+			// console.log(x)
+			var opt = document.createElement("option");
+			opt.value = console.log(foodCategory[x])
+			// opt.innerHTML = values[x];
+			target.appendChild(opt);
+		}
+		
+
+	</script>
+</body>
+</html>

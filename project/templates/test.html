@@ -1,14 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <input type="text" id = "test">
+<select onchange="categoryChange(this)">
+	<option>선택하세요.</option>
+	<option value="tt">텍스트박스</option>
+	<option value ="a">가나다</option>
+	<option value = "b">나나나</option>
+	<option value = "c">다다더</option>
+</select>
 
-    <script>
-        
-        document.getElementById('test').value = '1'
-    </script>
-</body>
-</html>
+<select id ="good">
+	<option>2번째 선택</option>
+</select>
+
+<script>
+	function categoryChange(e) {
+		if(e.value == "tt") {
+
+			var jbInp = document.createElement( 'input' );
+			document.body.appendChild(jbInp);	
+
+		}
+		else {
+			document.body.removeChild(jbInp)
+
+			var good_a = ['하나','둘', '셋', '넷']
+			var good_b = ['검정', '파랑', '노랑', '빨강']
+			var good_c = ['사과', '배', '귤', '감']
+			var target = document.getElementById("good") ;
+
+			if(e.value == "a") var d= good_a;
+			else if(e.value == "b") var d= good_b;
+			else if(e.value == "c") var d = good_c;
+
+			target.options.length = 0 ;
+
+			for (x in d) {
+				console.log(x)
+				var opt = document.createElement("option");
+				opt.value = d[x];
+				opt.innerHTML = d[x];
+				// target.appendChild(opt);
+			}
+		}
+	}
+</script>

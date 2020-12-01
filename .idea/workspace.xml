@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/project/templates/enrollment.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/enrollment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/test.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="185" column="27" lean-forward="true" selection-start-line="185" selection-start-column="27" selection-end-line="185" selection-end-column="27" />
+            <state relative-caret-position="1903">
+              <caret line="132" column="35" lean-forward="true" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -55,6 +56,7 @@
       <find>print</find>
       <find>수정창</find>
       <find>store_names</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,6 +86,7 @@
         <option value="$PROJECT_DIR$/../sparta/SPARTA_WarmUP/Class2.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/../app-1.py" />
+        <option value="$PROJECT_DIR$/project/templates/map.html" />
         <option value="$PROJECT_DIR$/project/app.py" />
       </list>
     </option>
@@ -92,7 +95,7 @@
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="980" />
-    <option name="height" value="525" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -103,7 +106,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/app.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/templates/map.html" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -266,6 +269,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12681638" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -287,7 +291,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/formating.py" />
     <entry file="file://$PROJECT_DIR$/daum.html" />
     <entry file="file://$PROJECT_DIR$/text.txt" />
     <entry file="file://$PROJECT_DIR$/../sparta/sparta/myproject/daum.html" />
@@ -478,10 +481,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/templates/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1778">
+          <caret line="1880" column="14" selection-start-line="1880" selection-start-column="14" selection-end-line="1880" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="185" column="27" lean-forward="true" selection-start-line="185" selection-start-column="27" selection-end-line="185" selection-end-column="27" />
+        <state relative-caret-position="1903">
+          <caret line="132" column="35" lean-forward="true" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

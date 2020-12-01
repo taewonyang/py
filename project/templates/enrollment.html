@@ -87,8 +87,8 @@
    		url: "/mylist",
    		data: {name_give:name, address_give:address, station_give:station, food_kind_give:food_kind, visit_give:$('input[name="visit_record"]:checked').val() , memo_give:memo},
    		success: function(response){
-   			if(response["result"] == "success" ) {
-   				alert("ㅊㅋㅊㅋ~ 등록완료!")
+   			if(response['result'] == 'success' ) {
+   				alert('ㅊㅋㅊㅋ~ 등록완료!')
    			} else {
    				alert('등록실패ㅠ 다시 진행해주세요!')
 
